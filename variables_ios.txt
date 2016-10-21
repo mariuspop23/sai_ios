@@ -1,0 +1,58 @@
+*** Variables ***
+
+${SERVER_LIVE}              ---
+${SERVER_DEV}               tadelos.ro/ios
+${BROWSER}                  chrome
+${DELAY}                    0
+${VALID ADMIN_USER}         marius@xcommerce.eu
+${VALID ADMIN_USER2}        marius.pop@xcommerce.eu     # used on Edit form
+${VALID MANAGER_USER}       marius.pop@xcommerce.eu
+${VALID STAFF_USER}         mariuspopa@xcommerce.eu
+${VALID PASSWORD}           Marius123
+${TEMP PASSWORD}            Marius321
+
+${VALID BE USER}            xcommerce1@gmail.com
+${VALID BE PASSWORD}        3U3lcDdFNRbD
+
+
+${ADMIN NAME}                   Automation Test
+${TEMP ADMIN EMAIL}             marius_automation@xcommerce.eu
+${TEMP Customer}                Marius Pop Automation Update
+${TEMP Reseller Customer}       Marius
+${TEMP ADMIN EMAIL UPDATED}     marius_automation1@xcommerce.eu
+
+
+${EMAIL SERVER}             xcommerce.eu
+${EMAIL USER}               marius@xcommerce.eu
+${EMAIL PASSWORD}           xcommerce1
+${EMAIL SENDER}             xcommerce1@gmail.com
+
+${LOCATION ADMIN_USER}      http://${SERVER_DEV}/en/index.php?controller=admins
+${LOCATION MANAGER_USER}    http://${SERVER_DEV}/en/index.php?controller=approvalorders
+${LOCATION STAFF_USER}      http://${SERVER_DEV}/en/index.php?controller=directsalesorders
+
+${HOMEPAGE URL}             http://${SERVER_DEV}
+${FORGOT PASSWORD URL}      http://${SERVER_DEV}/en/index.php?controller=admins&action=recover
+${LOGIN URL}                http://${SERVER_DEV}
+${LOGIN URL BE}             http://${SERVER_DEV}/Xadmin
+
+#Filters Variables - need to check values before build and update them before running AUTOMATION!
+${Filter Customer}          Marius Pop
+${Filter Order Number}      OC000212
+${Filter Order Number_res}  OR000211
+${Filter Status DR}         5
+${Filter Status TBA}        7
+${Filter Status APR}        8
+${Filter Status REJ}        9
+${Filter Status CAN}        10
+${Filter Status CL-NP}      11
+${Filter Status CL}         12
+${Filter Sales Rep}         5
+${Filter SoftID}            ${EMPTY}
+${Filter Key Number}        ${EMPTY}
+${Filter My orders}         0
+${Filter PO Number}         ${EMPTY}
+${typeDirectSales}          0
+${typeReseller}             1
+
+

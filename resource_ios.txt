@@ -1,0 +1,161 @@
+*** Settings ***
+Documentation     A resource file with reusable keywords and variables.
+...
+...               The system specific keywords created here form our own
+...               domain specific language. They utilize keywords provided
+...               by the imported Selenium2Library.
+Library           Selenium2Library
+
+*** Keywords ***
+
+Open Browser To Homepage
+    Open Browser            ${LOGIN URL}         ${BROWSER}
+    Maximize Browser Window
+    Set Selenium Speed      ${DELAY}
+
+Open Browser To Homepage in BE
+    Open Browser            ${LOGIN URL BE}         ${BROWSER}
+    Maximize Browser Window
+    Set Selenium Speed      ${DELAY}
+
+Open Browser To Forgot password
+    Open Browser            ${FORGOT PASSWORD URL}         ${BROWSER}
+    Maximize Browser Window
+    Set Selenium Speed      ${DELAY}
+
+Go To Login Page
+    Go To    ${LOGIN URL}
+
+Input Username
+    [Arguments]    ${username}
+    wait until page contains element  email
+    Input Text      email    ${username}
+
+Input Password
+    [Arguments]    ${password}
+    Input Text      passwd    ${password}
+
+Submit Credentials
+    Click Element    SubmitLogin
+    sleep            2s
+
+Logout user
+    wait until page contains element        xpath=//span[@class='username username-hide-on-mobile hidden-xs']
+    click element                           xpath=//span[@class='username username-hide-on-mobile hidden-xs']
+    click element                           xpath=//a[@href='http://tadelos.ro/ios/en/index.php?controller=admins&action=logout']
+
+Login Admin User
+    Input Username          ${VALID ADMIN_USER}
+    Input Password          ${VALID PASSWORD}
+    Submit Credentials
+
+Login Manager User
+    Input Username          ${VALID MANAGER_USER}
+    Input Password          ${VALID PASSWORD}
+    Submit Credentials
+
+Login Staff User
+    Input Username          ${VALID STAFF_USER}
+    Input Password          ${VALID PASSWORD}
+    Submit Credentials
+
+Login Admin User with new password
+    Input Username          ${VALID ADMIN_USER}
+    Input Password          ${TEMP PASSWORD}
+    Submit Credentials
+
+#Change password:__________________________________________________________
+
+Open Admin dropdown and select Change password
+    wait until page contains element        xpath=//span[@class='username username-hide-on-mobile hidden-xs']
+    click element                           xpath=//span[@class='username username-hide-on-mobile hidden-xs']
+    click element                           //a[@href='http://tadelos.ro/ios/en/index.php?controller=admins&action=change_password']
+    wait until page contains element        css=input#old_passwd
+
+Submit valid values for passwords
+    wait until page contains element        css=input#old_passwd
+    input text                              css=input#old_passwd        ${VALID PASSWORD}
+    input text                              css=input#passwd            ${TEMP PASSWORD}
+    input text                              css=input#confirm_passwd    ${TEMP PASSWORD}
+    click button                            submitChangePassword
+
+Verify the succesfull message for Change password
+    wait until page contains element        css=div.alert.alert-success
+    element should contain                  css=div.alert.alert-success         Password changed successfully
+
+Submit valid values for passwords BACK to previous password
+    wait until page contains element        css=input#old_passwd
+    input text                              css=input#old_passwd        ${TEMP PASSWORD}
+    input text                              css=input#passwd            ${VALID PASSWORD}
+    input text                              css=input#confirm_passwd    ${VALID PASSWORD}
+    click button                            submitChangePassword
+
+#__________________________________________________________
+
+Open browser and login user
+    Open Browser To Homepage
+    Login Admin User
+
+Go to Add Admin form
+    go to   http://tadelos.ro/ios/en/index.php?controller=admins?action=add
+
+Open browser and login user and go to Edit form
+    Open Browser To Homepage
+    Login Admin User
+
+Go to List of users
+     go to              http://${SERVER_DEV}/en/index.php?controller=admins
+
+Go to Awaiting approval page
+    go to               http://${SERVER_DEV}/en/index.php?controller=approvalorders
+
+Go to Direct sales page
+    go to               http://${SERVER_DEV}/en/index.php?controller=directsalesorders
+
+Go to Resellers page
+    go to               http://${SERVER_DEV}/en/index.php?controller=resellerorders
+
+Go to My Open Orders page
+    go to               http://${SERVER_DEV}/en/index.php?controller=myopenorders
+
+Login Admin and go to Add Customer form and Select Shipping checkbox
+    Login Admin User
+    click element                       xpath=//a[@href='http://${SERVER_DEV}/en/index.php?controller=createdirectorder&create=1']
+    wait until element is visible       search_company
+    click element                       xpath=//*[@id="createdirectorder"]/div/div[3]/div[2]/div/div[1]/div[4]/form/div[1]/div[5]/div[3]/div/label/span
+
+Go to Add customer page
+    go to                               http://${SERVER_DEV}/index.php?controller=createdirectorder&create=1
+    click element                       xpath=//*[@id="createdirectorder"]/div/div[3]/div[2]/div/div[1]/div[4]/form/div[1]/div[5]/div[3]/div/label/span
+
+Open browser and login user and go to edit
+    Open Browser To Homepage
+    Login Admin User
+    go to                               http://${SERVER_DEV}/index.php?controller=createdirectorder&create=1
+    wait until element is visible       search_company
+    input text                          search_company          marius_automation@xcommerce.eu
+    wait until element is visible       xpath=//*[@id="createdirectorder"]/div[2]/ul
+    click element                       xpath=//*[@id="createdirectorder"]/div[2]/ul/li[1]
+    wait until element is visible       edit_company_info
+    click button                        edit_company_info
+
+Go to Edit customer page
+#    go to                               http://tadelos.ro/ios/en/index.php?controller=createdirectorder
+#    input text                          search_company          marius_automation@xcommerce.eu
+#    wait until element is visible       xpath=//*[@id="createdirectorder"]/div[2]/ul
+#    click element                       xpath=//*[@id="createdirectorder"]/div[2]/ul/li[1]
+    go to                               http://${SERVER_DEV}/index.php?controller=createdirectorder&create=1
+    wait until element is visible       search_company
+    input text                          search_company          marius_automation@xcommerce.eu
+    wait until element is visible       xpath=//*[@id="createdirectorder"]/div[2]/ul
+    click element                       xpath=//*[@id="createdirectorder"]/div[2]/ul/li[1]
+    wait until element is visible       edit_company_info
+    click button                        edit_company_info
+
+
+Scroll Page To Location
+    [Arguments]    ${x_location}    ${y_location}
+    Execute JavaScript    window.scroll(${x_location},${y_location})
+
+
+
