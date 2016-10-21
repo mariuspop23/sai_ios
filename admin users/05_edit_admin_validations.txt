@@ -1,0 +1,43 @@
+*** Settings ***
+Documentation     A test suite containing tests for validating the Edit users form
+
+Suite Setup       Open browser and login user and go to Edit form
+
+Test Setup        Go to List of users
+Test Template     Edit Users with Invalid Credentials Should Fail
+
+Resource          ../resource_ios.txt
+Resource          ../variables_ios.txt
+
+
+*** Test Cases ***                  NAME                EMAIL                   PASSWORD            Account type            ERROR MESSAGE
+Empty fields                        ${EMPTY}            ${EMPTY}                ${EMPTY}            0                       Name is required Email is required Email is invalid format Account Type is required Password must be 8 characters longer and must contain Uppercase, Lowercase and Alphanumeric characters.
+Invalid email                       any                 invalid                 ${VALID PASSWORD}   1                       Email is invalid format
+Email already exists                any                 ${VALID ADMIN_USER2}    ${VALID PASSWORD}   1                       An admin with this email already exist
+Limit chars under 8                 any                 ${TEMP ADMIN EMAIL}     Test123             1                       Password must be 8 characters longer and must contain Uppercase, Lowercase and Alphanumeric characters
+Only Valid Uppercase                any                 ${TEMP ADMIN EMAIL}     VALIDUPPER          2                       Password must be 8 characters longer and must contain Uppercase, Lowercase and Alphanumeric characters
+Only Valid Lowercase                any                 ${TEMP ADMIN EMAIL}     VALIDLOWER          2                       Password must be 8 characters longer and must contain Uppercase, Lowercase and Alphanumeric characters
+Only Valid Alphanumerics            any                 ${TEMP ADMIN EMAIL}     123456789           3                       Password must be 8 characters longer and must contain Uppercase, Lowercase and Alphanumeric characters
+Only Uppercase and Lowercase        any                 ${TEMP ADMIN EMAIL}     TESTlowercase       3                       Password must be 8 characters longer and must contain Uppercase, Lowercase and Alphanumeric characters
+Only Uppercase and Alphanumeric     any                 ${TEMP ADMIN EMAIL}     TEST123456          2                       Password must be 8 characters longer and must contain Uppercase, Lowercase and Alphanumeric characters
+Only Lowercase and Alphanumeric     any                 ${TEMP ADMIN EMAIL}     test123456          3                       Password must be 8 characters longer and must contain Uppercase, Lowercase and Alphanumeric characters
+
+*** Keywords ***
+
+Edit Users with Invalid Credentials Should Fail
+    [Arguments]                 ${name}         ${email}         ${password}         ${account_type}       ${error_message}
+    wait until element is visible   xpath=//td[contains(.,"${VALID ADMIN_USER}")]/../td[4]//a[1]
+    click element                   xpath=//td[contains(.,"${VALID ADMIN_USER}")]/../td[4]//a[1]
+    wait until element is visible   css=input#name
+    clear element text              name
+    input text                      name                    ${name}
+    clear element text              email
+    input text                      email                   ${email}
+    clear element text              passwd
+    input text                      passwd                  ${password}
+    select from list by index       account_type            ${account_type}
+    click button                    actionsave
+
+    wait until element is enabled                   css=div.alert.alert-danger
+    page should contain element                     css=div.alert.alert-danger          ${error_message}
+

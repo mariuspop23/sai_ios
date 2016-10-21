@@ -1,0 +1,72 @@
+*** Settings ***
+Documentation     Test suite with create, edit and delete admin scenarios
+Suite Setup       Open Browser To Homepage
+#Suite Teardown    Close Browser
+
+Resource          ../resource_ios.txt
+Resource          ../variables_ios.txt
+
+*** Test Cases ***
+#ADD USER
+User should successful login
+    [Documentation]     This test case completes the login form and submits the form
+    [Tags]              Login should be succesful
+    Login Admin User
+    click element       xpath=//a[contains(.,'Add')]
+
+Complete the Add form and submit
+    wait until page contains element                css=input#name
+    input text                  name                ${ADMIN NAME}
+    input text                  email               ${TEMP ADMIN EMAIL}
+    input text                  passwd              ${VALID PASSWORD}
+    select from list by index   account_type        1
+    click button                actionsave
+
+Check if admin has succesfully created
+    wait until element is visible           css=p.alert.alert-success
+    page should contain element             css=p.alert.alert-success       Admin added successfully
+
+#EDIT USER
+Update the Edit form and submit succesfully
+    wait until element is visible   xpath=//td[contains(.,"${TEMP ADMIN EMAIL}")]/../td[4]//a[1]
+    click element                   xpath=//td[contains(.,"${TEMP ADMIN EMAIL}")]/../td[4]//a[1]
+
+    wait until element is visible   name
+    clear element text              name
+    input text                      name                Automation Test Update
+    clear element text              email
+    input text                      email               ${TEMP ADMIN EMAIL UPDATED}
+    clear element text              passwd
+    input text                      passwd              ${TEMP PASSWORD}
+    select from list by index       account_type        3
+    click button                    actionsave
+
+Check if admin has succesfully been edited
+    wait until element is visible   css=p.alert.alert-success
+    element should contain          css=p.alert.alert-success           Admin updated successfully
+
+#DELETE USER
+Cancel the delete action and check user still exists
+    Choose Cancel On Next Confirmation
+    wait until element is visible   xpath=//td[contains(.,"${TEMP ADMIN EMAIL UPDATED}")]/../td[4]//a[2]
+    click element                   xpath=//td[contains(.,"${TEMP ADMIN EMAIL UPDATED}")]/../td[4]//a[2]
+    Confirm Action
+    table should contain            css=table.table.table-hover     ${TEMP ADMIN EMAIL UPDATED}
+
+Delete user from table
+    wait until element is visible   xpath=//td[contains(.,"${TEMP ADMIN EMAIL UPDATED}")]/../td[4]//a[2]
+    click element                   xpath=//td[contains(.,"${TEMP ADMIN EMAIL UPDATED}")]/../td[4]//a[2]
+    Confirm Action
+
+Check delete has done succesfully
+    sleep       2s
+    wait until element is visible   css=p.alert.alert-success
+    element should contain          css=p.alert.alert-success            Admin deleted successfully
+
+
+
+
+
+
+
+

@@ -1,0 +1,27 @@
+*** Settings ***
+Documentation     A test suite containing tests related to invalid login.
+
+Suite Setup       Open Browser To Homepage
+Test Setup        Go To Login Page
+Test Template     Login With Invalid Credentials Should Fail
+
+Resource          ../resource_ios.txt
+Resource          ../variables_ios.txt
+
+
+*** Test Cases ***               USER NAME              PASSWORD                Error message
+Invalid Username                 invalid                ${VALID PASSWORD}       Invalid email address
+Invalid Password                 ${VALID ADMIN_USER}    invalid                 Authentication failed
+Invalid Username And Password    invalid                whatever                Invalid email address
+Empty Username                   ${EMPTY}               ${VALID PASSWORD}       An email address required
+Empty Password                   ${VALID ADMIN_USER}    ${EMPTY}                Password is required
+Empty Username And Password      ${EMPTY}               ${EMPTY}                An email address required
+
+*** Keywords ***
+Login With Invalid Credentials Should Fail
+    [Arguments]             ${username}         ${password}         ${error_message}
+    Input Username          ${username}
+    Input Password          ${password}
+    Submit Credentials
+    wait until element is enabled                   create_account_error
+    element should contain                          css=div.alert.alert-danger      ${error_message}

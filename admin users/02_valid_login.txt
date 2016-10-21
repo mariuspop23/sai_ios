@@ -1,0 +1,29 @@
+*** Settings ***
+Documentation     Test suite with valid login.
+Suite Setup       Open Browser To Homepage
+#Suite Teardown    Close Browser
+
+Resource          ../resource_ios.txt
+Resource          ../variables_ios.txt
+
+*** Test Cases ***
+
+User should successful login
+    [Documentation]     This test case completes the login form and submits the form
+    [Tags]              Login should be succesful
+    Login Admin User
+    location should be      ${LOCATION ADMIN_USER}
+    Xpath Should Match X Times      //ul[@class='page-sidebar-menu page-header-fixed ']/li   7
+    Logout user
+
+    Login Manager User
+    location should be      ${LOCATION MANAGER_USER}
+    Xpath Should Match X Times      //ul[@class='page-sidebar-menu page-header-fixed ']/li   5
+    Logout user
+
+    Login Staff User
+    location should be      ${LOCATION STAFF_USER}
+    Xpath Should Match X Times      //ul[@class='page-sidebar-menu page-header-fixed ']/li   4
+    Logout user
+
+
