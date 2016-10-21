@@ -1,0 +1,68 @@
+*** Settings ***
+Documentation     Test suite with Add line items validations
+Suite Setup       Open Browser To Homepage
+#Suite Teardown    Close Browser
+
+Resource          ../resource_ios.txt
+Resource          ../variables_ios.txt
+
+*** Test Cases ***
+
+Search Company name and Select customer
+    Login Admin User
+    Go to Resellers page
+    click element                       xpath=//*[@id="resellerorders"]/div/div[3]/div[2]/div/div[2]/div[1]/div[2]/div/a
+    wait until element is visible       search_reseller
+    input text                          search_reseller          ${VALID ADMIN_USER2}
+    wait until element is visible       xpath=//*[@id="createresellerorder"]/div[2]/ul
+    click element                       xpath=//*[@id="createresellerorder"]/div[2]/ul/li[1]
+    sleep   2s
+
+    click element                       xpath=//*[@id="createresellerorder"]/div/div[3]/div[2]/div/div[2]/div/a[2]
+
+New license validations
+    wait until element is visible       submitAddOrderItem
+    click button                        submitAddOrderItem
+    element should contain              css=div#error_message_prod      Please select a product
+
+    select from list by value           line        ENROUTE
+    click button                        submitAddOrderItem
+    element should contain              css=div#error_message_prod      Please select a product
+
+    select from list by value           type        NEW
+    click button                        submitAddOrderItem
+    element should contain              css=div#error_message_prod      Please select a product
+
+Upgrade from Legacy validations
+    select from list by value           type        LEG
+    sleep  1s
+    click button                        submitAddOrderItem
+    element should contain              css=div#error_message_prod      Please select a product
+
+    select from list by value           type                        LEG
+    sleep  1s
+    select from list by value           current_product_line        ENROUTE
+    sleep  1s
+    click button                        submitAddOrderItem
+    element should contain              css=div#error_message_prod      Please select a product
+
+    select from list by value           type                        LEG
+    sleep  1s
+    select from list by value           current_product_line        ENROUTE
+    sleep  1s
+    select from list by value           current_version             OLD
+    sleep  1s
+    select from list by value           current_level               PRO
+    sleep  1s
+    click button                        submitAddOrderItem
+    element should contain              css=div#error_message_prod      Please select a product
+
+
+
+
+
+
+
+
+
+

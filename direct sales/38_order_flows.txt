@@ -1,0 +1,131 @@
+*** Settings ***
+Documentation     Test suite with Order flows
+Suite Setup       Open Browser To Homepage
+#Suite Teardown    Close Browser
+
+Resource          ../resource_ios.txt
+Resource          ../variables_ios.txt
+
+*** Test Cases ***
+
+Search Company name and Select customer
+    Login Admin User
+    Go to Direct sales page
+    click element                       xpath=//*[@id="directsalesorders"]/div/div[3]/div[2]/div/div[2]/div[1]/div[2]/div/a
+    wait until element is visible       search_company
+    input text                          search_company          ${TEMP ADMIN EMAIL}
+    wait until element is visible       xpath=//*[@id="createdirectorder"]/div[2]/ul
+    click element                       xpath=//*[@id="createdirectorder"]/div[2]/ul/li[1]
+    sleep   2s
+
+    click element                       xpath=//*[@id="createdirectorder"]/div/div[3]/div[2]/div/div[2]/div/a[2]
+
+Add Item Enroute - New license
+    wait until element is visible       line
+    select from list by value           line        ENROUTE
+    wait until element is visible       type
+    select from list by value           type        NEW
+    wait until element is visible       xpath=//*[@id="item_options"]/div/div[1]/div/div/label[1]
+    click element                       xpath=//*[@id="item_options"]/div/div[1]/div/div/label[1]
+    input text                          hardware_key    5-10
+
+    click button                        submitAddOrderItem
+    sleep    2s
+
+    page should contain element         xpath=//*[@id="createdirectorder"]/div/div[3]/div[2]/div/div[3]
+
+Saves order as Draft and check status
+    click button                        save_as_draft
+    sleep   2s
+    element should contain              css=div.alert.alert-success     Order successfully saved
+
+    select from list by value           status      5
+    click element                       xpath=//*[@id="directsalesorders"]/div/div[3]/div[2]/div/div[1]/div[3]/form/div[2]/div/div/div/div/button[1]
+
+    sleep   2s
+    wait until element is visible       xpath=//td[contains(.,"${TEMP Customer}")]/../td[7]/span
+    element text should be              xpath=//td[contains(.,"${TEMP Customer}")]/../td[7]/span        Draft
+
+Saves order as Submit for approval and check status
+    wait until element is visible       xpath=//td[contains(.,"${TEMP Customer}")]/../td[9]/a
+    click element                       xpath=//td[contains(.,"${TEMP Customer}")]/../td[9]/a
+
+    click button                        action_for_approve
+    sleep   2s
+    element should contain              css=div.alert.alert-success     Order successfully saved
+
+    Go to Awaiting approval page
+
+    wait until element is visible       xpath=//td[contains(.,"${TEMP Customer}")]/../td[7]/span
+    element text should be              xpath=//td[contains(.,"${TEMP Customer}")]/../td[7]/span        To be Approved
+
+Reject an order and check status
+    wait until element is visible       xpath=//*[@id="approvalorders"]/div/div[3]/div[2]/div/div[2]/div[2]/div[2]/table/tbody/tr[1]/td[1]/a
+
+    wait until element is visible       xpath=//td[contains(.,"${TEMP Customer}")]/../td[10]/a[1]
+    click element                       xpath=//td[contains(.,"${TEMP Customer}")]/../td[10]/a[1]
+
+    click button                        action_reject
+    wait until element is visible       xpath=//*[@id="approvalorders"]/div[2]/div/div/div[2]/div/form/input
+    input text                          xpath=//*[@id="approvalorders"]/div[2]/div/div/div[2]/div/form/input            Reject TEST reason
+    click element                       xpath=//*[@id="approvalorders"]/div[2]/div/div/div[3]/button[2]
+
+    sleep   2s
+
+    element should contain              css=div.alert.alert-success         successfully rejected
+
+Go to Direct sales and submit for approval again
+    Go to Direct sales page
+
+    wait until element is visible       xpath=//td[contains(.,"${TEMP Customer}")]/../td[9]/a
+    click element                       xpath=//td[contains(.,"${TEMP Customer}")]/../td[9]/a
+
+    click button                        action_for_approve
+
+    sleep   2s
+
+    element should contain              css=div.alert.alert-success         Order successfully saved
+
+    Go to Awaiting approval page
+
+    wait until element is visible       xpath=//td[contains(.,"${TEMP Customer}")]/../td[10]/a[1]
+    click element                       xpath=//td[contains(.,"${TEMP Customer}")]/../td[10]/a[1]
+
+    click button                        action_approve
+
+    wait until element is visible       xpath=//*[@id="approvalorders"]/div[2]/div/div/div[3]/button[2]
+    click element                       xpath=//*[@id="approvalorders"]/div[2]/div/div/div[3]/button[2]
+
+    sleep   2s
+
+    element should contain              css=div.alert.alert-success         successfully approved
+
+Cancel the Order
+    Go to Direct sales page
+    wait until element is visible       xpath=//td[contains(.,"${TEMP Customer}")]/../td[9]/a
+    click element                       xpath=//td[contains(.,"${TEMP Customer}")]/../td[9]/a
+
+    choose ok on next confirmation
+    click button                        cancel
+    confirm action
+
+    wait until element is visible       xpath=//td[contains(.,"${TEMP Customer}")]/../td[7]/span
+    element text should be              xpath=//td[contains(.,"${TEMP Customer}")]/../td[7]/span        Canceled
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

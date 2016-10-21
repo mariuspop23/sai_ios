@@ -1,0 +1,58 @@
+*** Settings ***
+Documentation     Test suite with Add user
+Suite Setup       Open Browser To Homepage
+#Suite Teardown    Close Browser
+
+Resource          ../resource_ios.txt
+Resource          ../variables_ios.txt
+
+*** Test Cases ***
+
+Search Company name and Reset customer
+    Login Admin User
+    click element                       xpath=//a[@href='http://${SERVER_DEV}/en/index.php?controller=createdirectorder&create=1']
+
+    wait until element is visible       search_company
+    input text                          search_company          marius
+    wait until element is visible       xpath=//*[@id="createdirectorder"]/div[2]/ul
+    click element                       //*[@id="createdirectorder"]/div[2]/ul/li[1]
+
+    sleep       2s
+    location should be                  http://${SERVER_DEV}/en/index.php?controller=createdirectorder
+
+    click element                       xpath=//*[@id="createdirectorder"]/div/div[3]/div[2]/div/div[1]/div[4]/form/div[1]/div[2]/a
+    sleep       2s
+    location should be                  http://${SERVER_DEV}/index.php?controller=createdirectorder&create=1
+
+Complete the billing address form
+    wait until element is visible       company_name
+    input text                          company_name            Marius Pop Automation
+    input text                          address1                1380 Rt. 286 Highway East, Suite 303
+    input text                          address2                1380 Rt. 286 Highway East, Suite 303
+    select from list by value           id_country              21
+    wait until element is visible       id_state
+    select from list by value           id_state                1
+    input text                          city                    Alabama city
+    input text                          zip                     15701
+    input text                          contact_name            My name
+    input text                          contact_phone           0740123456
+    input text                          contact_email           marius_automation@xcommerce.eu
+    click element                       xpath=//*[@id="createdirectorder"]/div/div[3]/div[2]/div/div[1]/div[4]/form/div[1]/div[5]/div[3]/div/label/span
+
+Complete the shipping address form
+    wait until element is visible       shipp_address1
+    input text                          shipp_address1          My shipping address1
+    input text                          shipp_address2          My shipping address2
+    select from list by value           id_shipp_country        4
+    wait until element is visible       shipp_id_state
+    select from list by value           shipp_id_state          86
+    input text                          shipp_city              Ontario city
+    input text                          shipp_zip               A1A 2B2
+
+    click button                        save_company_info
+
+    element should contain              css=div.alert.alert-success         Company saved successfully
+
+
+
+

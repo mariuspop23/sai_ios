@@ -1,0 +1,53 @@
+*** Settings ***
+Documentation     A test suite containing tests for filtering the resellers orders
+
+Suite Setup       Open browser and login user
+
+Test Setup        Go to Resellers page
+Test Template     Filter Resellers
+
+Resource          ../resource_ios.txt
+Resource          ../variables_ios.txt
+
+
+*** Test Cases ***              Customer              Order Number              Status                      Sales Representative        SoftID              Key Number              PO Number               My Orders        Found Result
+Search by Customer              ${Filter Customer}   ${EMPTY}                   ${EMPTY}                    ${EMPTY}                    ${EMPTY}            ${EMPTY}                ${EMPTY}                    0            ${Filter Customer}
+Search by Order Number          ${EMPTY}             ${Filter Order Number_res} ${EMPTY}                    ${EMPTY}                    ${EMPTY}            ${EMPTY}                ${EMPTY}                    0            ${Filter Order Number_res}
+Search by Status DRA            ${EMPTY}             ${EMPTY}                   ${Filter Status DR}         ${EMPTY}                    ${EMPTY}            ${EMPTY}                ${EMPTY}                    0            Draft
+Search by Status TBA            ${EMPTY}             ${EMPTY}                   ${Filter Status TBA}        ${EMPTY}                    ${EMPTY}            ${EMPTY}                ${EMPTY}                    0            To be Approved
+Search by Status APR            ${EMPTY}             ${EMPTY}                   ${Filter Status APR}        ${EMPTY}                    ${EMPTY}            ${EMPTY}                ${EMPTY}                    0            Approved
+Search by Status REJ            ${EMPTY}             ${EMPTY}                   ${Filter Status REJ}        ${EMPTY}                    ${EMPTY}            ${EMPTY}                ${EMPTY}                    0            Rejected
+Search by Status CAN            ${EMPTY}             ${EMPTY}                   ${Filter Status CAN}        ${EMPTY}                    ${EMPTY}            ${EMPTY}                ${EMPTY}                    0            Canceled
+Search by Status CL-NP          ${EMPTY}             ${EMPTY}                   ${Filter Status CL-NP}      ${EMPTY}                    ${EMPTY}            ${EMPTY}                ${EMPTY}                    0            Closed - No Paid
+Search by Status CL             ${EMPTY}             ${EMPTY}                   ${Filter Status CL}         ${EMPTY}                    ${EMPTY}            ${EMPTY}                ${EMPTY}                    0            Closed
+Search by Sales Representative  ${EMPTY}             ${EMPTY}                   ${EMPTY}                    ${Filter Sales Rep}         ${EMPTY}            ${EMPTY}                ${EMPTY}                    0            Marius Pop
+Search by SoftID                ${EMPTY}             ${EMPTY}                   ${EMPTY}                    ${EMPTY}                    ${Filter SoftID}    ${EMPTY}                ${EMPTY}                    0            ${Filter SoftID}
+Search by Key Number            ${EMPTY}             ${EMPTY}                   ${EMPTY}                    ${EMPTY}                    ${EMPTY}            ${Filter Key Number}    ${EMPTY}                    0            ${Filter Key Number}
+Search by PO Number             ${EMPTY}             ${EMPTY}                   ${EMPTY}                    ${EMPTY}                    ${EMPTY}            ${EMPTY}                ${Filter PO Number}         0            ${Filter PO Number}
+Search by Only my orders        ${EMPTY}             ${EMPTY}                   ${EMPTY}                    ${EMPTY}                    ${EMPTY}            ${EMPTY}                ${EMPTY}                    1            ${Filter Customer}
+No results found                ${EMPTY}             invalid                    ${EMPTY}                    ${EMPTY}                    invalid             ${EMPTY}                ${EMPTY}                    0            No orders found
+
+*** Keywords ***
+
+Filter Resellers
+    [Arguments]             ${customer}     ${orderNumber}     ${status}      ${salesRep}     ${softID}       ${keyNumber}     ${poNumber}     ${my_orders}         ${found_result}
+    input text                      search_customer             ${customer}
+    run keyword and ignore error    wait until element is visible   css=#resellerorders > div.ac_results > ul > li.ac_even.ac_over
+    run keyword and ignore error    click element                   css=#resellerorders > div.ac_results > ul > li.ac_even.ac_over
+    input text                      reference                   ${orderNumber}
+    select from list by value       status                      ${status}
+
+    select from list by value       sales_representative        ${salesRep}
+    input text                      software_id                 ${softID}
+    input text                      key_number                  ${keyNumber}
+    select from list by index       my_orders                   ${my_orders}
+
+    input text                      po_number                   ${poNumber}
+
+    click element                   xpath=//button[contains(.,'Filter')]
+    sleep   2s
+
+    # Asta cauta in tot elementul si este cam general, trebuie gasita o solutie mai exacta:
+    wait until element is visible                   css=#resellerorders > div > div.page-container > div.page-content-wrapper > div > div:nth-child(3)
+    element should contain                          css=#resellerorders > div > div.page-container > div.page-content-wrapper > div > div:nth-child(3)      ${found_result}
+

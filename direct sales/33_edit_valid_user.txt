@@ -1,0 +1,61 @@
+*** Settings ***
+Documentation     Test suite with Add user
+Suite Setup       Open Browser To Homepage
+#Suite Teardown    Close Browser
+
+Resource          ../resource_ios.txt
+Resource          ../variables_ios.txt
+
+*** Test Cases ***
+
+Search Company name select customer
+    Login Admin User
+    click element                       xpath=//a[@href='http://${SERVER_DEV}/en/index.php?controller=createdirectorder&create=1']
+
+    wait until element is visible       search_company
+    input text                          search_company          marius_automation@xcommerce.eu
+    wait until element is visible       xpath=//*[@id="createdirectorder"]/div[2]/ul
+    click element                       //*[@id="createdirectorder"]/div[2]/ul/li[1]
+
+    sleep       2s
+    location should be                  http://${SERVER_DEV}/en/index.php?controller=createdirectorder
+
+    click button                       edit_company_info
+
+Update the billing address form
+    wait until element is visible       company_name
+    clear element text                  company_name
+    input text                          company_name            Marius Pop Automation Update
+    clear element text                  address1
+    input text                          address1                1380 Rt. 286 Highway East, Suite 303
+    clear element text                  address2
+    input text                          address2                1380 Rt. 286 Highway East, Suite 303 Update
+    select from list by value           id_country              21
+    wait until element is visible       id_state
+    select from list by value           id_state                2
+    clear element text                  city
+    input text                          city                    Alaska city
+    clear element text                  contact_name
+    input text                          contact_name            My name Update
+    clear element text                  contact_phone
+    input text                          contact_phone           0740654321
+
+Update the shipping address form
+    wait until element is visible       shipp_address1
+    clear element text                  shipp_address1
+    input text                          shipp_address1          My shipping address1 Update
+    clear element text                  shipp_address2
+    input text                          shipp_address2          My shipping address2 Update
+    select from list by value           id_shipp_country        4
+    wait until element is visible       shipp_id_state
+    select from list by value           shipp_id_state          87
+    clear element text                  shipp_city
+    input text                          shipp_city              Quebec city
+    clear element text                  shipp_zip
+    input text                          shipp_zip               C1C 3D3
+
+    click button                        save_company_info
+
+#    !!! check the succesful message after the fix is done
+
+

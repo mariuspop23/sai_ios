@@ -1,0 +1,94 @@
+*** Settings ***
+Documentation     Test suite with Cart actions
+Suite Setup       Open Browser To Homepage
+#Suite Teardown    Close Browser
+
+Resource          ../resource_ios.txt
+Resource          ../variables_ios.txt
+
+*** Test Cases ***
+
+Search Company name and Select customer
+    Login Admin User
+    Go to Direct sales page
+    click element                       xpath=//*[@id="directsalesorders"]/div/div[3]/div[2]/div/div[2]/div[1]/div[2]/div/a
+    wait until element is visible       search_company
+    input text                          search_company          ${TEMP ADMIN EMAIL}
+    wait until element is visible       xpath=//*[@id="createdirectorder"]/div[2]/ul
+    click element                       xpath=//*[@id="createdirectorder"]/div[2]/ul/li[1]
+    sleep   2s
+
+    click element                       xpath=//*[@id="createdirectorder"]/div/div[3]/div[2]/div/div[2]/div/a[2]
+
+Add Item Enroute - New license
+    wait until element is visible       line
+    select from list by value           line        ENROUTE
+    wait until element is visible       type
+    select from list by value           type        NEW
+    wait until element is visible       xpath=//*[@id="item_options"]/div/div[1]/div/div/label[1]
+    click element                       xpath=//*[@id="item_options"]/div/div[1]/div/div/label[1]
+    clear element text                  qty
+    input text                          qty             2
+    input text                          hardware_key    5-10
+
+    click button                        submitAddOrderItem
+    sleep    2s
+
+    page should contain element         xpath=//*[@id="createdirectorder"]/div/div[3]/div[2]/div/div[3]
+
+Cart - Add shipment or discount
+    click element                       xpath=//*[@id="createdirectorder"]/div/div[3]/div[2]/div/div[2]/div/a[1]
+    wait until element is visible       css=div#shipping_options
+    click element                       xpath=//*[@id="shipping_options"]/div/div/div/label[2]
+
+    click button                        submitAddOrderItem
+
+    wait until element is visible       xpath=//*[@id="createdirectorder"]/div/div[3]/div[2]/div/div[3]/div[2]/div/table
+    element should contain              xpath=//*[@id="createdirectorder"]/div/div[3]/div[2]/div/div[3]/div[2]/div/table      Shipping
+
+    click element                       xpath=//*[@id="createdirectorder"]/div/div[3]/div[2]/div/div[2]/div/a[1]
+    wait until element is visible       css=div#discount_options
+    click element                       xpath=//*[@id="discount_options"]/div/div/div/label[4]
+
+    click button                        submitAddOrderItem
+
+    wait until element is visible       xpath=//*[@id="createdirectorder"]/div/div[3]/div[2]/div/div[3]/div[2]/div/table
+    element should contain              xpath=//*[@id="createdirectorder"]/div/div[3]/div[2]/div/div[3]/div[2]/div/table      discount
+
+Cart - Delete shipment or discount
+    wait until element is visible       xpath=//td[contains(.,"discount")]/../td[7]/div/a
+    choose ok on next confirmation
+    click element                       xpath=//td[contains(.,"discount")]/../td[7]/div/a
+    confirm action
+    sleep  1s
+    element should not be visible       xpath=//td[contains(.,"discount")]/../td[7]/div/a
+
+    Scroll Page To Location             0  500
+
+    wait until element is visible       xpath=//td[contains(.,"Shipping")]/../td[7]/div/a
+    choose ok on next confirmation
+    click element                       xpath=//td[contains(.,"Shipping")]/../td[7]/div/a
+    confirm action
+    sleep  1s
+
+    element should not be visible       xpath=//td[contains(.,"Shipping")]/../td[7]/div/a
+
+Change Company name and check if cart stays in page
+    clear element text                  search_company
+    input text                          search_company          ${VALID ADMIN_USER}
+    wait until element is visible       xpath=//*[@id="createdirectorder"]/div[2]/ul
+    click element                       xpath=//*[@id="createdirectorder"]/div[2]/ul/li[1]
+    sleep   2s
+    element should be visible           xpath=//*[@id="createdirectorder"]/div/div[3]/div[2]/div/div[3]/div[2]/div/table
+
+Remove items by checkbox
+    choose ok on next confirmation
+    click element                       xpath=//*[@id="createdirectorder"]/div/div[3]/div[2]/div/div[2]/div/a[3]
+    confirm action
+    sleep   2s
+    click element                       xpath=//*[@id="createdirectorder"]/div/div[3]/div[2]/div/div[3]/div[2]/div/table/thead/tr/th[1]/label/span
+    click element                       xpath=//*[@id="createdirectorder"]/div/div[3]/div[2]/div/div[2]/div/a[3]
+
+    sleep  1s
+    element should not be visible       xpath=//*[@id="createdirectorder"]/div/div[3]/div[2]/div/div[3]/div[2]/div/table
+

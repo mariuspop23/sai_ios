@@ -1,0 +1,1687 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20161019 17:39:54.426" generator="Robot 3.0 (Python 2.7.8 on win32)">
+<suite source="C:\Python27\Proiecte\Live SAI IOS\direct sales\32_add_user_validations.txt" id="s1" name="32 Add User Validations">
+<kw type="setup" name="Open browser and login user" library="resource_ios">
+<kw name="Open Browser To Homepage" library="resource_ios">
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>${LOGIN URL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20161019 17:39:54.980" level="INFO">Opening browser 'chrome' to base url 'http://tadelos.ro/ios'</msg>
+<status status="PASS" endtime="20161019 17:40:04.032" starttime="20161019 17:39:54.980"></status>
+</kw>
+<kw name="Maximize Browser Window" library="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" endtime="20161019 17:40:04.263" starttime="20161019 17:40:04.032"></status>
+</kw>
+<kw name="Set Selenium Speed" library="Selenium2Library">
+<doc>Sets the delay in seconds that is waited after each Selenium command.</doc>
+<arguments>
+<arg>${DELAY}</arg>
+</arguments>
+<status status="PASS" endtime="20161019 17:40:04.266" starttime="20161019 17:40:04.264"></status>
+</kw>
+<status status="PASS" endtime="20161019 17:40:04.267" starttime="20161019 17:39:54.980"></status>
+</kw>
+<kw name="Login Admin User" library="resource_ios">
+<kw name="Input Username" library="resource_ios">
+<arguments>
+<arg>${VALID ADMIN_USER}</arg>
+</arguments>
+<kw name="Wait Until Page Contains Element" library="Selenium2Library">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>email</arg>
+</arguments>
+<status status="PASS" endtime="20161019 17:40:04.352" starttime="20161019 17:40:04.272"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>email</arg>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20161019 17:40:04.352" level="INFO">Typing text 'marius@xcommerce.eu' into text field 'email'</msg>
+<status status="PASS" endtime="20161019 17:40:04.447" starttime="20161019 17:40:04.352"></status>
+</kw>
+<status status="PASS" endtime="20161019 17:40:04.448" starttime="20161019 17:40:04.269"></status>
+</kw>
+<kw name="Input Password" library="resource_ios">
+<arguments>
+<arg>${VALID PASSWORD}</arg>
+</arguments>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>passwd</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20161019 17:40:04.449" level="INFO">Typing text 'Marius123' into text field 'passwd'</msg>
+<status status="PASS" endtime="20161019 17:40:04.678" starttime="20161019 17:40:04.449"></status>
+</kw>
+<status status="PASS" endtime="20161019 17:40:04.679" starttime="20161019 17:40:04.448"></status>
+</kw>
+<kw name="Submit Credentials" library="resource_ios">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>SubmitLogin</arg>
+</arguments>
+<msg timestamp="20161019 17:40:04.681" level="INFO">Clicking element 'SubmitLogin'.</msg>
+<status status="PASS" endtime="20161019 17:40:04.772" starttime="20161019 17:40:04.680"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20161019 17:40:06.775" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" endtime="20161019 17:40:06.776" starttime="20161019 17:40:04.773"></status>
+</kw>
+<status status="PASS" endtime="20161019 17:40:06.776" starttime="20161019 17:40:04.679"></status>
+</kw>
+<status status="PASS" endtime="20161019 17:40:06.776" starttime="20161019 17:40:04.268"></status>
+</kw>
+<status status="PASS" endtime="20161019 17:40:06.776" starttime="20161019 17:39:54.980"></status>
+</kw>
+<test id="s1-t1" name="Empty fields">
+<kw type="setup" name="Go to Add customer page" library="resource_ios">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>http://${SERVER_DEV}/index.php?controller=createdirectorder&amp;create=1</arg>
+</arguments>
+<msg timestamp="20161019 17:40:06.776" level="INFO">Opening url 'http://tadelos.ro/ios/index.php?controller=createdirectorder&amp;create=1'</msg>
+<status status="PASS" endtime="20161019 17:40:07.602" starttime="20161019 17:40:06.776"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=//*[@id="createdirectorder"]/div/div[3]/div[2]/div/div[1]/div[4]/form/div[1]/div[5]/div[3]/div/label/span</arg>
+</arguments>
+<msg timestamp="20161019 17:40:07.603" level="INFO">Clicking element 'xpath=//*[@id="createdirectorder"]/div/div[3]/div[2]/div/div[1]/div[4]/form/div[1]/div[5]/div[3]/div/label/span'.</msg>
+<status status="PASS" endtime="20161019 17:40:07.761" starttime="20161019 17:40:07.602"></status>
+</kw>
+<status status="PASS" endtime="20161019 17:40:07.761" starttime="20161019 17:40:06.776"></status>
+</kw>
+<kw name="Add invalid data in Customer Add form should Fail">
+<arguments>
+<arg>${EMPTY}</arg>
+<arg>${EMPTY}</arg>
+<arg>${EMPTY}</arg>
+<arg>21</arg>
+<arg>${EMPTY}</arg>
+<arg>${EMPTY}</arg>
+<arg>${EMPTY}</arg>
+<arg>${EMPTY}</arg>
+<arg>${EMPTY}</arg>
+<arg>${EMPTY}</arg>
+<arg>${EMPTY}</arg>
+<arg>${EMPTY}</arg>
+<arg>21</arg>
+<arg>${EMPTY}</arg>
+<arg>${EMPTY}</arg>
+<arg>${EMPTY}</arg>
+<arg>There were some errors: Company name is required Address is required Country is required City is required Zip is required Contact email is required Shipping address is required Shipping country is required Shipping city is required Shipping Zip is required</arg>
+</arguments>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>company_name</arg>
+<arg>${companyName}</arg>
+</arguments>
+<msg timestamp="20161019 17:40:07.780" level="INFO">Typing text '' into text field 'company_name'</msg>
+<status status="PASS" endtime="20161019 17:40:07.961" starttime="20161019 17:40:07.779"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>address1</arg>
+<arg>${address1}</arg>
+</arguments>
+<msg timestamp="20161019 17:40:07.961" level="INFO">Typing text '' into text field 'address1'</msg>
+<status status="PASS" endtime="20161019 17:40:08.093" starttime="20161019 17:40:07.961"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>address2</arg>
+<arg>${address2}</arg>
+</arguments>
+<msg timestamp="20161019 17:40:08.093" level="INFO">Typing text '' into text field 'address2'</msg>
+<status status="PASS" endtime="20161019 17:40:08.209" starttime="20161019 17:40:08.093"></status>
+</kw>
+<kw name="Select From List By Value" library="Selenium2Library">
+<doc>Selects `*values` from list identified by `locator`</doc>
+<arguments>
+<arg>id_country</arg>
+<arg>${country}</arg>
+</arguments>
+<msg timestamp="20161019 17:40:08.209" level="INFO">Selecting value(s) '21' from list 'id_country'.</msg>
+<status status="PASS" endtime="20161019 17:40:08.373" starttime="20161019 17:40:08.209"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>id_state</arg>
+</arguments>
+<status status="PASS" endtime="20161019 17:40:08.693" starttime="20161019 17:40:08.373"></status>
+</kw>
+<kw name="Select From List By Value" library="Selenium2Library">
+<doc>Selects `*values` from list identified by `locator`</doc>
+<arguments>
+<arg>id_state</arg>
+<arg>${state}</arg>
+</arguments>
+<msg timestamp="20161019 17:40:08.697" level="INFO">Selecting value(s) '' from list 'id_state'.</msg>
+<status status="PASS" endtime="20161019 17:40:08.897" starttime="20161019 17:40:08.697"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>city</arg>
+<arg>${city}</arg>
+</arguments>
+<msg timestamp="20161019 17:40:08.897" level="INFO">Typing text '' into text field 'city'</msg>
+<status status="PASS" endtime="20161019 17:40:09.143" starttime="20161019 17:40:08.897"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>zip</arg>
+<arg>${zip}</arg>
+</arguments>
+<msg timestamp="20161019 17:40:09.144" level="INFO">Typing text '' into text field 'zip'</msg>
+<status status="PASS" endtime="20161019 17:40:09.281" starttime="20161019 17:40:09.143"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>contact_name</arg>
+<arg>${contactName}</arg>
+</arguments>
+<msg timestamp="20161019 17:40:09.281" level="INFO">Typing text '' into text field 'contact_name'</msg>
+<status status="PASS" endtime="20161019 17:40:09.417" starttime="20161019 17:40:09.281"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>contact_phone</arg>
+<arg>${contactTel}</arg>
+</arguments>
+<msg timestamp="20161019 17:40:09.421" level="INFO">Typing text '' into text field 'contact_phone'</msg>
+<status status="PASS" endtime="20161019 17:40:09.565" starttime="20161019 17:40:09.417"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>contact_email</arg>
+<arg>${contactEmail}</arg>
+</arguments>
+<msg timestamp="20161019 17:40:09.569" level="INFO">Typing text '' into text field 'contact_email'</msg>
+<status status="PASS" endtime="20161019 17:40:09.746" starttime="20161019 17:40:09.569"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>shipp_address1</arg>
+<arg>${shippAdd1}</arg>
+</arguments>
+<msg timestamp="20161019 17:40:09.748" level="INFO">Typing text '' into text field 'shipp_address1'</msg>
+<status status="PASS" endtime="20161019 17:40:09.929" starttime="20161019 17:40:09.747"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>shipp_address2</arg>
+<arg>${shippAdd2}</arg>
+</arguments>
+<msg timestamp="20161019 17:40:09.933" level="INFO">Typing text '' into text field 'shipp_address2'</msg>
+<status status="PASS" endtime="20161019 17:40:10.117" starttime="20161019 17:40:09.929"></status>
+</kw>
+<kw name="Select From List By Value" library="Selenium2Library">
+<doc>Selects `*values` from list identified by `locator`</doc>
+<arguments>
+<arg>id_shipp_country</arg>
+<arg>${shippCountry}</arg>
+</arguments>
+<msg timestamp="20161019 17:40:10.117" level="INFO">Selecting value(s) '21' from list 'id_shipp_country'.</msg>
+<status status="PASS" endtime="20161019 17:40:10.306" starttime="20161019 17:40:10.117"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>shipp_id_state</arg>
+</arguments>
+<status status="PASS" endtime="20161019 17:40:10.634" starttime="20161019 17:40:10.306"></status>
+</kw>
+<kw name="Select From List By Value" library="Selenium2Library">
+<doc>Selects `*values` from list identified by `locator`</doc>
+<arguments>
+<arg>shipp_id_state</arg>
+<arg>${shippState}</arg>
+</arguments>
+<msg timestamp="20161019 17:40:10.634" level="INFO">Selecting value(s) '' from list 'shipp_id_state'.</msg>
+<status status="PASS" endtime="20161019 17:40:10.785" starttime="20161019 17:40:10.634"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>shipp_city</arg>
+<arg>${shippCity}</arg>
+</arguments>
+<msg timestamp="20161019 17:40:10.785" level="INFO">Typing text '' into text field 'shipp_city'</msg>
+<status status="PASS" endtime="20161019 17:40:10.958" starttime="20161019 17:40:10.785"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>shipp_zip</arg>
+<arg>${shippZip}</arg>
+</arguments>
+<msg timestamp="20161019 17:40:10.958" level="INFO">Typing text '' into text field 'shipp_zip'</msg>
+<status status="PASS" endtime="20161019 17:40:11.114" starttime="20161019 17:40:10.958"></status>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks a button identified by `locator`.</doc>
+<arguments>
+<arg>save_company_info</arg>
+</arguments>
+<msg timestamp="20161019 17:40:11.114" level="INFO">Clicking button 'save_company_info'.</msg>
+<status status="PASS" endtime="20161019 17:40:11.214" starttime="20161019 17:40:11.114"></status>
+</kw>
+<kw name="Wait Until Element Is Enabled" library="Selenium2Library">
+<doc>Waits until element specified with `locator` is enabled.</doc>
+<arguments>
+<arg>css=div.alert.alert-danger</arg>
+</arguments>
+<status status="PASS" endtime="20161019 17:40:11.282" starttime="20161019 17:40:11.218"></status>
+</kw>
+<kw name="Page Should Contain Element" library="Selenium2Library">
+<doc>Verifies element identified by `locator` is found on the current page.</doc>
+<arguments>
+<arg>css=div.alert.alert-danger</arg>
+<arg>${error_message}</arg>
+</arguments>
+<msg timestamp="20161019 17:40:11.298" level="INFO">Current page contains element 'css=div.alert.alert-danger'.</msg>
+<status status="PASS" endtime="20161019 17:40:11.298" starttime="20161019 17:40:11.286"></status>
+</kw>
+<status status="PASS" endtime="20161019 17:40:11.298" starttime="20161019 17:40:07.776"></status>
+</kw>
+<status status="PASS" endtime="20161019 17:40:11.310" critical="yes" starttime="20161019 17:40:06.776"></status>
+</test>
+<test id="s1-t2" name="Avalara invalid address + Invalid Zip">
+<kw type="setup" name="Go to Add customer page" library="resource_ios">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>http://${SERVER_DEV}/index.php?controller=createdirectorder&amp;create=1</arg>
+</arguments>
+<msg timestamp="20161019 17:40:11.314" level="INFO">Opening url 'http://tadelos.ro/ios/index.php?controller=createdirectorder&amp;create=1'</msg>
+<status status="PASS" endtime="20161019 17:40:12.263" starttime="20161019 17:40:11.314"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=//*[@id="createdirectorder"]/div/div[3]/div[2]/div/div[1]/div[4]/form/div[1]/div[5]/div[3]/div/label/span</arg>
+</arguments>
+<msg timestamp="20161019 17:40:12.263" level="INFO">Clicking element 'xpath=//*[@id="createdirectorder"]/div/div[3]/div[2]/div/div[1]/div[4]/form/div[1]/div[5]/div[3]/div/label/span'.</msg>
+<status status="PASS" endtime="20161019 17:40:12.507" starttime="20161019 17:40:12.263"></status>
+</kw>
+<status status="PASS" endtime="20161019 17:40:12.507" starttime="20161019 17:40:11.314"></status>
+</kw>
+<kw name="Add invalid data in Customer Add form should Fail">
+<arguments>
+<arg>Any company</arg>
+<arg>invalid</arg>
+<arg>Any second address</arg>
+<arg>21</arg>
+<arg>1</arg>
+<arg>Any city</arg>
+<arg>12345</arg>
+<arg>${EMPTY}</arg>
+<arg>${EMPTY}</arg>
+<arg>validemail@xcom.eu</arg>
+<arg>Any shipping address</arg>
+<arg>Any secondary shipping address</arg>
+<arg>21</arg>
+<arg>2</arg>
+<arg>Any city</arg>
+<arg>12345</arg>
+<arg>There were some errors: The address field it's invalid for taxes service: An exact street name match could not be found and phonetically matching the street name resulted in either no matches or matches to more than one street name. The address it's invalid for taxes service: Address cannot be geocoded.</arg>
+</arguments>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>company_name</arg>
+<arg>${companyName}</arg>
+</arguments>
+<msg timestamp="20161019 17:40:12.511" level="INFO">Typing text 'Any company' into text field 'company_name'</msg>
+<status status="PASS" endtime="20161019 17:40:12.703" starttime="20161019 17:40:12.511"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>address1</arg>
+<arg>${address1}</arg>
+</arguments>
+<msg timestamp="20161019 17:40:12.703" level="INFO">Typing text 'invalid' into text field 'address1'</msg>
+<status status="PASS" endtime="20161019 17:40:12.823" starttime="20161019 17:40:12.703"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>address2</arg>
+<arg>${address2}</arg>
+</arguments>
+<msg timestamp="20161019 17:40:12.823" level="INFO">Typing text 'Any second address' into text field 'address2'</msg>
+<status status="PASS" endtime="20161019 17:40:12.935" starttime="20161019 17:40:12.823"></status>
+</kw>
+<kw name="Select From List By Value" library="Selenium2Library">
+<doc>Selects `*values` from list identified by `locator`</doc>
+<arguments>
+<arg>id_country</arg>
+<arg>${country}</arg>
+</arguments>
+<msg timestamp="20161019 17:40:12.935" level="INFO">Selecting value(s) '21' from list 'id_country'.</msg>
+<status status="PASS" endtime="20161019 17:40:13.087" starttime="20161019 17:40:12.935"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>id_state</arg>
+</arguments>
+<status status="PASS" endtime="20161019 17:40:13.360" starttime="20161019 17:40:13.087"></status>
+</kw>
+<kw name="Select From List By Value" library="Selenium2Library">
+<doc>Selects `*values` from list identified by `locator`</doc>
+<arguments>
+<arg>id_state</arg>
+<arg>${state}</arg>
+</arguments>
+<msg timestamp="20161019 17:40:13.364" level="INFO">Selecting value(s) '1' from list 'id_state'.</msg>
+<status status="PASS" endtime="20161019 17:40:13.536" starttime="20161019 17:40:13.364"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>city</arg>
+<arg>${city}</arg>
+</arguments>
+<msg timestamp="20161019 17:40:13.540" level="INFO">Typing text 'Any city' into text field 'city'</msg>
+<status status="PASS" endtime="20161019 17:40:13.668" starttime="20161019 17:40:13.536"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>zip</arg>
+<arg>${zip}</arg>
+</arguments>
+<msg timestamp="20161019 17:40:13.668" level="INFO">Typing text '12345' into text field 'zip'</msg>
+<status status="PASS" endtime="20161019 17:40:13.772" starttime="20161019 17:40:13.668"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>contact_name</arg>
+<arg>${contactName}</arg>
+</arguments>
+<msg timestamp="20161019 17:40:13.772" level="INFO">Typing text '' into text field 'contact_name'</msg>
+<status status="PASS" endtime="20161019 17:40:13.880" starttime="20161019 17:40:13.772"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>contact_phone</arg>
+<arg>${contactTel}</arg>
+</arguments>
+<msg timestamp="20161019 17:40:13.880" level="INFO">Typing text '' into text field 'contact_phone'</msg>
+<status status="PASS" endtime="20161019 17:40:13.976" starttime="20161019 17:40:13.880"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>contact_email</arg>
+<arg>${contactEmail}</arg>
+</arguments>
+<msg timestamp="20161019 17:40:13.976" level="INFO">Typing text 'validemail@xcom.eu' into text field 'contact_email'</msg>
+<status status="PASS" endtime="20161019 17:40:14.084" starttime="20161019 17:40:13.976"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>shipp_address1</arg>
+<arg>${shippAdd1}</arg>
+</arguments>
+<msg timestamp="20161019 17:40:14.084" level="INFO">Typing text 'Any shipping address' into text field 'shipp_address1'</msg>
+<status status="PASS" endtime="20161019 17:40:14.208" starttime="20161019 17:40:14.084"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>shipp_address2</arg>
+<arg>${shippAdd2}</arg>
+</arguments>
+<msg timestamp="20161019 17:40:14.208" level="INFO">Typing text 'Any secondary shipping address' into text field 'shipp_address2'</msg>
+<status status="PASS" endtime="20161019 17:40:14.352" starttime="20161019 17:40:14.208"></status>
+</kw>
+<kw name="Select From List By Value" library="Selenium2Library">
+<doc>Selects `*values` from list identified by `locator`</doc>
+<arguments>
+<arg>id_shipp_country</arg>
+<arg>${shippCountry}</arg>
+</arguments>
+<msg timestamp="20161019 17:40:14.353" level="INFO">Selecting value(s) '21' from list 'id_shipp_country'.</msg>
+<status status="PASS" endtime="20161019 17:40:14.496" starttime="20161019 17:40:14.353"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>shipp_id_state</arg>
+</arguments>
+<status status="PASS" endtime="20161019 17:40:14.792" starttime="20161019 17:40:14.496"></status>
+</kw>
+<kw name="Select From List By Value" library="Selenium2Library">
+<doc>Selects `*values` from list identified by `locator`</doc>
+<arguments>
+<arg>shipp_id_state</arg>
+<arg>${shippState}</arg>
+</arguments>
+<msg timestamp="20161019 17:40:14.792" level="INFO">Selecting value(s) '2' from list 'shipp_id_state'.</msg>
+<status status="PASS" endtime="20161019 17:40:15.097" starttime="20161019 17:40:14.792"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>shipp_city</arg>
+<arg>${shippCity}</arg>
+</arguments>
+<msg timestamp="20161019 17:40:15.101" level="INFO">Typing text 'Any city' into text field 'shipp_city'</msg>
+<status status="PASS" endtime="20161019 17:40:15.350" starttime="20161019 17:40:15.097"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>shipp_zip</arg>
+<arg>${shippZip}</arg>
+</arguments>
+<msg timestamp="20161019 17:40:15.351" level="INFO">Typing text '12345' into text field 'shipp_zip'</msg>
+<status status="PASS" endtime="20161019 17:40:15.525" starttime="20161019 17:40:15.350"></status>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks a button identified by `locator`.</doc>
+<arguments>
+<arg>save_company_info</arg>
+</arguments>
+<msg timestamp="20161019 17:40:15.529" level="INFO">Clicking button 'save_company_info'.</msg>
+<status status="PASS" endtime="20161019 17:40:15.633" starttime="20161019 17:40:15.529"></status>
+</kw>
+<kw name="Wait Until Element Is Enabled" library="Selenium2Library">
+<doc>Waits until element specified with `locator` is enabled.</doc>
+<arguments>
+<arg>css=div.alert.alert-danger</arg>
+</arguments>
+<status status="PASS" endtime="20161019 17:40:15.697" starttime="20161019 17:40:15.633"></status>
+</kw>
+<kw name="Page Should Contain Element" library="Selenium2Library">
+<doc>Verifies element identified by `locator` is found on the current page.</doc>
+<arguments>
+<arg>css=div.alert.alert-danger</arg>
+<arg>${error_message}</arg>
+</arguments>
+<msg timestamp="20161019 17:40:15.713" level="INFO">Current page contains element 'css=div.alert.alert-danger'.</msg>
+<status status="PASS" endtime="20161019 17:40:15.713" starttime="20161019 17:40:15.697"></status>
+</kw>
+<status status="PASS" endtime="20161019 17:40:15.713" starttime="20161019 17:40:12.507"></status>
+</kw>
+<status status="PASS" endtime="20161019 17:40:15.713" critical="yes" starttime="20161019 17:40:11.310"></status>
+</test>
+<test id="s1-t3" name="Avalara invalid address + Valid Zip">
+<kw type="setup" name="Go to Add customer page" library="resource_ios">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>http://${SERVER_DEV}/index.php?controller=createdirectorder&amp;create=1</arg>
+</arguments>
+<msg timestamp="20161019 17:40:15.725" level="INFO">Opening url 'http://tadelos.ro/ios/index.php?controller=createdirectorder&amp;create=1'</msg>
+<status status="PASS" endtime="20161019 17:40:17.398" starttime="20161019 17:40:15.725"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=//*[@id="createdirectorder"]/div/div[3]/div[2]/div/div[1]/div[4]/form/div[1]/div[5]/div[3]/div/label/span</arg>
+</arguments>
+<msg timestamp="20161019 17:40:17.402" level="INFO">Clicking element 'xpath=//*[@id="createdirectorder"]/div/div[3]/div[2]/div/div[1]/div[4]/form/div[1]/div[5]/div[3]/div/label/span'.</msg>
+<status status="PASS" endtime="20161019 17:40:17.562" starttime="20161019 17:40:17.398"></status>
+</kw>
+<status status="PASS" endtime="20161019 17:40:17.562" starttime="20161019 17:40:15.725"></status>
+</kw>
+<kw name="Add invalid data in Customer Add form should Fail">
+<arguments>
+<arg>Any company</arg>
+<arg>invalid</arg>
+<arg>Any second address</arg>
+<arg>21</arg>
+<arg>1</arg>
+<arg>Any city</arg>
+<arg>15701</arg>
+<arg>${EMPTY}</arg>
+<arg>${EMPTY}</arg>
+<arg>validemail@xcom.eu</arg>
+<arg>Any shipping address</arg>
+<arg>Any secondary shipping address</arg>
+<arg>21</arg>
+<arg>2</arg>
+<arg>Any city</arg>
+<arg>12345</arg>
+<arg>There were some errors: The address field it's invalid for taxes service: The address was found but the street number in the input address was not between the low and high range of the post office database.</arg>
+</arguments>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>company_name</arg>
+<arg>${companyName}</arg>
+</arguments>
+<msg timestamp="20161019 17:40:17.582" level="INFO">Typing text 'Any company' into text field 'company_name'</msg>
+<status status="PASS" endtime="20161019 17:40:17.934" starttime="20161019 17:40:17.582"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>address1</arg>
+<arg>${address1}</arg>
+</arguments>
+<msg timestamp="20161019 17:40:17.934" level="INFO">Typing text 'invalid' into text field 'address1'</msg>
+<status status="PASS" endtime="20161019 17:40:18.126" starttime="20161019 17:40:17.934"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>address2</arg>
+<arg>${address2}</arg>
+</arguments>
+<msg timestamp="20161019 17:40:18.126" level="INFO">Typing text 'Any second address' into text field 'address2'</msg>
+<status status="PASS" endtime="20161019 17:40:18.278" starttime="20161019 17:40:18.126"></status>
+</kw>
+<kw name="Select From List By Value" library="Selenium2Library">
+<doc>Selects `*values` from list identified by `locator`</doc>
+<arguments>
+<arg>id_country</arg>
+<arg>${country}</arg>
+</arguments>
+<msg timestamp="20161019 17:40:18.278" level="INFO">Selecting value(s) '21' from list 'id_country'.</msg>
+<status status="PASS" endtime="20161019 17:40:18.482" starttime="20161019 17:40:18.278"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>id_state</arg>
+</arguments>
+<status status="PASS" endtime="20161019 17:40:18.783" starttime="20161019 17:40:18.482"></status>
+</kw>
+<kw name="Select From List By Value" library="Selenium2Library">
+<doc>Selects `*values` from list identified by `locator`</doc>
+<arguments>
+<arg>id_state</arg>
+<arg>${state}</arg>
+</arguments>
+<msg timestamp="20161019 17:40:18.783" level="INFO">Selecting value(s) '1' from list 'id_state'.</msg>
+<status status="PASS" endtime="20161019 17:40:19.075" starttime="20161019 17:40:18.783"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>city</arg>
+<arg>${city}</arg>
+</arguments>
+<msg timestamp="20161019 17:40:19.079" level="INFO">Typing text 'Any city' into text field 'city'</msg>
+<status status="PASS" endtime="20161019 17:40:19.350" starttime="20161019 17:40:19.075"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>zip</arg>
+<arg>${zip}</arg>
+</arguments>
+<msg timestamp="20161019 17:40:19.353" level="INFO">Typing text '15701' into text field 'zip'</msg>
+<status status="PASS" endtime="20161019 17:40:19.535" starttime="20161019 17:40:19.351"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>contact_name</arg>
+<arg>${contactName}</arg>
+</arguments>
+<msg timestamp="20161019 17:40:19.535" level="INFO">Typing text '' into text field 'contact_name'</msg>
+<status status="PASS" endtime="20161019 17:40:19.663" starttime="20161019 17:40:19.535"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>contact_phone</arg>
+<arg>${contactTel}</arg>
+</arguments>
+<msg timestamp="20161019 17:40:19.663" level="INFO">Typing text '' into text field 'contact_phone'</msg>
+<status status="PASS" endtime="20161019 17:40:19.749" starttime="20161019 17:40:19.663"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>contact_email</arg>
+<arg>${contactEmail}</arg>
+</arguments>
+<msg timestamp="20161019 17:40:19.750" level="INFO">Typing text 'validemail@xcom.eu' into text field 'contact_email'</msg>
+<status status="PASS" endtime="20161019 17:40:19.863" starttime="20161019 17:40:19.750"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>shipp_address1</arg>
+<arg>${shippAdd1}</arg>
+</arguments>
+<msg timestamp="20161019 17:40:19.867" level="INFO">Typing text 'Any shipping address' into text field 'shipp_address1'</msg>
+<status status="PASS" endtime="20161019 17:40:20.011" starttime="20161019 17:40:19.863"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>shipp_address2</arg>
+<arg>${shippAdd2}</arg>
+</arguments>
+<msg timestamp="20161019 17:40:20.011" level="INFO">Typing text 'Any secondary shipping address' into text field 'shipp_address2'</msg>
+<status status="PASS" endtime="20161019 17:40:20.156" starttime="20161019 17:40:20.011"></status>
+</kw>
+<kw name="Select From List By Value" library="Selenium2Library">
+<doc>Selects `*values` from list identified by `locator`</doc>
+<arguments>
+<arg>id_shipp_country</arg>
+<arg>${shippCountry}</arg>
+</arguments>
+<msg timestamp="20161019 17:40:20.157" level="INFO">Selecting value(s) '21' from list 'id_shipp_country'.</msg>
+<status status="PASS" endtime="20161019 17:40:20.358" starttime="20161019 17:40:20.156"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>shipp_id_state</arg>
+</arguments>
+<status status="PASS" endtime="20161019 17:40:20.667" starttime="20161019 17:40:20.359"></status>
+</kw>
+<kw name="Select From List By Value" library="Selenium2Library">
+<doc>Selects `*values` from list identified by `locator`</doc>
+<arguments>
+<arg>shipp_id_state</arg>
+<arg>${shippState}</arg>
+</arguments>
+<msg timestamp="20161019 17:40:20.667" level="INFO">Selecting value(s) '2' from list 'shipp_id_state'.</msg>
+<status status="PASS" endtime="20161019 17:40:20.957" starttime="20161019 17:40:20.667"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>shipp_city</arg>
+<arg>${shippCity}</arg>
+</arguments>
+<msg timestamp="20161019 17:40:20.958" level="INFO">Typing text 'Any city' into text field 'shipp_city'</msg>
+<status status="PASS" endtime="20161019 17:40:21.064" starttime="20161019 17:40:20.957"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>shipp_zip</arg>
+<arg>${shippZip}</arg>
+</arguments>
+<msg timestamp="20161019 17:40:21.064" level="INFO">Typing text '12345' into text field 'shipp_zip'</msg>
+<status status="PASS" endtime="20161019 17:40:21.224" starttime="20161019 17:40:21.064"></status>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks a button identified by `locator`.</doc>
+<arguments>
+<arg>save_company_info</arg>
+</arguments>
+<msg timestamp="20161019 17:40:21.224" level="INFO">Clicking button 'save_company_info'.</msg>
+<status status="PASS" endtime="20161019 17:40:21.356" starttime="20161019 17:40:21.224"></status>
+</kw>
+<kw name="Wait Until Element Is Enabled" library="Selenium2Library">
+<doc>Waits until element specified with `locator` is enabled.</doc>
+<arguments>
+<arg>css=div.alert.alert-danger</arg>
+</arguments>
+<status status="PASS" endtime="20161019 17:40:21.428" starttime="20161019 17:40:21.357"></status>
+</kw>
+<kw name="Page Should Contain Element" library="Selenium2Library">
+<doc>Verifies element identified by `locator` is found on the current page.</doc>
+<arguments>
+<arg>css=div.alert.alert-danger</arg>
+<arg>${error_message}</arg>
+</arguments>
+<msg timestamp="20161019 17:40:21.457" level="INFO">Current page contains element 'css=div.alert.alert-danger'.</msg>
+<status status="PASS" endtime="20161019 17:40:21.458" starttime="20161019 17:40:21.428"></status>
+</kw>
+<status status="PASS" endtime="20161019 17:40:21.458" starttime="20161019 17:40:17.578"></status>
+</kw>
+<status status="PASS" endtime="20161019 17:40:21.460" critical="yes" starttime="20161019 17:40:15.717"></status>
+</test>
+<test id="s1-t4" name="Zip format by country on billing">
+<kw type="setup" name="Go to Add customer page" library="resource_ios">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>http://${SERVER_DEV}/index.php?controller=createdirectorder&amp;create=1</arg>
+</arguments>
+<msg timestamp="20161019 17:40:21.464" level="INFO">Opening url 'http://tadelos.ro/ios/index.php?controller=createdirectorder&amp;create=1'</msg>
+<status status="PASS" endtime="20161019 17:40:23.156" starttime="20161019 17:40:21.464"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=//*[@id="createdirectorder"]/div/div[3]/div[2]/div/div[1]/div[4]/form/div[1]/div[5]/div[3]/div/label/span</arg>
+</arguments>
+<msg timestamp="20161019 17:40:23.158" level="INFO">Clicking element 'xpath=//*[@id="createdirectorder"]/div/div[3]/div[2]/div/div[1]/div[4]/form/div[1]/div[5]/div[3]/div/label/span'.</msg>
+<status status="PASS" endtime="20161019 17:40:23.362" starttime="20161019 17:40:23.157"></status>
+</kw>
+<status status="PASS" endtime="20161019 17:40:23.362" starttime="20161019 17:40:21.460"></status>
+</kw>
+<kw name="Add invalid data in Customer Add form should Fail">
+<arguments>
+<arg>Any company</arg>
+<arg>1380 Rt. 286 Highway East, Suite 303</arg>
+<arg>Any second address</arg>
+<arg>21</arg>
+<arg>1</arg>
+<arg>Any city</arg>
+<arg>123456</arg>
+<arg>${EMPTY}</arg>
+<arg>${EMPTY}</arg>
+<arg>validemail@xcom.eu</arg>
+<arg>Any shipping address</arg>
+<arg>Any secondary shipping address</arg>
+<arg>21</arg>
+<arg>2</arg>
+<arg>Any city</arg>
+<arg>15701</arg>
+<arg>There were some errors: Zip have invalid format, , must be like: NNNNN</arg>
+</arguments>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>company_name</arg>
+<arg>${companyName}</arg>
+</arguments>
+<msg timestamp="20161019 17:40:23.362" level="INFO">Typing text 'Any company' into text field 'company_name'</msg>
+<status status="PASS" endtime="20161019 17:40:23.722" starttime="20161019 17:40:23.362"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>address1</arg>
+<arg>${address1}</arg>
+</arguments>
+<msg timestamp="20161019 17:40:23.722" level="INFO">Typing text '1380 Rt. 286 Highway East, Suite 303' into text field 'address1'</msg>
+<status status="PASS" endtime="20161019 17:40:24.006" starttime="20161019 17:40:23.722"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>address2</arg>
+<arg>${address2}</arg>
+</arguments>
+<msg timestamp="20161019 17:40:24.006" level="INFO">Typing text 'Any second address' into text field 'address2'</msg>
+<status status="PASS" endtime="20161019 17:40:24.179" starttime="20161019 17:40:24.006"></status>
+</kw>
+<kw name="Select From List By Value" library="Selenium2Library">
+<doc>Selects `*values` from list identified by `locator`</doc>
+<arguments>
+<arg>id_country</arg>
+<arg>${country}</arg>
+</arguments>
+<msg timestamp="20161019 17:40:24.179" level="INFO">Selecting value(s) '21' from list 'id_country'.</msg>
+<status status="PASS" endtime="20161019 17:40:24.310" starttime="20161019 17:40:24.179"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>id_state</arg>
+</arguments>
+<status status="PASS" endtime="20161019 17:40:24.591" starttime="20161019 17:40:24.310"></status>
+</kw>
+<kw name="Select From List By Value" library="Selenium2Library">
+<doc>Selects `*values` from list identified by `locator`</doc>
+<arguments>
+<arg>id_state</arg>
+<arg>${state}</arg>
+</arguments>
+<msg timestamp="20161019 17:40:24.595" level="INFO">Selecting value(s) '1' from list 'id_state'.</msg>
+<status status="PASS" endtime="20161019 17:40:24.875" starttime="20161019 17:40:24.595"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>city</arg>
+<arg>${city}</arg>
+</arguments>
+<msg timestamp="20161019 17:40:24.879" level="INFO">Typing text 'Any city' into text field 'city'</msg>
+<status status="PASS" endtime="20161019 17:40:25.095" starttime="20161019 17:40:24.879"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>zip</arg>
+<arg>${zip}</arg>
+</arguments>
+<msg timestamp="20161019 17:40:25.095" level="INFO">Typing text '123456' into text field 'zip'</msg>
+<status status="PASS" endtime="20161019 17:40:25.303" starttime="20161019 17:40:25.095"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>contact_name</arg>
+<arg>${contactName}</arg>
+</arguments>
+<msg timestamp="20161019 17:40:25.303" level="INFO">Typing text '' into text field 'contact_name'</msg>
+<status status="PASS" endtime="20161019 17:40:25.487" starttime="20161019 17:40:25.303"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>contact_phone</arg>
+<arg>${contactTel}</arg>
+</arguments>
+<msg timestamp="20161019 17:40:25.487" level="INFO">Typing text '' into text field 'contact_phone'</msg>
+<status status="PASS" endtime="20161019 17:40:25.662" starttime="20161019 17:40:25.487"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>contact_email</arg>
+<arg>${contactEmail}</arg>
+</arguments>
+<msg timestamp="20161019 17:40:25.663" level="INFO">Typing text 'validemail@xcom.eu' into text field 'contact_email'</msg>
+<status status="PASS" endtime="20161019 17:40:25.927" starttime="20161019 17:40:25.663"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>shipp_address1</arg>
+<arg>${shippAdd1}</arg>
+</arguments>
+<msg timestamp="20161019 17:40:25.931" level="INFO">Typing text 'Any shipping address' into text field 'shipp_address1'</msg>
+<status status="PASS" endtime="20161019 17:40:26.188" starttime="20161019 17:40:25.927"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>shipp_address2</arg>
+<arg>${shippAdd2}</arg>
+</arguments>
+<msg timestamp="20161019 17:40:26.192" level="INFO">Typing text 'Any secondary shipping address' into text field 'shipp_address2'</msg>
+<status status="PASS" endtime="20161019 17:40:26.444" starttime="20161019 17:40:26.192"></status>
+</kw>
+<kw name="Select From List By Value" library="Selenium2Library">
+<doc>Selects `*values` from list identified by `locator`</doc>
+<arguments>
+<arg>id_shipp_country</arg>
+<arg>${shippCountry}</arg>
+</arguments>
+<msg timestamp="20161019 17:40:26.444" level="INFO">Selecting value(s) '21' from list 'id_shipp_country'.</msg>
+<status status="PASS" endtime="20161019 17:40:26.716" starttime="20161019 17:40:26.444"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>shipp_id_state</arg>
+</arguments>
+<status status="PASS" endtime="20161019 17:40:27.046" starttime="20161019 17:40:26.720"></status>
+</kw>
+<kw name="Select From List By Value" library="Selenium2Library">
+<doc>Selects `*values` from list identified by `locator`</doc>
+<arguments>
+<arg>shipp_id_state</arg>
+<arg>${shippState}</arg>
+</arguments>
+<msg timestamp="20161019 17:40:27.046" level="INFO">Selecting value(s) '2' from list 'shipp_id_state'.</msg>
+<status status="PASS" endtime="20161019 17:40:27.339" starttime="20161019 17:40:27.046"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>shipp_city</arg>
+<arg>${shippCity}</arg>
+</arguments>
+<msg timestamp="20161019 17:40:27.343" level="INFO">Typing text 'Any city' into text field 'shipp_city'</msg>
+<status status="PASS" endtime="20161019 17:40:27.608" starttime="20161019 17:40:27.343"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>shipp_zip</arg>
+<arg>${shippZip}</arg>
+</arguments>
+<msg timestamp="20161019 17:40:27.612" level="INFO">Typing text '15701' into text field 'shipp_zip'</msg>
+<status status="PASS" endtime="20161019 17:40:27.858" starttime="20161019 17:40:27.612"></status>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks a button identified by `locator`.</doc>
+<arguments>
+<arg>save_company_info</arg>
+</arguments>
+<msg timestamp="20161019 17:40:27.860" level="INFO">Clicking button 'save_company_info'.</msg>
+<status status="PASS" endtime="20161019 17:40:28.020" starttime="20161019 17:40:27.859"></status>
+</kw>
+<kw name="Wait Until Element Is Enabled" library="Selenium2Library">
+<doc>Waits until element specified with `locator` is enabled.</doc>
+<arguments>
+<arg>css=div.alert.alert-danger</arg>
+</arguments>
+<status status="PASS" endtime="20161019 17:40:28.104" starttime="20161019 17:40:28.020"></status>
+</kw>
+<kw name="Page Should Contain Element" library="Selenium2Library">
+<doc>Verifies element identified by `locator` is found on the current page.</doc>
+<arguments>
+<arg>css=div.alert.alert-danger</arg>
+<arg>${error_message}</arg>
+</arguments>
+<msg timestamp="20161019 17:40:28.120" level="INFO">Current page contains element 'css=div.alert.alert-danger'.</msg>
+<status status="PASS" endtime="20161019 17:40:28.124" starttime="20161019 17:40:28.108"></status>
+</kw>
+<status status="PASS" endtime="20161019 17:40:28.124" starttime="20161019 17:40:23.362"></status>
+</kw>
+<status status="PASS" endtime="20161019 17:40:28.124" critical="yes" starttime="20161019 17:40:21.460"></status>
+</test>
+<test id="s1-t5" name="Zip format by country on shipping">
+<kw type="setup" name="Go to Add customer page" library="resource_ios">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>http://${SERVER_DEV}/index.php?controller=createdirectorder&amp;create=1</arg>
+</arguments>
+<msg timestamp="20161019 17:40:28.128" level="INFO">Opening url 'http://tadelos.ro/ios/index.php?controller=createdirectorder&amp;create=1'</msg>
+<status status="PASS" endtime="20161019 17:40:28.948" starttime="20161019 17:40:28.128"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=//*[@id="createdirectorder"]/div/div[3]/div[2]/div/div[1]/div[4]/form/div[1]/div[5]/div[3]/div/label/span</arg>
+</arguments>
+<msg timestamp="20161019 17:40:28.950" level="INFO">Clicking element 'xpath=//*[@id="createdirectorder"]/div/div[3]/div[2]/div/div[1]/div[4]/form/div[1]/div[5]/div[3]/div/label/span'.</msg>
+<status status="PASS" endtime="20161019 17:40:29.073" starttime="20161019 17:40:28.949"></status>
+</kw>
+<status status="PASS" endtime="20161019 17:40:29.073" starttime="20161019 17:40:28.128"></status>
+</kw>
+<kw name="Add invalid data in Customer Add form should Fail">
+<arguments>
+<arg>Any company</arg>
+<arg>1380 Rt. 286 Highway East, Suite 303</arg>
+<arg>Any second address</arg>
+<arg>21</arg>
+<arg>1</arg>
+<arg>Any city</arg>
+<arg>123456</arg>
+<arg>${EMPTY}</arg>
+<arg>${EMPTY}</arg>
+<arg>validemail@xcom.eu</arg>
+<arg>Any shipping address</arg>
+<arg>Any secondary shipping address</arg>
+<arg>4</arg>
+<arg>86</arg>
+<arg>Any city</arg>
+<arg>15701</arg>
+<arg>There were some errors: Shipping Zip have invalid format, must be like: LNL NLN</arg>
+</arguments>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>company_name</arg>
+<arg>${companyName}</arg>
+</arguments>
+<msg timestamp="20161019 17:40:29.121" level="INFO">Typing text 'Any company' into text field 'company_name'</msg>
+<status status="PASS" endtime="20161019 17:40:29.368" starttime="20161019 17:40:29.121"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>address1</arg>
+<arg>${address1}</arg>
+</arguments>
+<msg timestamp="20161019 17:40:29.372" level="INFO">Typing text '1380 Rt. 286 Highway East, Suite 303' into text field 'address1'</msg>
+<status status="PASS" endtime="20161019 17:40:29.554" starttime="20161019 17:40:29.368"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>address2</arg>
+<arg>${address2}</arg>
+</arguments>
+<msg timestamp="20161019 17:40:29.556" level="INFO">Typing text 'Any second address' into text field 'address2'</msg>
+<status status="PASS" endtime="20161019 17:40:29.745" starttime="20161019 17:40:29.555"></status>
+</kw>
+<kw name="Select From List By Value" library="Selenium2Library">
+<doc>Selects `*values` from list identified by `locator`</doc>
+<arguments>
+<arg>id_country</arg>
+<arg>${country}</arg>
+</arguments>
+<msg timestamp="20161019 17:40:29.749" level="INFO">Selecting value(s) '21' from list 'id_country'.</msg>
+<status status="PASS" endtime="20161019 17:40:30.053" starttime="20161019 17:40:29.749"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>id_state</arg>
+</arguments>
+<status status="PASS" endtime="20161019 17:40:30.411" starttime="20161019 17:40:30.054"></status>
+</kw>
+<kw name="Select From List By Value" library="Selenium2Library">
+<doc>Selects `*values` from list identified by `locator`</doc>
+<arguments>
+<arg>id_state</arg>
+<arg>${state}</arg>
+</arguments>
+<msg timestamp="20161019 17:40:30.411" level="INFO">Selecting value(s) '1' from list 'id_state'.</msg>
+<status status="PASS" endtime="20161019 17:40:30.658" starttime="20161019 17:40:30.411"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>city</arg>
+<arg>${city}</arg>
+</arguments>
+<msg timestamp="20161019 17:40:30.659" level="INFO">Typing text 'Any city' into text field 'city'</msg>
+<status status="PASS" endtime="20161019 17:40:30.805" starttime="20161019 17:40:30.658"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>zip</arg>
+<arg>${zip}</arg>
+</arguments>
+<msg timestamp="20161019 17:40:30.805" level="INFO">Typing text '123456' into text field 'zip'</msg>
+<status status="PASS" endtime="20161019 17:40:30.955" starttime="20161019 17:40:30.805"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>contact_name</arg>
+<arg>${contactName}</arg>
+</arguments>
+<msg timestamp="20161019 17:40:30.957" level="INFO">Typing text '' into text field 'contact_name'</msg>
+<status status="PASS" endtime="20161019 17:40:31.113" starttime="20161019 17:40:30.956"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>contact_phone</arg>
+<arg>${contactTel}</arg>
+</arguments>
+<msg timestamp="20161019 17:40:31.117" level="INFO">Typing text '' into text field 'contact_phone'</msg>
+<status status="PASS" endtime="20161019 17:40:31.261" starttime="20161019 17:40:31.117"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>contact_email</arg>
+<arg>${contactEmail}</arg>
+</arguments>
+<msg timestamp="20161019 17:40:31.262" level="INFO">Typing text 'validemail@xcom.eu' into text field 'contact_email'</msg>
+<status status="PASS" endtime="20161019 17:40:31.556" starttime="20161019 17:40:31.261"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>shipp_address1</arg>
+<arg>${shippAdd1}</arg>
+</arguments>
+<msg timestamp="20161019 17:40:31.557" level="INFO">Typing text 'Any shipping address' into text field 'shipp_address1'</msg>
+<status status="PASS" endtime="20161019 17:40:31.681" starttime="20161019 17:40:31.556"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>shipp_address2</arg>
+<arg>${shippAdd2}</arg>
+</arguments>
+<msg timestamp="20161019 17:40:31.681" level="INFO">Typing text 'Any secondary shipping address' into text field 'shipp_address2'</msg>
+<status status="PASS" endtime="20161019 17:40:31.825" starttime="20161019 17:40:31.681"></status>
+</kw>
+<kw name="Select From List By Value" library="Selenium2Library">
+<doc>Selects `*values` from list identified by `locator`</doc>
+<arguments>
+<arg>id_shipp_country</arg>
+<arg>${shippCountry}</arg>
+</arguments>
+<msg timestamp="20161019 17:40:31.825" level="INFO">Selecting value(s) '4' from list 'id_shipp_country'.</msg>
+<status status="PASS" endtime="20161019 17:40:31.960" starttime="20161019 17:40:31.825"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>shipp_id_state</arg>
+</arguments>
+<status status="PASS" endtime="20161019 17:40:32.238" starttime="20161019 17:40:31.961"></status>
+</kw>
+<kw name="Select From List By Value" library="Selenium2Library">
+<doc>Selects `*values` from list identified by `locator`</doc>
+<arguments>
+<arg>shipp_id_state</arg>
+<arg>${shippState}</arg>
+</arguments>
+<msg timestamp="20161019 17:40:32.242" level="INFO">Selecting value(s) '86' from list 'shipp_id_state'.</msg>
+<status status="PASS" endtime="20161019 17:40:32.497" starttime="20161019 17:40:32.242"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>shipp_city</arg>
+<arg>${shippCity}</arg>
+</arguments>
+<msg timestamp="20161019 17:40:32.497" level="INFO">Typing text 'Any city' into text field 'shipp_city'</msg>
+<status status="PASS" endtime="20161019 17:40:32.702" starttime="20161019 17:40:32.497"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>shipp_zip</arg>
+<arg>${shippZip}</arg>
+</arguments>
+<msg timestamp="20161019 17:40:32.706" level="INFO">Typing text '15701' into text field 'shipp_zip'</msg>
+<status status="PASS" endtime="20161019 17:40:32.874" starttime="20161019 17:40:32.706"></status>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks a button identified by `locator`.</doc>
+<arguments>
+<arg>save_company_info</arg>
+</arguments>
+<msg timestamp="20161019 17:40:32.874" level="INFO">Clicking button 'save_company_info'.</msg>
+<status status="PASS" endtime="20161019 17:40:32.970" starttime="20161019 17:40:32.874"></status>
+</kw>
+<kw name="Wait Until Element Is Enabled" library="Selenium2Library">
+<doc>Waits until element specified with `locator` is enabled.</doc>
+<arguments>
+<arg>css=div.alert.alert-danger</arg>
+</arguments>
+<status status="PASS" endtime="20161019 17:40:33.022" starttime="20161019 17:40:32.970"></status>
+</kw>
+<kw name="Page Should Contain Element" library="Selenium2Library">
+<doc>Verifies element identified by `locator` is found on the current page.</doc>
+<arguments>
+<arg>css=div.alert.alert-danger</arg>
+<arg>${error_message}</arg>
+</arguments>
+<msg timestamp="20161019 17:40:33.034" level="INFO">Current page contains element 'css=div.alert.alert-danger'.</msg>
+<status status="PASS" endtime="20161019 17:40:33.034" starttime="20161019 17:40:33.022"></status>
+</kw>
+<status status="PASS" endtime="20161019 17:40:33.034" starttime="20161019 17:40:29.113"></status>
+</kw>
+<status status="PASS" endtime="20161019 17:40:33.046" critical="yes" starttime="20161019 17:40:28.124"></status>
+</test>
+<test id="s1-t6" name="Contact email already exists">
+<kw type="setup" name="Go to Add customer page" library="resource_ios">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>http://${SERVER_DEV}/index.php?controller=createdirectorder&amp;create=1</arg>
+</arguments>
+<msg timestamp="20161019 17:40:33.055" level="INFO">Opening url 'http://tadelos.ro/ios/index.php?controller=createdirectorder&amp;create=1'</msg>
+<status status="PASS" endtime="20161019 17:40:34.167" starttime="20161019 17:40:33.055"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=//*[@id="createdirectorder"]/div/div[3]/div[2]/div/div[1]/div[4]/form/div[1]/div[5]/div[3]/div/label/span</arg>
+</arguments>
+<msg timestamp="20161019 17:40:34.171" level="INFO">Clicking element 'xpath=//*[@id="createdirectorder"]/div/div[3]/div[2]/div/div[1]/div[4]/form/div[1]/div[5]/div[3]/div/label/span'.</msg>
+<status status="PASS" endtime="20161019 17:40:34.467" starttime="20161019 17:40:34.171"></status>
+</kw>
+<status status="PASS" endtime="20161019 17:40:34.467" starttime="20161019 17:40:33.055"></status>
+</kw>
+<kw name="Add invalid data in Customer Add form should Fail">
+<arguments>
+<arg>Any company</arg>
+<arg>1380 Rt. 286 Highway East, Suite 303</arg>
+<arg>Any second address</arg>
+<arg>21</arg>
+<arg>1</arg>
+<arg>Any city</arg>
+<arg>15701</arg>
+<arg>${EMPTY}</arg>
+<arg>${EMPTY}</arg>
+<arg>marius_automation@xcommerce.eu</arg>
+<arg>Any shipping address</arg>
+<arg>Any secondary shipping address</arg>
+<arg>21</arg>
+<arg>2</arg>
+<arg>Any city</arg>
+<arg>12345</arg>
+<arg>There were some errors: Customer email allready exist</arg>
+</arguments>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>company_name</arg>
+<arg>${companyName}</arg>
+</arguments>
+<msg timestamp="20161019 17:40:34.484" level="INFO">Typing text 'Any company' into text field 'company_name'</msg>
+<status status="PASS" endtime="20161019 17:40:34.754" starttime="20161019 17:40:34.484"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>address1</arg>
+<arg>${address1}</arg>
+</arguments>
+<msg timestamp="20161019 17:40:34.755" level="INFO">Typing text '1380 Rt. 286 Highway East, Suite 303' into text field 'address1'</msg>
+<status status="PASS" endtime="20161019 17:40:34.944" starttime="20161019 17:40:34.754"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>address2</arg>
+<arg>${address2}</arg>
+</arguments>
+<msg timestamp="20161019 17:40:34.944" level="INFO">Typing text 'Any second address' into text field 'address2'</msg>
+<status status="PASS" endtime="20161019 17:40:35.128" starttime="20161019 17:40:34.944"></status>
+</kw>
+<kw name="Select From List By Value" library="Selenium2Library">
+<doc>Selects `*values` from list identified by `locator`</doc>
+<arguments>
+<arg>id_country</arg>
+<arg>${country}</arg>
+</arguments>
+<msg timestamp="20161019 17:40:35.128" level="INFO">Selecting value(s) '21' from list 'id_country'.</msg>
+<status status="PASS" endtime="20161019 17:40:35.328" starttime="20161019 17:40:35.128"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>id_state</arg>
+</arguments>
+<status status="PASS" endtime="20161019 17:40:35.644" starttime="20161019 17:40:35.328"></status>
+</kw>
+<kw name="Select From List By Value" library="Selenium2Library">
+<doc>Selects `*values` from list identified by `locator`</doc>
+<arguments>
+<arg>id_state</arg>
+<arg>${state}</arg>
+</arguments>
+<msg timestamp="20161019 17:40:35.648" level="INFO">Selecting value(s) '1' from list 'id_state'.</msg>
+<status status="PASS" endtime="20161019 17:40:35.900" starttime="20161019 17:40:35.648"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>city</arg>
+<arg>${city}</arg>
+</arguments>
+<msg timestamp="20161019 17:40:35.904" level="INFO">Typing text 'Any city' into text field 'city'</msg>
+<status status="PASS" endtime="20161019 17:40:36.092" starttime="20161019 17:40:35.900"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>zip</arg>
+<arg>${zip}</arg>
+</arguments>
+<msg timestamp="20161019 17:40:36.092" level="INFO">Typing text '15701' into text field 'zip'</msg>
+<status status="PASS" endtime="20161019 17:40:36.224" starttime="20161019 17:40:36.092"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>contact_name</arg>
+<arg>${contactName}</arg>
+</arguments>
+<msg timestamp="20161019 17:40:36.228" level="INFO">Typing text '' into text field 'contact_name'</msg>
+<status status="PASS" endtime="20161019 17:40:36.388" starttime="20161019 17:40:36.228"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>contact_phone</arg>
+<arg>${contactTel}</arg>
+</arguments>
+<msg timestamp="20161019 17:40:36.392" level="INFO">Typing text '' into text field 'contact_phone'</msg>
+<status status="PASS" endtime="20161019 17:40:36.584" starttime="20161019 17:40:36.388"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>contact_email</arg>
+<arg>${contactEmail}</arg>
+</arguments>
+<msg timestamp="20161019 17:40:36.584" level="INFO">Typing text 'marius_automation@xcommerce.eu' into text field 'contact_email'</msg>
+<status status="PASS" endtime="20161019 17:40:36.876" starttime="20161019 17:40:36.584"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>shipp_address1</arg>
+<arg>${shippAdd1}</arg>
+</arguments>
+<msg timestamp="20161019 17:40:36.880" level="INFO">Typing text 'Any shipping address' into text field 'shipp_address1'</msg>
+<status status="PASS" endtime="20161019 17:40:37.256" starttime="20161019 17:40:36.876"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>shipp_address2</arg>
+<arg>${shippAdd2}</arg>
+</arguments>
+<msg timestamp="20161019 17:40:37.257" level="INFO">Typing text 'Any secondary shipping address' into text field 'shipp_address2'</msg>
+<status status="PASS" endtime="20161019 17:40:37.437" starttime="20161019 17:40:37.256"></status>
+</kw>
+<kw name="Select From List By Value" library="Selenium2Library">
+<doc>Selects `*values` from list identified by `locator`</doc>
+<arguments>
+<arg>id_shipp_country</arg>
+<arg>${shippCountry}</arg>
+</arguments>
+<msg timestamp="20161019 17:40:37.437" level="INFO">Selecting value(s) '21' from list 'id_shipp_country'.</msg>
+<status status="PASS" endtime="20161019 17:40:37.566" starttime="20161019 17:40:37.437"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>shipp_id_state</arg>
+</arguments>
+<status status="PASS" endtime="20161019 17:40:37.838" starttime="20161019 17:40:37.566"></status>
+</kw>
+<kw name="Select From List By Value" library="Selenium2Library">
+<doc>Selects `*values` from list identified by `locator`</doc>
+<arguments>
+<arg>shipp_id_state</arg>
+<arg>${shippState}</arg>
+</arguments>
+<msg timestamp="20161019 17:40:37.838" level="INFO">Selecting value(s) '2' from list 'shipp_id_state'.</msg>
+<status status="PASS" endtime="20161019 17:40:38.059" starttime="20161019 17:40:37.838"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>shipp_city</arg>
+<arg>${shippCity}</arg>
+</arguments>
+<msg timestamp="20161019 17:40:38.061" level="INFO">Typing text 'Any city' into text field 'shipp_city'</msg>
+<status status="PASS" endtime="20161019 17:40:38.273" starttime="20161019 17:40:38.059"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>shipp_zip</arg>
+<arg>${shippZip}</arg>
+</arguments>
+<msg timestamp="20161019 17:40:38.277" level="INFO">Typing text '12345' into text field 'shipp_zip'</msg>
+<status status="PASS" endtime="20161019 17:40:38.521" starttime="20161019 17:40:38.273"></status>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks a button identified by `locator`.</doc>
+<arguments>
+<arg>save_company_info</arg>
+</arguments>
+<msg timestamp="20161019 17:40:38.521" level="INFO">Clicking button 'save_company_info'.</msg>
+<status status="PASS" endtime="20161019 17:40:38.630" starttime="20161019 17:40:38.521"></status>
+</kw>
+<kw name="Wait Until Element Is Enabled" library="Selenium2Library">
+<doc>Waits until element specified with `locator` is enabled.</doc>
+<arguments>
+<arg>css=div.alert.alert-danger</arg>
+</arguments>
+<status status="PASS" endtime="20161019 17:40:38.709" starttime="20161019 17:40:38.634"></status>
+</kw>
+<kw name="Page Should Contain Element" library="Selenium2Library">
+<doc>Verifies element identified by `locator` is found on the current page.</doc>
+<arguments>
+<arg>css=div.alert.alert-danger</arg>
+<arg>${error_message}</arg>
+</arguments>
+<msg timestamp="20161019 17:40:38.721" level="INFO">Current page contains element 'css=div.alert.alert-danger'.</msg>
+<status status="PASS" endtime="20161019 17:40:38.721" starttime="20161019 17:40:38.709"></status>
+</kw>
+<status status="PASS" endtime="20161019 17:40:38.721" starttime="20161019 17:40:34.480"></status>
+</kw>
+<status status="PASS" endtime="20161019 17:40:38.721" critical="yes" starttime="20161019 17:40:33.052"></status>
+</test>
+<test id="s1-t7" name="Contact email invalid format">
+<kw type="setup" name="Go to Add customer page" library="resource_ios">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>http://${SERVER_DEV}/index.php?controller=createdirectorder&amp;create=1</arg>
+</arguments>
+<msg timestamp="20161019 17:40:38.725" level="INFO">Opening url 'http://tadelos.ro/ios/index.php?controller=createdirectorder&amp;create=1'</msg>
+<status status="PASS" endtime="20161019 17:40:39.674" starttime="20161019 17:40:38.725"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=//*[@id="createdirectorder"]/div/div[3]/div[2]/div/div[1]/div[4]/form/div[1]/div[5]/div[3]/div/label/span</arg>
+</arguments>
+<msg timestamp="20161019 17:40:39.674" level="INFO">Clicking element 'xpath=//*[@id="createdirectorder"]/div/div[3]/div[2]/div/div[1]/div[4]/form/div[1]/div[5]/div[3]/div/label/span'.</msg>
+<status status="PASS" endtime="20161019 17:40:39.836" starttime="20161019 17:40:39.674"></status>
+</kw>
+<status status="PASS" endtime="20161019 17:40:39.836" starttime="20161019 17:40:38.725"></status>
+</kw>
+<kw name="Add invalid data in Customer Add form should Fail">
+<arguments>
+<arg>Any company</arg>
+<arg>1380 Rt. 286 Highway East, Suite 303</arg>
+<arg>Any second address</arg>
+<arg>21</arg>
+<arg>1</arg>
+<arg>Any city</arg>
+<arg>15701</arg>
+<arg>${EMPTY}</arg>
+<arg>${EMPTY}</arg>
+<arg>invalid email</arg>
+<arg>Any shipping address</arg>
+<arg>Any secondary shipping address</arg>
+<arg>21</arg>
+<arg>2</arg>
+<arg>Any city</arg>
+<arg>12345</arg>
+<arg>There were some errors: Invalid contact email</arg>
+</arguments>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>company_name</arg>
+<arg>${companyName}</arg>
+</arguments>
+<msg timestamp="20161019 17:40:39.848" level="INFO">Typing text 'Any company' into text field 'company_name'</msg>
+<status status="PASS" endtime="20161019 17:40:40.106" starttime="20161019 17:40:39.848"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>address1</arg>
+<arg>${address1}</arg>
+</arguments>
+<msg timestamp="20161019 17:40:40.106" level="INFO">Typing text '1380 Rt. 286 Highway East, Suite 303' into text field 'address1'</msg>
+<status status="PASS" endtime="20161019 17:40:40.334" starttime="20161019 17:40:40.106"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>address2</arg>
+<arg>${address2}</arg>
+</arguments>
+<msg timestamp="20161019 17:40:40.334" level="INFO">Typing text 'Any second address' into text field 'address2'</msg>
+<status status="PASS" endtime="20161019 17:40:40.598" starttime="20161019 17:40:40.334"></status>
+</kw>
+<kw name="Select From List By Value" library="Selenium2Library">
+<doc>Selects `*values` from list identified by `locator`</doc>
+<arguments>
+<arg>id_country</arg>
+<arg>${country}</arg>
+</arguments>
+<msg timestamp="20161019 17:40:40.598" level="INFO">Selecting value(s) '21' from list 'id_country'.</msg>
+<status status="PASS" endtime="20161019 17:40:40.846" starttime="20161019 17:40:40.598"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>id_state</arg>
+</arguments>
+<status status="PASS" endtime="20161019 17:40:41.142" starttime="20161019 17:40:40.846"></status>
+</kw>
+<kw name="Select From List By Value" library="Selenium2Library">
+<doc>Selects `*values` from list identified by `locator`</doc>
+<arguments>
+<arg>id_state</arg>
+<arg>${state}</arg>
+</arguments>
+<msg timestamp="20161019 17:40:41.146" level="INFO">Selecting value(s) '1' from list 'id_state'.</msg>
+<status status="PASS" endtime="20161019 17:40:41.425" starttime="20161019 17:40:41.142"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>city</arg>
+<arg>${city}</arg>
+</arguments>
+<msg timestamp="20161019 17:40:41.425" level="INFO">Typing text 'Any city' into text field 'city'</msg>
+<status status="PASS" endtime="20161019 17:40:41.714" starttime="20161019 17:40:41.425"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>zip</arg>
+<arg>${zip}</arg>
+</arguments>
+<msg timestamp="20161019 17:40:41.714" level="INFO">Typing text '15701' into text field 'zip'</msg>
+<status status="PASS" endtime="20161019 17:40:41.907" starttime="20161019 17:40:41.714"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>contact_name</arg>
+<arg>${contactName}</arg>
+</arguments>
+<msg timestamp="20161019 17:40:41.907" level="INFO">Typing text '' into text field 'contact_name'</msg>
+<status status="PASS" endtime="20161019 17:40:42.043" starttime="20161019 17:40:41.907"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>contact_phone</arg>
+<arg>${contactTel}</arg>
+</arguments>
+<msg timestamp="20161019 17:40:42.043" level="INFO">Typing text '' into text field 'contact_phone'</msg>
+<status status="PASS" endtime="20161019 17:40:42.146" starttime="20161019 17:40:42.043"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>contact_email</arg>
+<arg>${contactEmail}</arg>
+</arguments>
+<msg timestamp="20161019 17:40:42.150" level="INFO">Typing text 'invalid email' into text field 'contact_email'</msg>
+<status status="PASS" endtime="20161019 17:40:42.295" starttime="20161019 17:40:42.146"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>shipp_address1</arg>
+<arg>${shippAdd1}</arg>
+</arguments>
+<msg timestamp="20161019 17:40:42.299" level="INFO">Typing text 'Any shipping address' into text field 'shipp_address1'</msg>
+<status status="PASS" endtime="20161019 17:40:42.487" starttime="20161019 17:40:42.295"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>shipp_address2</arg>
+<arg>${shippAdd2}</arg>
+</arguments>
+<msg timestamp="20161019 17:40:42.487" level="INFO">Typing text 'Any secondary shipping address' into text field 'shipp_address2'</msg>
+<status status="PASS" endtime="20161019 17:40:42.618" starttime="20161019 17:40:42.487"></status>
+</kw>
+<kw name="Select From List By Value" library="Selenium2Library">
+<doc>Selects `*values` from list identified by `locator`</doc>
+<arguments>
+<arg>id_shipp_country</arg>
+<arg>${shippCountry}</arg>
+</arguments>
+<msg timestamp="20161019 17:40:42.622" level="INFO">Selecting value(s) '21' from list 'id_shipp_country'.</msg>
+<status status="PASS" endtime="20161019 17:40:42.779" starttime="20161019 17:40:42.622"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>shipp_id_state</arg>
+</arguments>
+<status status="PASS" endtime="20161019 17:40:43.087" starttime="20161019 17:40:42.779"></status>
+</kw>
+<kw name="Select From List By Value" library="Selenium2Library">
+<doc>Selects `*values` from list identified by `locator`</doc>
+<arguments>
+<arg>shipp_id_state</arg>
+<arg>${shippState}</arg>
+</arguments>
+<msg timestamp="20161019 17:40:43.091" level="INFO">Selecting value(s) '2' from list 'shipp_id_state'.</msg>
+<status status="PASS" endtime="20161019 17:40:43.337" starttime="20161019 17:40:43.087"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>shipp_city</arg>
+<arg>${shippCity}</arg>
+</arguments>
+<msg timestamp="20161019 17:40:43.341" level="INFO">Typing text 'Any city' into text field 'shipp_city'</msg>
+<status status="PASS" endtime="20161019 17:40:43.576" starttime="20161019 17:40:43.341"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>shipp_zip</arg>
+<arg>${shippZip}</arg>
+</arguments>
+<msg timestamp="20161019 17:40:43.580" level="INFO">Typing text '12345' into text field 'shipp_zip'</msg>
+<status status="PASS" endtime="20161019 17:40:43.700" starttime="20161019 17:40:43.576"></status>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks a button identified by `locator`.</doc>
+<arguments>
+<arg>save_company_info</arg>
+</arguments>
+<msg timestamp="20161019 17:40:43.700" level="INFO">Clicking button 'save_company_info'.</msg>
+<status status="PASS" endtime="20161019 17:40:43.800" starttime="20161019 17:40:43.700"></status>
+</kw>
+<kw name="Wait Until Element Is Enabled" library="Selenium2Library">
+<doc>Waits until element specified with `locator` is enabled.</doc>
+<arguments>
+<arg>css=div.alert.alert-danger</arg>
+</arguments>
+<status status="PASS" endtime="20161019 17:40:43.870" starttime="20161019 17:40:43.800"></status>
+</kw>
+<kw name="Page Should Contain Element" library="Selenium2Library">
+<doc>Verifies element identified by `locator` is found on the current page.</doc>
+<arguments>
+<arg>css=div.alert.alert-danger</arg>
+<arg>${error_message}</arg>
+</arguments>
+<msg timestamp="20161019 17:40:43.888" level="INFO">Current page contains element 'css=div.alert.alert-danger'.</msg>
+<status status="PASS" endtime="20161019 17:40:43.888" starttime="20161019 17:40:43.871"></status>
+</kw>
+<status status="PASS" endtime="20161019 17:40:43.888" starttime="20161019 17:40:39.844"></status>
+</kw>
+<status status="PASS" endtime="20161019 17:40:43.888" critical="yes" starttime="20161019 17:40:38.725"></status>
+</test>
+<doc>A test suite containing tests for validating the Add users form</doc>
+<status status="PASS" endtime="20161019 17:40:43.892" starttime="20161019 17:39:54.442"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="7">Critical Tests</stat>
+<stat fail="0" pass="7">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="0" id="s1" name="32 Add User Validations" pass="7">32 Add User Validations</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

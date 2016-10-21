@@ -1,0 +1,50 @@
+*** Settings ***
+Documentation     A test suite containing tests for validating the Add users form
+
+Suite Setup       Open browser and login user
+
+Test Setup        Go to Add customer page
+Test Template     Add invalid data in Customer Add form should Fail
+
+Resource          ../resource_ios.txt
+Resource          ../variables_ios.txt
+
+
+*** Test Cases ***                      Company Name        Address Line 1                          Address Line 2              Country             State           City            Zip             Contact Name        Contact Tel     Contact email                       Shipping Address Line 1     Shipping Address Line 2             Shipping Country            Shipping State      Shipping City       Shipping Zip        Error message
+Empty fields                            ${EMPTY}            ${EMPTY}                                ${EMPTY}                    21                  ${EMPTY}        ${EMPTY}        ${EMPTY}        ${EMPTY}            ${EMPTY}        ${EMPTY}                            ${EMPTY}                    ${EMPTY}                            21                          ${EMPTY}            ${EMPTY}            ${EMPTY}            There were some errors: Company name is required Address is required Country is required City is required Zip is required Contact email is required Shipping address is required Shipping country is required Shipping city is required Shipping Zip is required
+Avalara invalid address + Invalid Zip   Any company         invalid                                 Any second address          21                  1               Any city        12345           ${EMPTY}            ${EMPTY}        validemail@xcom.eu                  Any shipping address        Any secondary shipping address      21                          2                   Any city            12345               There were some errors: The address field it's invalid for taxes service: An exact street name match could not be found and phonetically matching the street name resulted in either no matches or matches to more than one street name. The address it's invalid for taxes service: Address cannot be geocoded.
+Avalara invalid address + Valid Zip     Any company         invalid                                 Any second address          21                  1               Any city        15701           ${EMPTY}            ${EMPTY}        validemail@xcom.eu                  Any shipping address        Any secondary shipping address      21                          2                   Any city            12345               There were some errors: The address field it's invalid for taxes service: The address was found but the street number in the input address was not between the low and high range of the post office database.
+Zip format by country on billing        Any company         1380 Rt. 286 Highway East, Suite 303    Any second address          21                  1               Any city        123456          ${EMPTY}            ${EMPTY}        validemail@xcom.eu                  Any shipping address        Any secondary shipping address      21                          2                   Any city            15701               There were some errors: Zip have invalid format, , must be like: NNNNN
+Zip format by country on shipping       Any company         1380 Rt. 286 Highway East, Suite 303    Any second address          21                  1               Any city        123456          ${EMPTY}            ${EMPTY}        validemail@xcom.eu                  Any shipping address        Any secondary shipping address      4                           86                  Any city            15701               There were some errors: Shipping Zip have invalid format, must be like: LNL NLN
+Contact email already exists            Any company         1380 Rt. 286 Highway East, Suite 303    Any second address          21                  1               Any city        15701           ${EMPTY}            ${EMPTY}        marius_automation@xcommerce.eu      Any shipping address        Any secondary shipping address      21                          2                   Any city            12345               There were some errors: Customer email allready exist
+Contact email invalid format            Any company         1380 Rt. 286 Highway East, Suite 303    Any second address          21                  1               Any city        15701           ${EMPTY}            ${EMPTY}        invalid email                       Any shipping address        Any secondary shipping address      21                          2                   Any city            12345               There were some errors: Invalid contact email
+
+*** Keywords ***
+Add invalid data in Customer Add form should Fail
+    [Arguments]                 ${companyName}         ${address1}         ${address2}         ${country}       ${state}    ${city}     ${zip}      ${contactName}      ${contactTel}       ${contactEmail}     ${shippAdd1}        ${shippAdd2}    ${shippCountry}     ${shippState}       ${shippCity}        ${shippZip}     ${error_message}
+    input text                          company_name            ${companyName}
+    input text                          address1                ${address1}
+    input text                          address2                ${address2}
+    select from list by value           id_country              ${country}
+    wait until element is visible       id_state
+    select from list by value           id_state                ${state}
+    input text                          city                    ${city}
+    input text                          zip                     ${zip}
+    input text                          contact_name            ${contactName}
+    input text                          contact_phone           ${contactTel}
+    input text                          contact_email           ${contactEmail}
+
+    input text                          shipp_address1          ${shippAdd1}
+    input text                          shipp_address2          ${shippAdd2}
+    select from list by value           id_shipp_country        ${shippCountry}
+    wait until element is visible       shipp_id_state
+    select from list by value           shipp_id_state          ${shippState}
+    input text                          shipp_city              ${shippCity}
+    input text                          shipp_zip               ${shippZip}
+
+    click button                        save_company_info
+
+    wait until element is enabled                   css=div.alert.alert-danger
+    page should contain element                     css=div.alert.alert-danger          ${error_message}
+
+

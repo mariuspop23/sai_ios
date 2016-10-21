@@ -1,0 +1,61 @@
+*** Settings ***
+Documentation     A test suite containing tests for validating the Edit users form
+
+Suite Setup       Open browser and login user and go to edit
+
+Test Setup        Go to Edit customer page
+Test Template     Edit invalid data in Customer Add form should Fail
+
+Resource          ../resource_ios.txt
+Resource          ../variables_ios.txt
+
+
+*** Test Cases ***                      Company Name        Address Line 1                          Address Line 2              Country             State           City            Zip             Contact Name        Contact Tel     Contact email                       Shipping Address Line 1     Shipping Address Line 2             Shipping Country            Shipping State      Shipping City       Shipping Zip        Error message
+Empty fields                            ${EMPTY}            ${EMPTY}                                ${EMPTY}                    21                   1              ${EMPTY}        ${EMPTY}        ${EMPTY}            ${EMPTY}        ${EMPTY}                            ${EMPTY}                    ${EMPTY}                            21                          86                   ${EMPTY}            ${EMPTY}            There were some errors: Company name is required Address is required Country is required City is required Zip is required Contact email is required Shipping address is required Shipping country is required Shipping city is required Shipping Zip is required
+#Avalara invalid address + Invalid Zip   Any company         invalid                                 Any second address          21                  1               Any city        12345           ${EMPTY}            ${EMPTY}        validemail@xcom.eu                  Any shipping address        Any secondary shipping address      21                          2                   Any city            12345               There were some errors: The address field it's invalid for taxes service: An exact street name match could not be found and phonetically matching the street name resulted in either no matches or matches to more than one street name. The address it's invalid for taxes service: Address cannot be geocoded.
+#Avalara invalid address + Valid Zip     Any company         invalid                                 Any second address          21                  1               Any city        15701           ${EMPTY}            ${EMPTY}        validemail@xcom.eu                  Any shipping address        Any secondary shipping address      21                          2                   Any city            12345               There were some errors: The address field it's invalid for taxes service: The address was found but the street number in the input address was not between the low and high range of the post office database.
+#Zip format by country on billing        Any company         1380 Rt. 286 Highway East, Suite 303    Any second address          21                  1               Any city        123456          ${EMPTY}            ${EMPTY}        validemail@xcom.eu                  Any shipping address        Any secondary shipping address      21                          2                   Any city            15701               There were some errors: Zip have invalid format, , must be like: NNNNN
+#Zip format by country on shipping       Any company         1380 Rt. 286 Highway East, Suite 303    Any second address          21                  1               Any city        123456          ${EMPTY}            ${EMPTY}        validemail@xcom.eu                  Any shipping address        Any secondary shipping address      4                           86                  Any city            15701               There were some errors: Shipping Zip have invalid format, must be like: LNL NLN
+#Contact email already exists            Any company         1380 Rt. 286 Highway East, Suite 303    Any second address          21                  1               Any city        15701           ${EMPTY}            ${EMPTY}        marius_automation@xcommerce.eu      Any shipping address        Any secondary shipping address      21                          2                   Any city            12345               There were some errors: Customer email allready exist
+#Contact email invalid format            Any company         1380 Rt. 286 Highway East, Suite 303    Any second address          21                  1               Any city        15701           ${EMPTY}            ${EMPTY}        invalid email                       Any shipping address        Any secondary shipping address      21                          2                   Any city            12345               There were some errors: Invalid contact email
+
+*** Keywords ***
+Edit invalid data in Customer Add form should Fail
+    [Arguments]                 ${companyName}         ${address1}         ${address2}         ${country}       ${state}    ${city}     ${zip}      ${contactName}      ${contactTel}       ${contactEmail}     ${shippAdd1}        ${shippAdd2}    ${shippCountry}     ${shippState}       ${shippCity}        ${shippZip}     ${error_message}
+    wait until element is visible       company_name
+    clear element text                  company_name
+    input text                          company_name            Marius Pop Automation Update
+    clear element text                  address1
+    input text                          address1                1380 Rt. 286 Highway East, Suite 303
+    clear element text                  address2
+    input text                          address2                1380 Rt. 286 Highway East, Suite 303 Update
+    select from list by value           id_country              21
+    wait until element is visible       id_state
+    select from list by value           id_state                2
+    clear element text                  city
+    input text                          city                    Alaska city
+    clear element text                  contact_name
+    input text                          contact_name            My name Update
+    clear element text                  contact_phone
+    input text                          contact_phone           0740654321
+
+Update the shipping address form
+    wait until element is visible       shipp_address1
+    clear element text                  shipp_address1
+    input text                          shipp_address1          My shipping address1 Update
+    clear element text                  shipp_address2
+    input text                          shipp_address2          My shipping address2 Update
+    select from list by value           id_shipp_country        4
+    wait until element is visible       shipp_id_state
+    select from list by value           shipp_id_state          87
+    clear element text                  shipp_city
+    input text                          shipp_city              Quebec city
+    clear element text                  shipp_zip
+    input text                          shipp_zip               C1C 3D3
+
+    click button                        save_company_info
+
+    wait until element is enabled                   css=div.alert.alert-danger
+    page should contain element                     css=div.alert.alert-danger          ${error_message}
+
+# REVIN AICI< CA NU MAI AM RABDARE ACUMA!!!

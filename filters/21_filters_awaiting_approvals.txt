@@ -1,0 +1,46 @@
+*** Settings ***
+Documentation     A test suite containing tests for filtering the awaiting approval orders
+
+Suite Setup       Open browser and login user
+
+Test Setup        Go to Awaiting approval page
+Test Template     Filter Awaiting approval
+
+Resource          ../resource_ios.txt
+Resource          ../variables_ios.txt
+
+
+*** Test Cases ***              Customer                Order Number              Sales Representative        SoftID              Key Number              PO Number               Type                Found Result
+Search by Customer              ${Filter Customer}      ${EMPTY}                   ${EMPTY}                    ${EMPTY}            ${EMPTY}                ${EMPTY}                ${EMPTY}            ${Filter Customer}
+Search by Order Number          ${EMPTY}                ${Filter Order Number}     ${EMPTY}                    ${EMPTY}            ${EMPTY}                ${EMPTY}                ${EMPTY}            ${Filter Order Number}
+Search by Sales Representative  ${EMPTY}                ${EMPTY}                   ${Filter Sales Rep}         ${EMPTY}            ${EMPTY}                ${EMPTY}                ${EMPTY}            Marius Pop
+Search by SoftID                ${EMPTY}                ${EMPTY}                   ${EMPTY}                    ${Filter SoftID}    ${EMPTY}                ${EMPTY}                ${EMPTY}            ${Filter SoftID}
+Search by Key Number            ${EMPTY}                ${EMPTY}                   ${EMPTY}                    ${EMPTY}            ${Filter Key Number}    ${EMPTY}                ${EMPTY}            ${Filter Key Number}
+Search by PO Number             ${EMPTY}                ${EMPTY}                   ${EMPTY}                    ${EMPTY}            ${EMPTY}                ${Filter PO Number}     ${EMPTY}            ${Filter PO Number}
+Search by Type Direct Sales     ${EMPTY}                ${EMPTY}                   ${EMPTY}                    ${EMPTY}            ${EMPTY}                ${EMPTY}                ${typeDirectSales}  Direct Sales
+No results found                ${EMPTY}                invalid                    ${EMPTY}                    invalid             ${EMPTY}                ${EMPTY}                ${EMPTY}            No orders found
+
+*** Keywords ***
+
+Filter Awaiting approval
+    [Arguments]             ${customer}     ${orderNumber}     ${salesRep}     ${softID}       ${keyNumber}     ${poNumber}     ${type}         ${found_result}
+    input text                      search_customer             ${customer}
+    run keyword and ignore error    wait until element is visible   css=#approvalorders > div.ac_results > ul > li.ac_even.ac_over
+    run keyword and ignore error    click element                   css=#approvalorders > div.ac_results > ul > li.ac_even.ac_over
+    input text                      reference                   ${orderNumber}
+
+    select from list by value       sales_representative        ${salesRep}
+    input text                      software_id                 ${softID}
+    input text                      key_number                  ${keyNumber}
+    input text                      po_number                   ${poNumber}
+    select from list by value       type                        ${type}
+
+    click element                   xpath=//button[contains(.,'Filter')]
+    sleep   2s
+
+    # Asta cauta in tot elementul si este cam general, trebuie gasita o solutie mai exacta:
+    wait until element is visible                   css=#approvalorders > div > div.page-container > div.page-content-wrapper > div > div:nth-child(3)
+    element should contain                          css=#approvalorders > div > div.page-container > div.page-content-wrapper > div > div:nth-child(3)      ${found_result}
+
+
+

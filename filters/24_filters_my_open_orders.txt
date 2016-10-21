@@ -1,0 +1,48 @@
+*** Settings ***
+Documentation     A test suite containing tests for filtering the my open orders
+
+Suite Setup       Open browser and login user
+
+Test Setup        Go to My Open Orders page
+Test Template     Filter My Open Orders
+
+Resource          ../resource_ios.txt
+Resource          ../variables_ios.txt
+
+
+*** Test Cases ***              Customer              Order Number                          Status                      SoftID              Key Number              Type                    Found Result
+Search by Customer              ${Filter Customer}   ${EMPTY}                               ${EMPTY}                    ${EMPTY}            ${EMPTY}                0                       ${Filter Customer}
+Search by Order Number R        ${EMPTY}             ${Filter Order Number_res}             ${EMPTY}                    ${EMPTY}            ${EMPTY}                0                       ${Filter Order Number_res}
+Search by Order Number D        ${EMPTY}             ${Filter Order Number}                 ${EMPTY}                    ${EMPTY}            ${EMPTY}                0                       ${Filter Order Number}
+Search by Status DRA            ${EMPTY}             ${EMPTY}                               ${Filter Status DR}         ${EMPTY}            ${EMPTY}                ${EMPTY}                Draft
+Search by Status TBA            ${EMPTY}             ${EMPTY}                               ${Filter Status TBA}        ${EMPTY}            ${EMPTY}                ${EMPTY}                To be Approved
+Search by Status APR            ${EMPTY}             ${EMPTY}                               ${Filter Status APR}        ${EMPTY}            ${EMPTY}                ${EMPTY}                Approved
+Search by Status REJ            ${EMPTY}             ${EMPTY}                               ${Filter Status REJ}        ${EMPTY}            ${EMPTY}                ${EMPTY}                Rejected
+Search by Status CAN            ${EMPTY}             ${EMPTY}                               ${Filter Status CAN}        ${EMPTY}            ${EMPTY}                ${EMPTY}                Canceled
+Search by SoftID                ${EMPTY}             ${EMPTY}                               ${EMPTY}                    ${Filter SoftID}    ${EMPTY}                ${EMPTY}                ${Filter SoftID}
+Search by Key Number            ${EMPTY}             ${EMPTY}                               ${EMPTY}                    ${EMPTY}            ${Filter Key Number}    ${EMPTY}                ${Filter Key Number}
+Search by Type D                ${EMPTY}             ${EMPTY}                               ${EMPTY}                    ${EMPTY}            ${EMPTY}                ${typeDirectSales}      Direct sales
+Search by Type R                ${EMPTY}             ${EMPTY}                               ${EMPTY}                    ${EMPTY}            ${EMPTY}                ${typeReseller}         Reseller
+No results found                ${EMPTY}             invalid                                ${EMPTY}                    invalid             ${EMPTY}                ${EMPTY}                No orders found
+
+*** Keywords ***
+
+Filter My Open Orders
+    [Arguments]             ${customer}     ${orderNumber}     ${status}     ${softID}       ${keyNumber}     ${type}         ${found_result}
+    input text                      search_customer             ${customer}
+    run keyword and ignore error    wait until element is visible   css=#myopenorders > div.ac_results > ul > li.ac_even.ac_over
+    run keyword and ignore error    click element                   css=#myopenorders > div.ac_results > ul > li.ac_even.ac_over
+    input text                      reference                   ${orderNumber}
+    select from list by value       status                      ${status}
+
+    input text                      software_id                 ${softID}
+    input text                      key_number                  ${keyNumber}
+    select from list by value       type                        ${type}
+
+    click element                   xpath=//button[contains(.,'Filter')]
+    sleep   2s
+
+    # Asta cauta in tot elementul si este cam general, trebuie gasita o solutie mai exacta:
+    wait until element is visible                   css=#myopenorders > div > div.page-container > div.page-content-wrapper > div > div:nth-child(3)
+    element should contain                          css=#myopenorders > div > div.page-container > div.page-content-wrapper > div > div:nth-child(3)      ${found_result}
+
