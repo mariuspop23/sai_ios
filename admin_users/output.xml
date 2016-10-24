@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20161019 16:12:12.457" generator="Robot 3.0 (Python 2.7.8 on win32)">
+<suite source="C:\Python27\Proiecte\Live SAI IOS\admin users\valid_forgot_password.txt" id="s1" name="Valid Forgot Password">
+<kw type="setup" name="Open Browser To Homepage" library="resource_ios">
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>${LOGIN URL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20161019 16:12:12.642" level="INFO">Opening browser 'chrome' to base url 'http://tadelos.ro/ios'</msg>
+<status status="PASS" endtime="20161019 16:12:17.692" starttime="20161019 16:12:12.642"></status>
+</kw>
+<kw name="Maximize Browser Window" library="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" endtime="20161019 16:12:17.883" starttime="20161019 16:12:17.692"></status>
+</kw>
+<kw name="Set Selenium Speed" library="Selenium2Library">
+<doc>Sets the delay in seconds that is waited after each Selenium command.</doc>
+<arguments>
+<arg>${DELAY}</arg>
+</arguments>
+<status status="PASS" endtime="20161019 16:12:17.884" starttime="20161019 16:12:17.884"></status>
+</kw>
+<status status="PASS" endtime="20161019 16:12:17.885" starttime="20161019 16:12:12.642"></status>
+</kw>
+<test id="s1-t1" name="Go to Forgot password and submit a valid email">
+<kw name="Click Link" library="Selenium2Library">
+<doc>Clicks a link identified by locator.</doc>
+<arguments>
+<arg>forget-password</arg>
+</arguments>
+<msg timestamp="20161019 16:12:17.892" level="INFO">Clicking link 'forget-password'.</msg>
+<status status="PASS" endtime="20161019 16:12:17.981" starttime="20161019 16:12:17.891"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="Selenium2Library">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>email</arg>
+</arguments>
+<status status="PASS" endtime="20161019 16:12:18.720" starttime="20161019 16:12:17.982"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>email</arg>
+<arg>${VALID ADMIN_USER}</arg>
+</arguments>
+<msg timestamp="20161019 16:12:18.723" level="INFO">Typing text 'marius@xcommerce.eu' into text field 'email'</msg>
+<status status="PASS" endtime="20161019 16:12:18.838" starttime="20161019 16:12:18.722"></status>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks a button identified by `locator`.</doc>
+<arguments>
+<arg>SubmitLogin</arg>
+</arguments>
+<msg timestamp="20161019 16:12:18.842" level="INFO">Clicking button 'SubmitLogin'.</msg>
+<status status="PASS" endtime="20161019 16:12:18.972" starttime="20161019 16:12:18.842"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="Selenium2Library">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>css=p.alert.alert-success</arg>
+</arguments>
+<status status="PASS" endtime="20161019 16:12:19.915" starttime="20161019 16:12:18.973"></status>
+</kw>
+<kw name="Element Should Contain" library="Selenium2Library">
+<doc>Verifies element identified by `locator` contains text `expected`.</doc>
+<arguments>
+<arg>css=p.alert.alert-success</arg>
+<arg>A confirmation email has been sent to your address</arg>
+</arguments>
+<msg timestamp="20161019 16:12:19.917" level="INFO">Verifying element 'css=p.alert.alert-success' contains text 'A confirmation email has been sent to your address'.</msg>
+<status status="PASS" endtime="20161019 16:12:19.947" starttime="20161019 16:12:19.916"></status>
+</kw>
+<kw name="Click Link" library="Selenium2Library">
+<doc>Clicks a link identified by locator.</doc>
+<arguments>
+<arg>css=a.btn.green.btn-outline</arg>
+</arguments>
+<msg timestamp="20161019 16:12:19.953" level="INFO">Clicking link 'css=a.btn.green.btn-outline'.</msg>
+<status status="PASS" endtime="20161019 16:12:20.009" starttime="20161019 16:12:19.953"></status>
+</kw>
+<status status="PASS" endtime="20161019 16:12:20.010" critical="yes" starttime="20161019 16:12:17.885"></status>
+</test>
+<doc>Test suite with valid login.</doc>
+<status status="PASS" endtime="20161019 16:12:20.012" starttime="20161019 16:12:12.459"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="1">Critical Tests</stat>
+<stat fail="0" pass="1">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="0" id="s1" name="Valid Forgot Password" pass="1">Valid Forgot Password</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
