@@ -38,8 +38,8 @@ ${LOGIN URL BE}             http://${SERVER_DEV}/Xadmin
 
 #Filters Variables - need to check values before build and update them before running AUTOMATION!
 ${Filter Customer}          Marius Pop
-${Filter Order Number}      OC000212
-${Filter Order Number_res}  OR000211
+${Filter Order Number}      OC000235
+${Filter Order Number_res}  OR000232
 ${Filter Status DR}         5
 ${Filter Status TBA}        7
 ${Filter Status APR}        8

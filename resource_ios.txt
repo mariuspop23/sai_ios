@@ -158,4 +158,5 @@ Scroll Page To Location
     Execute JavaScript    window.scroll(${x_location},${y_location})
 
 
-
+Current Order Number
+    log to console      xpath=//*[@id="directsalesorders"]/div/div[3]/div[2]/div/div[2]/div[2]/div[2]/table/tbody/tr[1]/td[1]/a
