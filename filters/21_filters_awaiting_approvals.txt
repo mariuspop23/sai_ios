@@ -25,7 +25,7 @@ No results found                ${EMPTY}                invalid                 
 Filter Awaiting approval
     [Arguments]             ${customer}     ${orderNumber}     ${salesRep}     ${softID}       ${keyNumber}     ${poNumber}     ${type}         ${found_result}
     input text                      search_customer             ${customer}
-    run keyword and ignore error    wait until element is visible   css=#approvalorders > div.ac_results > ul > li.ac_even.ac_over
+#    run keyword and ignore error    wait until element is visible   css=#approvalorders > div.ac_results > ul > li.ac_even.ac_over
     run keyword and ignore error    click element                   css=#approvalorders > div.ac_results > ul > li.ac_even.ac_over
     input text                      reference                   ${orderNumber}
 
@@ -39,7 +39,7 @@ Filter Awaiting approval
     sleep   2s
 
     wait until element is visible   css=#approvalorders > div > div.page-container > div.page-content-wrapper > div > div:nth-child(3)
-    element should contain         css=#approvalorders > div > div.page-container > div.page-content-wrapper > div > div:nth-child(3)      ${found_result}
+    element should contain          css=#approvalorders > div > div.page-container > div.page-content-wrapper > div > div:nth-child(3)      ${found_result}
 
 
 

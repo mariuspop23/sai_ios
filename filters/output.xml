@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generated="20161024 09:04:32.464" generator="Robot 3.0 (Python 2.7.8 on win32)">
-<suite source="C:\Python27\Proiecte\Live SAI IOS\filters\21_filters_awaiting_approvals.txt" id="s1" name="21 Filters Awaiting Approvals">
+<robot generated="20161024 09:55:05.734" generator="Robot 3.0 (Python 2.7.8 on win32)">
+<suite source="C:\Python27\Proiecte\Live SAI IOS\filters\24_filters_my_open_orders.txt" id="s1" name="24 Filters My Open Orders">
 <kw type="setup" name="Open browser and login user" library="resource_ios">
 <kw name="Open Browser To Homepage" library="resource_ios">
 <kw name="Open Browser" library="Selenium2Library">
@@ -9,21 +9,21 @@
 <arg>${LOGIN URL}</arg>
 <arg>${BROWSER}</arg>
 </arguments>
-<msg timestamp="20161024 09:04:32.610" level="INFO">Opening browser 'chrome' to base url 'http://tadelos.ro/ios'</msg>
-<status status="PASS" endtime="20161024 09:04:40.147" starttime="20161024 09:04:32.609"></status>
+<msg timestamp="20161024 09:55:05.887" level="INFO">Opening browser 'chrome' to base url 'http://tadelos.ro/ios'</msg>
+<status status="PASS" endtime="20161024 09:55:10.348" starttime="20161024 09:55:05.886"></status>
 </kw>
 <kw name="Maximize Browser Window" library="Selenium2Library">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" endtime="20161024 09:04:40.326" starttime="20161024 09:04:40.147"></status>
+<status status="PASS" endtime="20161024 09:55:10.549" starttime="20161024 09:55:10.348"></status>
 </kw>
 <kw name="Set Selenium Speed" library="Selenium2Library">
 <doc>Sets the delay in seconds that is waited after each Selenium command.</doc>
 <arguments>
 <arg>${DELAY}</arg>
 </arguments>
-<status status="PASS" endtime="20161024 09:04:40.331" starttime="20161024 09:04:40.328"></status>
+<status status="PASS" endtime="20161024 09:55:10.554" starttime="20161024 09:55:10.551"></status>
 </kw>
-<status status="PASS" endtime="20161024 09:04:40.332" starttime="20161024 09:04:32.609"></status>
+<status status="PASS" endtime="20161024 09:55:10.556" starttime="20161024 09:55:05.886"></status>
 </kw>
 <kw name="Login Admin User" library="resource_ios">
 <kw name="Input Username" library="resource_ios">
@@ -35,7 +35,7 @@
 <arguments>
 <arg>email</arg>
 </arguments>
-<status status="PASS" endtime="20161024 09:04:40.430" starttime="20161024 09:04:40.340"></status>
+<status status="PASS" endtime="20161024 09:55:10.600" starttime="20161024 09:55:10.561"></status>
 </kw>
 <kw name="Input Text" library="Selenium2Library">
 <doc>Types the given `text` into text field identified by `locator`.</doc>
@@ -43,10 +43,10 @@
 <arg>email</arg>
 <arg>${username}</arg>
 </arguments>
-<msg timestamp="20161024 09:04:40.436" level="INFO">Typing text 'marius@xcommerce.eu' into text field 'email'</msg>
-<status status="PASS" endtime="20161024 09:04:40.568" starttime="20161024 09:04:40.431"></status>
+<msg timestamp="20161024 09:55:10.601" level="INFO">Typing text 'marius@xcommerce.eu' into text field 'email'</msg>
+<status status="PASS" endtime="20161024 09:55:10.698" starttime="20161024 09:55:10.600"></status>
 </kw>
-<status status="PASS" endtime="20161024 09:04:40.569" starttime="20161024 09:04:40.336"></status>
+<status status="PASS" endtime="20161024 09:55:10.698" starttime="20161024 09:55:10.558"></status>
 </kw>
 <kw name="Input Password" library="resource_ios">
 <arguments>
@@ -58,10 +58,10 @@
 <arg>passwd</arg>
 <arg>${password}</arg>
 </arguments>
-<msg timestamp="20161024 09:04:40.571" level="INFO">Typing text 'Marius123' into text field 'passwd'</msg>
-<status status="PASS" endtime="20161024 09:04:40.712" starttime="20161024 09:04:40.571"></status>
+<msg timestamp="20161024 09:55:10.699" level="INFO">Typing text 'Marius123' into text field 'passwd'</msg>
+<status status="PASS" endtime="20161024 09:55:10.818" starttime="20161024 09:55:10.699"></status>
 </kw>
-<status status="PASS" endtime="20161024 09:04:40.712" starttime="20161024 09:04:40.570"></status>
+<status status="PASS" endtime="20161024 09:55:10.819" starttime="20161024 09:55:10.698"></status>
 </kw>
 <kw name="Submit Credentials" library="resource_ios">
 <kw name="Click Element" library="Selenium2Library">
@@ -69,44 +69,319 @@
 <arguments>
 <arg>SubmitLogin</arg>
 </arguments>
-<msg timestamp="20161024 09:04:40.714" level="INFO">Clicking element 'SubmitLogin'.</msg>
-<status status="PASS" endtime="20161024 09:04:40.789" starttime="20161024 09:04:40.713"></status>
+<msg timestamp="20161024 09:55:10.820" level="INFO">Clicking element 'SubmitLogin'.</msg>
+<status status="PASS" endtime="20161024 09:55:10.874" starttime="20161024 09:55:10.819"></status>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <doc>Pauses the test executed for the given time.</doc>
 <arguments>
 <arg>2s</arg>
 </arguments>
-<msg timestamp="20161024 09:04:42.791" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" endtime="20161024 09:04:42.792" starttime="20161024 09:04:40.790"></status>
+<msg timestamp="20161024 09:55:12.875" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" endtime="20161024 09:55:12.876" starttime="20161024 09:55:10.874"></status>
 </kw>
-<status status="PASS" endtime="20161024 09:04:42.792" starttime="20161024 09:04:40.713"></status>
+<status status="PASS" endtime="20161024 09:55:12.876" starttime="20161024 09:55:10.819"></status>
 </kw>
-<status status="PASS" endtime="20161024 09:04:42.793" starttime="20161024 09:04:40.333"></status>
+<status status="PASS" endtime="20161024 09:55:12.877" starttime="20161024 09:55:10.557"></status>
 </kw>
-<status status="PASS" endtime="20161024 09:04:42.793" starttime="20161024 09:04:32.609"></status>
+<status status="PASS" endtime="20161024 09:55:12.877" starttime="20161024 09:55:05.886"></status>
 </kw>
-<test id="s1-t1" name="Search by Order Number">
-<kw type="setup" name="Go to Awaiting approval page" library="resource_ios">
+<test id="s1-t1" name="Search by Customer">
+<kw type="setup" name="Go to My Open Orders page" library="resource_ios">
 <kw name="Go To" library="Selenium2Library">
 <doc>Navigates the active browser instance to the provided URL.</doc>
 <arguments>
-<arg>http://${SERVER_DEV}/en/index.php?controller=approvalorders</arg>
+<arg>http://${SERVER_DEV}/en/index.php?controller=myopenorders</arg>
 </arguments>
-<msg timestamp="20161024 09:04:42.798" level="INFO">Opening url 'http://tadelos.ro/ios/en/index.php?controller=approvalorders'</msg>
-<status status="PASS" endtime="20161024 09:04:43.702" starttime="20161024 09:04:42.797"></status>
+<msg timestamp="20161024 09:55:12.883" level="INFO">Opening url 'http://tadelos.ro/ios/en/index.php?controller=myopenorders'</msg>
+<status status="PASS" endtime="20161024 09:55:13.671" starttime="20161024 09:55:12.881"></status>
 </kw>
-<status status="PASS" endtime="20161024 09:04:43.703" starttime="20161024 09:04:42.796"></status>
+<status status="PASS" endtime="20161024 09:55:13.671" starttime="20161024 09:55:12.880"></status>
 </kw>
-<kw name="Filter Awaiting approval">
+<kw name="Filter My Open Orders">
+<arguments>
+<arg>${Filter Customer}</arg>
+<arg>${EMPTY}</arg>
+<arg>${EMPTY}</arg>
+<arg>${EMPTY}</arg>
+<arg>${EMPTY}</arg>
+<arg>0</arg>
+<arg>${Filter Customer}</arg>
+</arguments>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>search_customer</arg>
+<arg>${customer}</arg>
+</arguments>
+<msg timestamp="20161024 09:55:13.674" level="INFO">Typing text 'Marius Pop' into text field 'search_customer'</msg>
+<status status="PASS" endtime="20161024 09:55:13.844" starttime="20161024 09:55:13.674"></status>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<arguments>
+<arg>click element</arg>
+<arg>css=#myopenorders &gt; div.ac_results &gt; ul &gt; li.ac_even.ac_over</arg>
+</arguments>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>css=#myopenorders &gt; div.ac_results &gt; ul &gt; li.ac_even.ac_over</arg>
+</arguments>
+<msg timestamp="20161024 09:55:13.845" level="INFO">Clicking element 'css=#myopenorders &gt; div.ac_results &gt; ul &gt; li.ac_even.ac_over'.</msg>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20161024 09:55:14.194" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20161024 09:55:14.195" starttime="20161024 09:55:13.884"></status>
+</kw>
+<msg timestamp="20161024 09:55:14.196" level="FAIL">ValueError: Element locator 'css=#myopenorders &gt; div.ac_results &gt; ul &gt; li.ac_even.ac_over' did not match any elements.</msg>
+<status status="FAIL" endtime="20161024 09:55:14.196" starttime="20161024 09:55:13.845"></status>
+</kw>
+<status status="PASS" endtime="20161024 09:55:14.196" starttime="20161024 09:55:13.844"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>reference</arg>
+<arg>${orderNumber}</arg>
+</arguments>
+<msg timestamp="20161024 09:55:14.197" level="INFO">Typing text '' into text field 'reference'</msg>
+<status status="PASS" endtime="20161024 09:55:14.283" starttime="20161024 09:55:14.196"></status>
+</kw>
+<kw name="Select From List By Value" library="Selenium2Library">
+<doc>Selects `*values` from list identified by `locator`</doc>
+<arguments>
+<arg>status</arg>
+<arg>${status}</arg>
+</arguments>
+<msg timestamp="20161024 09:55:14.283" level="INFO">Selecting value(s) '' from list 'status'.</msg>
+<status status="PASS" endtime="20161024 09:55:14.354" starttime="20161024 09:55:14.283"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>software_id</arg>
+<arg>${softID}</arg>
+</arguments>
+<msg timestamp="20161024 09:55:14.355" level="INFO">Typing text '' into text field 'software_id'</msg>
+<status status="PASS" endtime="20161024 09:55:14.453" starttime="20161024 09:55:14.354"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>key_number</arg>
+<arg>${keyNumber}</arg>
+</arguments>
+<msg timestamp="20161024 09:55:14.455" level="INFO">Typing text '' into text field 'key_number'</msg>
+<status status="PASS" endtime="20161024 09:55:14.557" starttime="20161024 09:55:14.453"></status>
+</kw>
+<kw name="Select From List By Value" library="Selenium2Library">
+<doc>Selects `*values` from list identified by `locator`</doc>
+<arguments>
+<arg>type</arg>
+<arg>${type}</arg>
+</arguments>
+<msg timestamp="20161024 09:55:14.558" level="INFO">Selecting value(s) '0' from list 'type'.</msg>
+<status status="PASS" endtime="20161024 09:55:14.686" starttime="20161024 09:55:14.557"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=//button[contains(.,'Filter')]</arg>
+</arguments>
+<msg timestamp="20161024 09:55:14.687" level="INFO">Clicking element 'xpath=//button[contains(.,'Filter')]'.</msg>
+<status status="PASS" endtime="20161024 09:55:14.775" starttime="20161024 09:55:14.687"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20161024 09:55:16.775" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" endtime="20161024 09:55:16.776" starttime="20161024 09:55:14.775"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>css=#myopenorders &gt; div &gt; div.page-container &gt; div.page-content-wrapper &gt; div &gt; div:nth-child(3)</arg>
+</arguments>
+<status status="PASS" endtime="20161024 09:55:16.834" starttime="20161024 09:55:16.776"></status>
+</kw>
+<kw name="Element Should Contain" library="Selenium2Library">
+<doc>Verifies element identified by `locator` contains text `expected`.</doc>
+<arguments>
+<arg>css=#myopenorders &gt; div &gt; div.page-container &gt; div.page-content-wrapper &gt; div &gt; div:nth-child(3)</arg>
+<arg>${found_result}</arg>
+</arguments>
+<msg timestamp="20161024 09:55:16.834" level="INFO">Verifying element 'css=#myopenorders &gt; div &gt; div.page-container &gt; div.page-content-wrapper &gt; div &gt; div:nth-child(3)' contains text 'Marius Pop'.</msg>
+<status status="PASS" endtime="20161024 09:55:17.065" starttime="20161024 09:55:16.834"></status>
+</kw>
+<status status="PASS" endtime="20161024 09:55:17.065" starttime="20161024 09:55:13.672"></status>
+</kw>
+<status status="PASS" endtime="20161024 09:55:17.065" critical="yes" starttime="20161024 09:55:12.878"></status>
+</test>
+<test id="s1-t2" name="Search by Order Number R">
+<kw type="setup" name="Go to My Open Orders page" library="resource_ios">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>http://${SERVER_DEV}/en/index.php?controller=myopenorders</arg>
+</arguments>
+<msg timestamp="20161024 09:55:17.071" level="INFO">Opening url 'http://tadelos.ro/ios/en/index.php?controller=myopenorders'</msg>
+<status status="PASS" endtime="20161024 09:55:17.713" starttime="20161024 09:55:17.070"></status>
+</kw>
+<status status="PASS" endtime="20161024 09:55:17.714" starttime="20161024 09:55:17.070"></status>
+</kw>
+<kw name="Filter My Open Orders">
+<arguments>
+<arg>${EMPTY}</arg>
+<arg>${Filter Order Number_res}</arg>
+<arg>${EMPTY}</arg>
+<arg>${EMPTY}</arg>
+<arg>${EMPTY}</arg>
+<arg>0</arg>
+<arg>${Filter Order Number_res}</arg>
+</arguments>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>search_customer</arg>
+<arg>${customer}</arg>
+</arguments>
+<msg timestamp="20161024 09:55:17.716" level="INFO">Typing text '' into text field 'search_customer'</msg>
+<status status="PASS" endtime="20161024 09:55:17.862" starttime="20161024 09:55:17.716"></status>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<arguments>
+<arg>click element</arg>
+<arg>css=#myopenorders &gt; div.ac_results &gt; ul &gt; li.ac_even.ac_over</arg>
+</arguments>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>css=#myopenorders &gt; div.ac_results &gt; ul &gt; li.ac_even.ac_over</arg>
+</arguments>
+<msg timestamp="20161024 09:55:17.863" level="INFO">Clicking element 'css=#myopenorders &gt; div.ac_results &gt; ul &gt; li.ac_even.ac_over'.</msg>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20161024 09:55:18.100" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-2.png"&gt;&lt;img src="selenium-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20161024 09:55:18.100" starttime="20161024 09:55:17.871"></status>
+</kw>
+<msg timestamp="20161024 09:55:18.101" level="FAIL">ValueError: Element locator 'css=#myopenorders &gt; div.ac_results &gt; ul &gt; li.ac_even.ac_over' did not match any elements.</msg>
+<status status="FAIL" endtime="20161024 09:55:18.101" starttime="20161024 09:55:17.863"></status>
+</kw>
+<status status="PASS" endtime="20161024 09:55:18.102" starttime="20161024 09:55:17.862"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>reference</arg>
+<arg>${orderNumber}</arg>
+</arguments>
+<msg timestamp="20161024 09:55:18.103" level="INFO">Typing text 'OR000232' into text field 'reference'</msg>
+<status status="PASS" endtime="20161024 09:55:18.246" starttime="20161024 09:55:18.102"></status>
+</kw>
+<kw name="Select From List By Value" library="Selenium2Library">
+<doc>Selects `*values` from list identified by `locator`</doc>
+<arguments>
+<arg>status</arg>
+<arg>${status}</arg>
+</arguments>
+<msg timestamp="20161024 09:55:18.247" level="INFO">Selecting value(s) '' from list 'status'.</msg>
+<status status="PASS" endtime="20161024 09:55:18.348" starttime="20161024 09:55:18.247"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>software_id</arg>
+<arg>${softID}</arg>
+</arguments>
+<msg timestamp="20161024 09:55:18.349" level="INFO">Typing text '' into text field 'software_id'</msg>
+<status status="PASS" endtime="20161024 09:55:18.434" starttime="20161024 09:55:18.348"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>key_number</arg>
+<arg>${keyNumber}</arg>
+</arguments>
+<msg timestamp="20161024 09:55:18.435" level="INFO">Typing text '' into text field 'key_number'</msg>
+<status status="PASS" endtime="20161024 09:55:18.531" starttime="20161024 09:55:18.434"></status>
+</kw>
+<kw name="Select From List By Value" library="Selenium2Library">
+<doc>Selects `*values` from list identified by `locator`</doc>
+<arguments>
+<arg>type</arg>
+<arg>${type}</arg>
+</arguments>
+<msg timestamp="20161024 09:55:18.532" level="INFO">Selecting value(s) '0' from list 'type'.</msg>
+<status status="PASS" endtime="20161024 09:55:18.659" starttime="20161024 09:55:18.532"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=//button[contains(.,'Filter')]</arg>
+</arguments>
+<msg timestamp="20161024 09:55:18.660" level="INFO">Clicking element 'xpath=//button[contains(.,'Filter')]'.</msg>
+<status status="PASS" endtime="20161024 09:55:18.715" starttime="20161024 09:55:18.660"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20161024 09:55:20.716" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" endtime="20161024 09:55:20.716" starttime="20161024 09:55:18.716"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>css=#myopenorders &gt; div &gt; div.page-container &gt; div.page-content-wrapper &gt; div &gt; div:nth-child(3)</arg>
+</arguments>
+<status status="PASS" endtime="20161024 09:55:20.758" starttime="20161024 09:55:20.716"></status>
+</kw>
+<kw name="Element Should Contain" library="Selenium2Library">
+<doc>Verifies element identified by `locator` contains text `expected`.</doc>
+<arguments>
+<arg>css=#myopenorders &gt; div &gt; div.page-container &gt; div.page-content-wrapper &gt; div &gt; div:nth-child(3)</arg>
+<arg>${found_result}</arg>
+</arguments>
+<msg timestamp="20161024 09:55:20.759" level="INFO">Verifying element 'css=#myopenorders &gt; div &gt; div.page-container &gt; div.page-content-wrapper &gt; div &gt; div:nth-child(3)' contains text 'OR000232'.</msg>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20161024 09:55:20.978" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-3.png"&gt;&lt;img src="selenium-screenshot-3.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20161024 09:55:20.979" starttime="20161024 09:55:20.788"></status>
+</kw>
+<msg timestamp="20161024 09:55:20.979" level="FAIL">Element 'css=#myopenorders &gt; div &gt; div.page-container &gt; div.page-content-wrapper &gt; div &gt; div:nth-child(3)' should have contained text 'OR000232' but its text was 'Filter results
+No orders found'.</msg>
+<status status="FAIL" endtime="20161024 09:55:20.980" starttime="20161024 09:55:20.758"></status>
+</kw>
+<status status="FAIL" endtime="20161024 09:55:20.980" starttime="20161024 09:55:17.714"></status>
+</kw>
+<status status="FAIL" endtime="20161024 09:55:20.980" critical="yes" starttime="20161024 09:55:17.069">Element 'css=#myopenorders &gt; div &gt; div.page-container &gt; div.page-content-wrapper &gt; div &gt; div:nth-child(3)' should have contained text 'OR000232' but its text was 'Filter results
+No orders found'.</status>
+</test>
+<test id="s1-t3" name="Search by Order Number D">
+<kw type="setup" name="Go to My Open Orders page" library="resource_ios">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>http://${SERVER_DEV}/en/index.php?controller=myopenorders</arg>
+</arguments>
+<msg timestamp="20161024 09:55:20.983" level="INFO">Opening url 'http://tadelos.ro/ios/en/index.php?controller=myopenorders'</msg>
+<status status="PASS" endtime="20161024 09:55:21.763" starttime="20161024 09:55:20.982"></status>
+</kw>
+<status status="PASS" endtime="20161024 09:55:21.763" starttime="20161024 09:55:20.982"></status>
+</kw>
+<kw name="Filter My Open Orders">
 <arguments>
 <arg>${EMPTY}</arg>
 <arg>${Filter Order Number}</arg>
 <arg>${EMPTY}</arg>
 <arg>${EMPTY}</arg>
 <arg>${EMPTY}</arg>
-<arg>${EMPTY}</arg>
-<arg>${EMPTY}</arg>
+<arg>0</arg>
 <arg>${Filter Order Number}</arg>
 </arguments>
 <kw name="Input Text" library="Selenium2Library">
@@ -115,51 +390,30 @@
 <arg>search_customer</arg>
 <arg>${customer}</arg>
 </arguments>
-<msg timestamp="20161024 09:04:43.707" level="INFO">Typing text '' into text field 'search_customer'</msg>
-<status status="PASS" endtime="20161024 09:04:43.842" starttime="20161024 09:04:43.707"></status>
-</kw>
-<kw name="Run Keyword And Ignore Error" library="BuiltIn">
-<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
-<arguments>
-<arg>wait until element is visible</arg>
-<arg>css=#approvalorders &gt; div.ac_results &gt; ul &gt; li.ac_even.ac_over</arg>
-</arguments>
-<kw name="Wait Until Element Is Visible" library="Selenium2Library">
-<doc>Waits until element specified with `locator` is visible.</doc>
-<arguments>
-<arg>css=#approvalorders &gt; div.ac_results &gt; ul &gt; li.ac_even.ac_over</arg>
-</arguments>
-<kw name="Capture Page Screenshot" library="Selenium2Library">
-<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
-<msg timestamp="20161024 09:04:49.308" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" endtime="20161024 09:04:49.309" starttime="20161024 09:04:49.016"></status>
-</kw>
-<msg timestamp="20161024 09:04:49.310" level="FAIL">Element locator 'css=#approvalorders &gt; div.ac_results &gt; ul &gt; li.ac_even.ac_over' did not match any elements after 5 seconds</msg>
-<status status="FAIL" endtime="20161024 09:04:49.310" starttime="20161024 09:04:43.843"></status>
-</kw>
-<status status="PASS" endtime="20161024 09:04:49.310" starttime="20161024 09:04:43.842"></status>
+<msg timestamp="20161024 09:55:21.765" level="INFO">Typing text '' into text field 'search_customer'</msg>
+<status status="PASS" endtime="20161024 09:55:21.841" starttime="20161024 09:55:21.765"></status>
 </kw>
 <kw name="Run Keyword And Ignore Error" library="BuiltIn">
 <doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
 <arguments>
 <arg>click element</arg>
-<arg>css=#approvalorders &gt; div.ac_results &gt; ul &gt; li.ac_even.ac_over</arg>
+<arg>css=#myopenorders &gt; div.ac_results &gt; ul &gt; li.ac_even.ac_over</arg>
 </arguments>
 <kw name="Click Element" library="Selenium2Library">
 <doc>Click element identified by `locator`.</doc>
 <arguments>
-<arg>css=#approvalorders &gt; div.ac_results &gt; ul &gt; li.ac_even.ac_over</arg>
+<arg>css=#myopenorders &gt; div.ac_results &gt; ul &gt; li.ac_even.ac_over</arg>
 </arguments>
-<msg timestamp="20161024 09:04:49.311" level="INFO">Clicking element 'css=#approvalorders &gt; div.ac_results &gt; ul &gt; li.ac_even.ac_over'.</msg>
+<msg timestamp="20161024 09:55:21.842" level="INFO">Clicking element 'css=#myopenorders &gt; div.ac_results &gt; ul &gt; li.ac_even.ac_over'.</msg>
 <kw name="Capture Page Screenshot" library="Selenium2Library">
 <doc>Takes a screenshot of the current page and embeds it into the log.</doc>
-<msg timestamp="20161024 09:04:49.509" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-2.png"&gt;&lt;img src="selenium-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" endtime="20161024 09:04:49.510" starttime="20161024 09:04:49.317"></status>
+<msg timestamp="20161024 09:55:22.148" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-4.png"&gt;&lt;img src="selenium-screenshot-4.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20161024 09:55:22.148" starttime="20161024 09:55:21.848"></status>
 </kw>
-<msg timestamp="20161024 09:04:49.511" level="FAIL">ValueError: Element locator 'css=#approvalorders &gt; div.ac_results &gt; ul &gt; li.ac_even.ac_over' did not match any elements.</msg>
-<status status="FAIL" endtime="20161024 09:04:49.511" starttime="20161024 09:04:49.310"></status>
+<msg timestamp="20161024 09:55:22.149" level="FAIL">ValueError: Element locator 'css=#myopenorders &gt; div.ac_results &gt; ul &gt; li.ac_even.ac_over' did not match any elements.</msg>
+<status status="FAIL" endtime="20161024 09:55:22.149" starttime="20161024 09:55:21.841"></status>
 </kw>
-<status status="PASS" endtime="20161024 09:04:49.511" starttime="20161024 09:04:49.310"></status>
+<status status="PASS" endtime="20161024 09:55:22.149" starttime="20161024 09:55:21.841"></status>
 </kw>
 <kw name="Input Text" library="Selenium2Library">
 <doc>Types the given `text` into text field identified by `locator`.</doc>
@@ -167,17 +421,17 @@
 <arg>reference</arg>
 <arg>${orderNumber}</arg>
 </arguments>
-<msg timestamp="20161024 09:04:49.512" level="INFO">Typing text 'OC000235' into text field 'reference'</msg>
-<status status="PASS" endtime="20161024 09:04:49.598" starttime="20161024 09:04:49.511"></status>
+<msg timestamp="20161024 09:55:22.150" level="INFO">Typing text 'OC000235' into text field 'reference'</msg>
+<status status="PASS" endtime="20161024 09:55:22.304" starttime="20161024 09:55:22.150"></status>
 </kw>
 <kw name="Select From List By Value" library="Selenium2Library">
 <doc>Selects `*values` from list identified by `locator`</doc>
 <arguments>
-<arg>sales_representative</arg>
-<arg>${salesRep}</arg>
+<arg>status</arg>
+<arg>${status}</arg>
 </arguments>
-<msg timestamp="20161024 09:04:49.599" level="INFO">Selecting value(s) '' from list 'sales_representative'.</msg>
-<status status="PASS" endtime="20161024 09:04:49.683" starttime="20161024 09:04:49.598"></status>
+<msg timestamp="20161024 09:55:22.305" level="INFO">Selecting value(s) '' from list 'status'.</msg>
+<status status="PASS" endtime="20161024 09:55:22.418" starttime="20161024 09:55:22.305"></status>
 </kw>
 <kw name="Input Text" library="Selenium2Library">
 <doc>Types the given `text` into text field identified by `locator`.</doc>
@@ -185,8 +439,8 @@
 <arg>software_id</arg>
 <arg>${softID}</arg>
 </arguments>
-<msg timestamp="20161024 09:04:49.684" level="INFO">Typing text '' into text field 'software_id'</msg>
-<status status="PASS" endtime="20161024 09:04:49.779" starttime="20161024 09:04:49.684"></status>
+<msg timestamp="20161024 09:55:22.419" level="INFO">Typing text '' into text field 'software_id'</msg>
+<status status="PASS" endtime="20161024 09:55:22.596" starttime="20161024 09:55:22.418"></status>
 </kw>
 <kw name="Input Text" library="Selenium2Library">
 <doc>Types the given `text` into text field identified by `locator`.</doc>
@@ -194,17 +448,8 @@
 <arg>key_number</arg>
 <arg>${keyNumber}</arg>
 </arguments>
-<msg timestamp="20161024 09:04:49.779" level="INFO">Typing text '' into text field 'key_number'</msg>
-<status status="PASS" endtime="20161024 09:04:49.870" starttime="20161024 09:04:49.779"></status>
-</kw>
-<kw name="Input Text" library="Selenium2Library">
-<doc>Types the given `text` into text field identified by `locator`.</doc>
-<arguments>
-<arg>po_number</arg>
-<arg>${poNumber}</arg>
-</arguments>
-<msg timestamp="20161024 09:04:49.870" level="INFO">Typing text '' into text field 'po_number'</msg>
-<status status="PASS" endtime="20161024 09:04:49.957" starttime="20161024 09:04:49.870"></status>
+<msg timestamp="20161024 09:55:22.596" level="INFO">Typing text '' into text field 'key_number'</msg>
+<status status="PASS" endtime="20161024 09:55:22.734" starttime="20161024 09:55:22.596"></status>
 </kw>
 <kw name="Select From List By Value" library="Selenium2Library">
 <doc>Selects `*values` from list identified by `locator`</doc>
@@ -212,57 +457,1480 @@
 <arg>type</arg>
 <arg>${type}</arg>
 </arguments>
-<msg timestamp="20161024 09:04:49.958" level="INFO">Selecting value(s) '' from list 'type'.</msg>
-<status status="PASS" endtime="20161024 09:04:50.018" starttime="20161024 09:04:49.957"></status>
+<msg timestamp="20161024 09:55:22.735" level="INFO">Selecting value(s) '0' from list 'type'.</msg>
+<status status="PASS" endtime="20161024 09:55:22.907" starttime="20161024 09:55:22.734"></status>
 </kw>
 <kw name="Click Element" library="Selenium2Library">
 <doc>Click element identified by `locator`.</doc>
 <arguments>
 <arg>xpath=//button[contains(.,'Filter')]</arg>
 </arguments>
-<msg timestamp="20161024 09:04:50.019" level="INFO">Clicking element 'xpath=//button[contains(.,'Filter')]'.</msg>
-<status status="PASS" endtime="20161024 09:04:50.075" starttime="20161024 09:04:50.018"></status>
+<msg timestamp="20161024 09:55:22.907" level="INFO">Clicking element 'xpath=//button[contains(.,'Filter')]'.</msg>
+<status status="PASS" endtime="20161024 09:55:22.983" starttime="20161024 09:55:22.907"></status>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <doc>Pauses the test executed for the given time.</doc>
 <arguments>
 <arg>2s</arg>
 </arguments>
-<msg timestamp="20161024 09:04:52.076" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" endtime="20161024 09:04:52.076" starttime="20161024 09:04:50.075"></status>
+<msg timestamp="20161024 09:55:24.984" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" endtime="20161024 09:55:24.985" starttime="20161024 09:55:22.983"></status>
 </kw>
 <kw name="Wait Until Element Is Visible" library="Selenium2Library">
 <doc>Waits until element specified with `locator` is visible.</doc>
 <arguments>
-<arg>css=#approvalorders &gt; div &gt; div.page-container &gt; div.page-content-wrapper &gt; div &gt; div:nth-child(3)</arg>
+<arg>css=#myopenorders &gt; div &gt; div.page-container &gt; div.page-content-wrapper &gt; div &gt; div:nth-child(3)</arg>
 </arguments>
-<status status="PASS" endtime="20161024 09:04:52.156" starttime="20161024 09:04:52.077"></status>
+<status status="PASS" endtime="20161024 09:55:25.041" starttime="20161024 09:55:24.985"></status>
 </kw>
 <kw name="Element Should Contain" library="Selenium2Library">
 <doc>Verifies element identified by `locator` contains text `expected`.</doc>
 <arguments>
-<arg>css=#approvalorders &gt; div &gt; div.page-container &gt; div.page-content-wrapper &gt; div &gt; div:nth-child(3)</arg>
+<arg>css=#myopenorders &gt; div &gt; div.page-container &gt; div.page-content-wrapper &gt; div &gt; div:nth-child(3)</arg>
 <arg>${found_result}</arg>
 </arguments>
-<msg timestamp="20161024 09:04:52.157" level="INFO">Verifying element 'css=#approvalorders &gt; div &gt; div.page-container &gt; div.page-content-wrapper &gt; div &gt; div:nth-child(3)' contains text 'OC000235'.</msg>
-<status status="PASS" endtime="20161024 09:04:52.208" starttime="20161024 09:04:52.157"></status>
+<msg timestamp="20161024 09:55:25.043" level="INFO">Verifying element 'css=#myopenorders &gt; div &gt; div.page-container &gt; div.page-content-wrapper &gt; div &gt; div:nth-child(3)' contains text 'OC000235'.</msg>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20161024 09:55:25.264" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-5.png"&gt;&lt;img src="selenium-screenshot-5.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20161024 09:55:25.264" starttime="20161024 09:55:25.077"></status>
 </kw>
-<status status="PASS" endtime="20161024 09:04:52.208" starttime="20161024 09:04:43.705"></status>
+<msg timestamp="20161024 09:55:25.264" level="FAIL">Element 'css=#myopenorders &gt; div &gt; div.page-container &gt; div.page-content-wrapper &gt; div &gt; div:nth-child(3)' should have contained text 'OC000235' but its text was 'Filter results
+No orders found'.</msg>
+<status status="FAIL" endtime="20161024 09:55:25.265" starttime="20161024 09:55:25.042"></status>
 </kw>
-<status status="PASS" endtime="20161024 09:04:52.208" critical="yes" starttime="20161024 09:04:42.793"></status>
+<status status="FAIL" endtime="20161024 09:55:25.265" starttime="20161024 09:55:21.764"></status>
+</kw>
+<status status="FAIL" endtime="20161024 09:55:25.265" critical="yes" starttime="20161024 09:55:20.981">Element 'css=#myopenorders &gt; div &gt; div.page-container &gt; div.page-content-wrapper &gt; div &gt; div:nth-child(3)' should have contained text 'OC000235' but its text was 'Filter results
+No orders found'.</status>
 </test>
-<doc>A test suite containing tests for filtering the awaiting approval orders</doc>
-<status status="PASS" endtime="20161024 09:04:52.210" starttime="20161024 09:04:32.468"></status>
+<test id="s1-t4" name="Search by Status DRA">
+<kw type="setup" name="Go to My Open Orders page" library="resource_ios">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>http://${SERVER_DEV}/en/index.php?controller=myopenorders</arg>
+</arguments>
+<msg timestamp="20161024 09:55:25.268" level="INFO">Opening url 'http://tadelos.ro/ios/en/index.php?controller=myopenorders'</msg>
+<status status="PASS" endtime="20161024 09:55:25.925" starttime="20161024 09:55:25.268"></status>
+</kw>
+<status status="PASS" endtime="20161024 09:55:25.926" starttime="20161024 09:55:25.267"></status>
+</kw>
+<kw name="Filter My Open Orders">
+<arguments>
+<arg>${EMPTY}</arg>
+<arg>${EMPTY}</arg>
+<arg>${Filter Status DR}</arg>
+<arg>${EMPTY}</arg>
+<arg>${EMPTY}</arg>
+<arg>${EMPTY}</arg>
+<arg>Draft</arg>
+</arguments>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>search_customer</arg>
+<arg>${customer}</arg>
+</arguments>
+<msg timestamp="20161024 09:55:25.937" level="INFO">Typing text '' into text field 'search_customer'</msg>
+<status status="PASS" endtime="20161024 09:55:26.093" starttime="20161024 09:55:25.936"></status>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<arguments>
+<arg>click element</arg>
+<arg>css=#myopenorders &gt; div.ac_results &gt; ul &gt; li.ac_even.ac_over</arg>
+</arguments>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>css=#myopenorders &gt; div.ac_results &gt; ul &gt; li.ac_even.ac_over</arg>
+</arguments>
+<msg timestamp="20161024 09:55:26.094" level="INFO">Clicking element 'css=#myopenorders &gt; div.ac_results &gt; ul &gt; li.ac_even.ac_over'.</msg>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20161024 09:55:26.336" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-6.png"&gt;&lt;img src="selenium-screenshot-6.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20161024 09:55:26.337" starttime="20161024 09:55:26.115"></status>
+</kw>
+<msg timestamp="20161024 09:55:26.337" level="FAIL">ValueError: Element locator 'css=#myopenorders &gt; div.ac_results &gt; ul &gt; li.ac_even.ac_over' did not match any elements.</msg>
+<status status="FAIL" endtime="20161024 09:55:26.338" starttime="20161024 09:55:26.094"></status>
+</kw>
+<status status="PASS" endtime="20161024 09:55:26.338" starttime="20161024 09:55:26.093"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>reference</arg>
+<arg>${orderNumber}</arg>
+</arguments>
+<msg timestamp="20161024 09:55:26.338" level="INFO">Typing text '' into text field 'reference'</msg>
+<status status="PASS" endtime="20161024 09:55:26.416" starttime="20161024 09:55:26.338"></status>
+</kw>
+<kw name="Select From List By Value" library="Selenium2Library">
+<doc>Selects `*values` from list identified by `locator`</doc>
+<arguments>
+<arg>status</arg>
+<arg>${status}</arg>
+</arguments>
+<msg timestamp="20161024 09:55:26.417" level="INFO">Selecting value(s) '5' from list 'status'.</msg>
+<status status="PASS" endtime="20161024 09:55:26.521" starttime="20161024 09:55:26.416"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>software_id</arg>
+<arg>${softID}</arg>
+</arguments>
+<msg timestamp="20161024 09:55:26.522" level="INFO">Typing text '' into text field 'software_id'</msg>
+<status status="PASS" endtime="20161024 09:55:26.619" starttime="20161024 09:55:26.521"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>key_number</arg>
+<arg>${keyNumber}</arg>
+</arguments>
+<msg timestamp="20161024 09:55:26.620" level="INFO">Typing text '' into text field 'key_number'</msg>
+<status status="PASS" endtime="20161024 09:55:26.702" starttime="20161024 09:55:26.620"></status>
+</kw>
+<kw name="Select From List By Value" library="Selenium2Library">
+<doc>Selects `*values` from list identified by `locator`</doc>
+<arguments>
+<arg>type</arg>
+<arg>${type}</arg>
+</arguments>
+<msg timestamp="20161024 09:55:26.703" level="INFO">Selecting value(s) '' from list 'type'.</msg>
+<status status="PASS" endtime="20161024 09:55:26.756" starttime="20161024 09:55:26.703"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=//button[contains(.,'Filter')]</arg>
+</arguments>
+<msg timestamp="20161024 09:55:26.757" level="INFO">Clicking element 'xpath=//button[contains(.,'Filter')]'.</msg>
+<status status="PASS" endtime="20161024 09:55:26.805" starttime="20161024 09:55:26.756"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20161024 09:55:28.805" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" endtime="20161024 09:55:28.806" starttime="20161024 09:55:26.805"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>css=#myopenorders &gt; div &gt; div.page-container &gt; div.page-content-wrapper &gt; div &gt; div:nth-child(3)</arg>
+</arguments>
+<status status="PASS" endtime="20161024 09:55:28.860" starttime="20161024 09:55:28.807"></status>
+</kw>
+<kw name="Element Should Contain" library="Selenium2Library">
+<doc>Verifies element identified by `locator` contains text `expected`.</doc>
+<arguments>
+<arg>css=#myopenorders &gt; div &gt; div.page-container &gt; div.page-content-wrapper &gt; div &gt; div:nth-child(3)</arg>
+<arg>${found_result}</arg>
+</arguments>
+<msg timestamp="20161024 09:55:28.861" level="INFO">Verifying element 'css=#myopenorders &gt; div &gt; div.page-container &gt; div.page-content-wrapper &gt; div &gt; div:nth-child(3)' contains text 'Draft'.</msg>
+<status status="PASS" endtime="20161024 09:55:28.948" starttime="20161024 09:55:28.860"></status>
+</kw>
+<status status="PASS" endtime="20161024 09:55:28.948" starttime="20161024 09:55:25.934"></status>
+</kw>
+<status status="PASS" endtime="20161024 09:55:28.948" critical="yes" starttime="20161024 09:55:25.267"></status>
+</test>
+<test id="s1-t5" name="Search by Status TBA">
+<kw type="setup" name="Go to My Open Orders page" library="resource_ios">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>http://${SERVER_DEV}/en/index.php?controller=myopenorders</arg>
+</arguments>
+<msg timestamp="20161024 09:55:28.953" level="INFO">Opening url 'http://tadelos.ro/ios/en/index.php?controller=myopenorders'</msg>
+<status status="PASS" endtime="20161024 09:55:29.596" starttime="20161024 09:55:28.953"></status>
+</kw>
+<status status="PASS" endtime="20161024 09:55:29.596" starttime="20161024 09:55:28.952"></status>
+</kw>
+<kw name="Filter My Open Orders">
+<arguments>
+<arg>${EMPTY}</arg>
+<arg>${EMPTY}</arg>
+<arg>${Filter Status TBA}</arg>
+<arg>${EMPTY}</arg>
+<arg>${EMPTY}</arg>
+<arg>${EMPTY}</arg>
+<arg>To be Approved</arg>
+</arguments>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>search_customer</arg>
+<arg>${customer}</arg>
+</arguments>
+<msg timestamp="20161024 09:55:29.598" level="INFO">Typing text '' into text field 'search_customer'</msg>
+<status status="PASS" endtime="20161024 09:55:29.730" starttime="20161024 09:55:29.598"></status>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<arguments>
+<arg>click element</arg>
+<arg>css=#myopenorders &gt; div.ac_results &gt; ul &gt; li.ac_even.ac_over</arg>
+</arguments>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>css=#myopenorders &gt; div.ac_results &gt; ul &gt; li.ac_even.ac_over</arg>
+</arguments>
+<msg timestamp="20161024 09:55:29.731" level="INFO">Clicking element 'css=#myopenorders &gt; div.ac_results &gt; ul &gt; li.ac_even.ac_over'.</msg>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20161024 09:55:29.972" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-7.png"&gt;&lt;img src="selenium-screenshot-7.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20161024 09:55:29.972" starttime="20161024 09:55:29.746"></status>
+</kw>
+<msg timestamp="20161024 09:55:29.973" level="FAIL">ValueError: Element locator 'css=#myopenorders &gt; div.ac_results &gt; ul &gt; li.ac_even.ac_over' did not match any elements.</msg>
+<status status="FAIL" endtime="20161024 09:55:29.973" starttime="20161024 09:55:29.731"></status>
+</kw>
+<status status="PASS" endtime="20161024 09:55:29.973" starttime="20161024 09:55:29.730"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>reference</arg>
+<arg>${orderNumber}</arg>
+</arguments>
+<msg timestamp="20161024 09:55:29.974" level="INFO">Typing text '' into text field 'reference'</msg>
+<status status="PASS" endtime="20161024 09:55:30.051" starttime="20161024 09:55:29.974"></status>
+</kw>
+<kw name="Select From List By Value" library="Selenium2Library">
+<doc>Selects `*values` from list identified by `locator`</doc>
+<arguments>
+<arg>status</arg>
+<arg>${status}</arg>
+</arguments>
+<msg timestamp="20161024 09:55:30.052" level="INFO">Selecting value(s) '7' from list 'status'.</msg>
+<status status="PASS" endtime="20161024 09:55:30.159" starttime="20161024 09:55:30.051"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>software_id</arg>
+<arg>${softID}</arg>
+</arguments>
+<msg timestamp="20161024 09:55:30.160" level="INFO">Typing text '' into text field 'software_id'</msg>
+<status status="PASS" endtime="20161024 09:55:30.246" starttime="20161024 09:55:30.159"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>key_number</arg>
+<arg>${keyNumber}</arg>
+</arguments>
+<msg timestamp="20161024 09:55:30.247" level="INFO">Typing text '' into text field 'key_number'</msg>
+<status status="PASS" endtime="20161024 09:55:30.332" starttime="20161024 09:55:30.246"></status>
+</kw>
+<kw name="Select From List By Value" library="Selenium2Library">
+<doc>Selects `*values` from list identified by `locator`</doc>
+<arguments>
+<arg>type</arg>
+<arg>${type}</arg>
+</arguments>
+<msg timestamp="20161024 09:55:30.333" level="INFO">Selecting value(s) '' from list 'type'.</msg>
+<status status="PASS" endtime="20161024 09:55:30.400" starttime="20161024 09:55:30.332"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=//button[contains(.,'Filter')]</arg>
+</arguments>
+<msg timestamp="20161024 09:55:30.401" level="INFO">Clicking element 'xpath=//button[contains(.,'Filter')]'.</msg>
+<status status="PASS" endtime="20161024 09:55:30.454" starttime="20161024 09:55:30.400"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20161024 09:55:32.455" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" endtime="20161024 09:55:32.456" starttime="20161024 09:55:30.454"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>css=#myopenorders &gt; div &gt; div.page-container &gt; div.page-content-wrapper &gt; div &gt; div:nth-child(3)</arg>
+</arguments>
+<status status="PASS" endtime="20161024 09:55:32.507" starttime="20161024 09:55:32.456"></status>
+</kw>
+<kw name="Element Should Contain" library="Selenium2Library">
+<doc>Verifies element identified by `locator` contains text `expected`.</doc>
+<arguments>
+<arg>css=#myopenorders &gt; div &gt; div.page-container &gt; div.page-content-wrapper &gt; div &gt; div:nth-child(3)</arg>
+<arg>${found_result}</arg>
+</arguments>
+<msg timestamp="20161024 09:55:32.508" level="INFO">Verifying element 'css=#myopenorders &gt; div &gt; div.page-container &gt; div.page-content-wrapper &gt; div &gt; div:nth-child(3)' contains text 'To be Approved'.</msg>
+<status status="PASS" endtime="20161024 09:55:32.623" starttime="20161024 09:55:32.507"></status>
+</kw>
+<status status="PASS" endtime="20161024 09:55:32.624" starttime="20161024 09:55:29.597"></status>
+</kw>
+<status status="PASS" endtime="20161024 09:55:32.624" critical="yes" starttime="20161024 09:55:28.951"></status>
+</test>
+<test id="s1-t6" name="Search by Status APR">
+<kw type="setup" name="Go to My Open Orders page" library="resource_ios">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>http://${SERVER_DEV}/en/index.php?controller=myopenorders</arg>
+</arguments>
+<msg timestamp="20161024 09:55:32.627" level="INFO">Opening url 'http://tadelos.ro/ios/en/index.php?controller=myopenorders'</msg>
+<status status="PASS" endtime="20161024 09:55:33.342" starttime="20161024 09:55:32.627"></status>
+</kw>
+<status status="PASS" endtime="20161024 09:55:33.342" starttime="20161024 09:55:32.626"></status>
+</kw>
+<kw name="Filter My Open Orders">
+<arguments>
+<arg>${EMPTY}</arg>
+<arg>${EMPTY}</arg>
+<arg>${Filter Status APR}</arg>
+<arg>${EMPTY}</arg>
+<arg>${EMPTY}</arg>
+<arg>${EMPTY}</arg>
+<arg>Approved</arg>
+</arguments>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>search_customer</arg>
+<arg>${customer}</arg>
+</arguments>
+<msg timestamp="20161024 09:55:33.344" level="INFO">Typing text '' into text field 'search_customer'</msg>
+<status status="PASS" endtime="20161024 09:55:33.459" starttime="20161024 09:55:33.344"></status>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<arguments>
+<arg>click element</arg>
+<arg>css=#myopenorders &gt; div.ac_results &gt; ul &gt; li.ac_even.ac_over</arg>
+</arguments>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>css=#myopenorders &gt; div.ac_results &gt; ul &gt; li.ac_even.ac_over</arg>
+</arguments>
+<msg timestamp="20161024 09:55:33.460" level="INFO">Clicking element 'css=#myopenorders &gt; div.ac_results &gt; ul &gt; li.ac_even.ac_over'.</msg>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20161024 09:55:33.685" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-8.png"&gt;&lt;img src="selenium-screenshot-8.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20161024 09:55:33.685" starttime="20161024 09:55:33.472"></status>
+</kw>
+<msg timestamp="20161024 09:55:33.686" level="FAIL">ValueError: Element locator 'css=#myopenorders &gt; div.ac_results &gt; ul &gt; li.ac_even.ac_over' did not match any elements.</msg>
+<status status="FAIL" endtime="20161024 09:55:33.686" starttime="20161024 09:55:33.460"></status>
+</kw>
+<status status="PASS" endtime="20161024 09:55:33.686" starttime="20161024 09:55:33.459"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>reference</arg>
+<arg>${orderNumber}</arg>
+</arguments>
+<msg timestamp="20161024 09:55:33.687" level="INFO">Typing text '' into text field 'reference'</msg>
+<status status="PASS" endtime="20161024 09:55:33.786" starttime="20161024 09:55:33.687"></status>
+</kw>
+<kw name="Select From List By Value" library="Selenium2Library">
+<doc>Selects `*values` from list identified by `locator`</doc>
+<arguments>
+<arg>status</arg>
+<arg>${status}</arg>
+</arguments>
+<msg timestamp="20161024 09:55:33.787" level="INFO">Selecting value(s) '8' from list 'status'.</msg>
+<status status="PASS" endtime="20161024 09:55:33.906" starttime="20161024 09:55:33.787"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>software_id</arg>
+<arg>${softID}</arg>
+</arguments>
+<msg timestamp="20161024 09:55:33.906" level="INFO">Typing text '' into text field 'software_id'</msg>
+<status status="PASS" endtime="20161024 09:55:33.994" starttime="20161024 09:55:33.906"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>key_number</arg>
+<arg>${keyNumber}</arg>
+</arguments>
+<msg timestamp="20161024 09:55:33.995" level="INFO">Typing text '' into text field 'key_number'</msg>
+<status status="PASS" endtime="20161024 09:55:34.103" starttime="20161024 09:55:33.995"></status>
+</kw>
+<kw name="Select From List By Value" library="Selenium2Library">
+<doc>Selects `*values` from list identified by `locator`</doc>
+<arguments>
+<arg>type</arg>
+<arg>${type}</arg>
+</arguments>
+<msg timestamp="20161024 09:55:34.103" level="INFO">Selecting value(s) '' from list 'type'.</msg>
+<status status="PASS" endtime="20161024 09:55:34.170" starttime="20161024 09:55:34.103"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=//button[contains(.,'Filter')]</arg>
+</arguments>
+<msg timestamp="20161024 09:55:34.171" level="INFO">Clicking element 'xpath=//button[contains(.,'Filter')]'.</msg>
+<status status="PASS" endtime="20161024 09:55:34.220" starttime="20161024 09:55:34.171"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20161024 09:55:36.221" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" endtime="20161024 09:55:36.221" starttime="20161024 09:55:34.220"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>css=#myopenorders &gt; div &gt; div.page-container &gt; div.page-content-wrapper &gt; div &gt; div:nth-child(3)</arg>
+</arguments>
+<status status="PASS" endtime="20161024 09:55:36.247" starttime="20161024 09:55:36.221"></status>
+</kw>
+<kw name="Element Should Contain" library="Selenium2Library">
+<doc>Verifies element identified by `locator` contains text `expected`.</doc>
+<arguments>
+<arg>css=#myopenorders &gt; div &gt; div.page-container &gt; div.page-content-wrapper &gt; div &gt; div:nth-child(3)</arg>
+<arg>${found_result}</arg>
+</arguments>
+<msg timestamp="20161024 09:55:36.247" level="INFO">Verifying element 'css=#myopenorders &gt; div &gt; div.page-container &gt; div.page-content-wrapper &gt; div &gt; div:nth-child(3)' contains text 'Approved'.</msg>
+<status status="PASS" endtime="20161024 09:55:36.412" starttime="20161024 09:55:36.247"></status>
+</kw>
+<status status="PASS" endtime="20161024 09:55:36.412" starttime="20161024 09:55:33.343"></status>
+</kw>
+<status status="PASS" endtime="20161024 09:55:36.413" critical="yes" starttime="20161024 09:55:32.626"></status>
+</test>
+<test id="s1-t7" name="Search by Status REJ">
+<kw type="setup" name="Go to My Open Orders page" library="resource_ios">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>http://${SERVER_DEV}/en/index.php?controller=myopenorders</arg>
+</arguments>
+<msg timestamp="20161024 09:55:36.416" level="INFO">Opening url 'http://tadelos.ro/ios/en/index.php?controller=myopenorders'</msg>
+<status status="PASS" endtime="20161024 09:55:37.082" starttime="20161024 09:55:36.416"></status>
+</kw>
+<status status="PASS" endtime="20161024 09:55:37.082" starttime="20161024 09:55:36.415"></status>
+</kw>
+<kw name="Filter My Open Orders">
+<arguments>
+<arg>${EMPTY}</arg>
+<arg>${EMPTY}</arg>
+<arg>${Filter Status REJ}</arg>
+<arg>${EMPTY}</arg>
+<arg>${EMPTY}</arg>
+<arg>${EMPTY}</arg>
+<arg>Rejected</arg>
+</arguments>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>search_customer</arg>
+<arg>${customer}</arg>
+</arguments>
+<msg timestamp="20161024 09:55:37.086" level="INFO">Typing text '' into text field 'search_customer'</msg>
+<status status="PASS" endtime="20161024 09:55:37.189" starttime="20161024 09:55:37.085"></status>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<arguments>
+<arg>click element</arg>
+<arg>css=#myopenorders &gt; div.ac_results &gt; ul &gt; li.ac_even.ac_over</arg>
+</arguments>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>css=#myopenorders &gt; div.ac_results &gt; ul &gt; li.ac_even.ac_over</arg>
+</arguments>
+<msg timestamp="20161024 09:55:37.190" level="INFO">Clicking element 'css=#myopenorders &gt; div.ac_results &gt; ul &gt; li.ac_even.ac_over'.</msg>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20161024 09:55:37.424" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-9.png"&gt;&lt;img src="selenium-screenshot-9.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20161024 09:55:37.424" starttime="20161024 09:55:37.197"></status>
+</kw>
+<msg timestamp="20161024 09:55:37.425" level="FAIL">ValueError: Element locator 'css=#myopenorders &gt; div.ac_results &gt; ul &gt; li.ac_even.ac_over' did not match any elements.</msg>
+<status status="FAIL" endtime="20161024 09:55:37.425" starttime="20161024 09:55:37.190"></status>
+</kw>
+<status status="PASS" endtime="20161024 09:55:37.425" starttime="20161024 09:55:37.190"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>reference</arg>
+<arg>${orderNumber}</arg>
+</arguments>
+<msg timestamp="20161024 09:55:37.426" level="INFO">Typing text '' into text field 'reference'</msg>
+<status status="PASS" endtime="20161024 09:55:37.509" starttime="20161024 09:55:37.425"></status>
+</kw>
+<kw name="Select From List By Value" library="Selenium2Library">
+<doc>Selects `*values` from list identified by `locator`</doc>
+<arguments>
+<arg>status</arg>
+<arg>${status}</arg>
+</arguments>
+<msg timestamp="20161024 09:55:37.510" level="INFO">Selecting value(s) '9' from list 'status'.</msg>
+<status status="PASS" endtime="20161024 09:55:37.611" starttime="20161024 09:55:37.509"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>software_id</arg>
+<arg>${softID}</arg>
+</arguments>
+<msg timestamp="20161024 09:55:37.612" level="INFO">Typing text '' into text field 'software_id'</msg>
+<status status="PASS" endtime="20161024 09:55:37.709" starttime="20161024 09:55:37.611"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>key_number</arg>
+<arg>${keyNumber}</arg>
+</arguments>
+<msg timestamp="20161024 09:55:37.709" level="INFO">Typing text '' into text field 'key_number'</msg>
+<status status="PASS" endtime="20161024 09:55:37.821" starttime="20161024 09:55:37.709"></status>
+</kw>
+<kw name="Select From List By Value" library="Selenium2Library">
+<doc>Selects `*values` from list identified by `locator`</doc>
+<arguments>
+<arg>type</arg>
+<arg>${type}</arg>
+</arguments>
+<msg timestamp="20161024 09:55:37.822" level="INFO">Selecting value(s) '' from list 'type'.</msg>
+<status status="PASS" endtime="20161024 09:55:37.889" starttime="20161024 09:55:37.822"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=//button[contains(.,'Filter')]</arg>
+</arguments>
+<msg timestamp="20161024 09:55:37.890" level="INFO">Clicking element 'xpath=//button[contains(.,'Filter')]'.</msg>
+<status status="PASS" endtime="20161024 09:55:37.946" starttime="20161024 09:55:37.890"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20161024 09:55:39.946" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" endtime="20161024 09:55:39.946" starttime="20161024 09:55:37.946"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>css=#myopenorders &gt; div &gt; div.page-container &gt; div.page-content-wrapper &gt; div &gt; div:nth-child(3)</arg>
+</arguments>
+<status status="PASS" endtime="20161024 09:55:39.982" starttime="20161024 09:55:39.946"></status>
+</kw>
+<kw name="Element Should Contain" library="Selenium2Library">
+<doc>Verifies element identified by `locator` contains text `expected`.</doc>
+<arguments>
+<arg>css=#myopenorders &gt; div &gt; div.page-container &gt; div.page-content-wrapper &gt; div &gt; div:nth-child(3)</arg>
+<arg>${found_result}</arg>
+</arguments>
+<msg timestamp="20161024 09:55:39.983" level="INFO">Verifying element 'css=#myopenorders &gt; div &gt; div.page-container &gt; div.page-content-wrapper &gt; div &gt; div:nth-child(3)' contains text 'Rejected'.</msg>
+<status status="PASS" endtime="20161024 09:55:40.071" starttime="20161024 09:55:39.983"></status>
+</kw>
+<status status="PASS" endtime="20161024 09:55:40.071" starttime="20161024 09:55:37.083"></status>
+</kw>
+<status status="PASS" endtime="20161024 09:55:40.072" critical="yes" starttime="20161024 09:55:36.414"></status>
+</test>
+<test id="s1-t8" name="Search by Status CAN">
+<kw type="setup" name="Go to My Open Orders page" library="resource_ios">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>http://${SERVER_DEV}/en/index.php?controller=myopenorders</arg>
+</arguments>
+<msg timestamp="20161024 09:55:40.075" level="INFO">Opening url 'http://tadelos.ro/ios/en/index.php?controller=myopenorders'</msg>
+<status status="PASS" endtime="20161024 09:55:40.796" starttime="20161024 09:55:40.075"></status>
+</kw>
+<status status="PASS" endtime="20161024 09:55:40.796" starttime="20161024 09:55:40.074"></status>
+</kw>
+<kw name="Filter My Open Orders">
+<arguments>
+<arg>${EMPTY}</arg>
+<arg>${EMPTY}</arg>
+<arg>${Filter Status CAN}</arg>
+<arg>${EMPTY}</arg>
+<arg>${EMPTY}</arg>
+<arg>${EMPTY}</arg>
+<arg>Canceled</arg>
+</arguments>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>search_customer</arg>
+<arg>${customer}</arg>
+</arguments>
+<msg timestamp="20161024 09:55:40.803" level="INFO">Typing text '' into text field 'search_customer'</msg>
+<status status="PASS" endtime="20161024 09:55:40.930" starttime="20161024 09:55:40.802"></status>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<arguments>
+<arg>click element</arg>
+<arg>css=#myopenorders &gt; div.ac_results &gt; ul &gt; li.ac_even.ac_over</arg>
+</arguments>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>css=#myopenorders &gt; div.ac_results &gt; ul &gt; li.ac_even.ac_over</arg>
+</arguments>
+<msg timestamp="20161024 09:55:40.932" level="INFO">Clicking element 'css=#myopenorders &gt; div.ac_results &gt; ul &gt; li.ac_even.ac_over'.</msg>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20161024 09:55:41.171" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-10.png"&gt;&lt;img src="selenium-screenshot-10.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20161024 09:55:41.172" starttime="20161024 09:55:40.952"></status>
+</kw>
+<msg timestamp="20161024 09:55:41.172" level="FAIL">ValueError: Element locator 'css=#myopenorders &gt; div.ac_results &gt; ul &gt; li.ac_even.ac_over' did not match any elements.</msg>
+<status status="FAIL" endtime="20161024 09:55:41.172" starttime="20161024 09:55:40.931"></status>
+</kw>
+<status status="PASS" endtime="20161024 09:55:41.172" starttime="20161024 09:55:40.931"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>reference</arg>
+<arg>${orderNumber}</arg>
+</arguments>
+<msg timestamp="20161024 09:55:41.173" level="INFO">Typing text '' into text field 'reference'</msg>
+<status status="PASS" endtime="20161024 09:55:41.253" starttime="20161024 09:55:41.173"></status>
+</kw>
+<kw name="Select From List By Value" library="Selenium2Library">
+<doc>Selects `*values` from list identified by `locator`</doc>
+<arguments>
+<arg>status</arg>
+<arg>${status}</arg>
+</arguments>
+<msg timestamp="20161024 09:55:41.254" level="INFO">Selecting value(s) '10' from list 'status'.</msg>
+<status status="PASS" endtime="20161024 09:55:41.363" starttime="20161024 09:55:41.253"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>software_id</arg>
+<arg>${softID}</arg>
+</arguments>
+<msg timestamp="20161024 09:55:41.364" level="INFO">Typing text '' into text field 'software_id'</msg>
+<status status="PASS" endtime="20161024 09:55:41.460" starttime="20161024 09:55:41.364"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>key_number</arg>
+<arg>${keyNumber}</arg>
+</arguments>
+<msg timestamp="20161024 09:55:41.461" level="INFO">Typing text '' into text field 'key_number'</msg>
+<status status="PASS" endtime="20161024 09:55:41.544" starttime="20161024 09:55:41.461"></status>
+</kw>
+<kw name="Select From List By Value" library="Selenium2Library">
+<doc>Selects `*values` from list identified by `locator`</doc>
+<arguments>
+<arg>type</arg>
+<arg>${type}</arg>
+</arguments>
+<msg timestamp="20161024 09:55:41.545" level="INFO">Selecting value(s) '' from list 'type'.</msg>
+<status status="PASS" endtime="20161024 09:55:41.612" starttime="20161024 09:55:41.544"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=//button[contains(.,'Filter')]</arg>
+</arguments>
+<msg timestamp="20161024 09:55:41.612" level="INFO">Clicking element 'xpath=//button[contains(.,'Filter')]'.</msg>
+<status status="PASS" endtime="20161024 09:55:41.664" starttime="20161024 09:55:41.612"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20161024 09:55:43.666" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" endtime="20161024 09:55:43.666" starttime="20161024 09:55:41.664"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>css=#myopenorders &gt; div &gt; div.page-container &gt; div.page-content-wrapper &gt; div &gt; div:nth-child(3)</arg>
+</arguments>
+<status status="PASS" endtime="20161024 09:55:43.718" starttime="20161024 09:55:43.667"></status>
+</kw>
+<kw name="Element Should Contain" library="Selenium2Library">
+<doc>Verifies element identified by `locator` contains text `expected`.</doc>
+<arguments>
+<arg>css=#myopenorders &gt; div &gt; div.page-container &gt; div.page-content-wrapper &gt; div &gt; div:nth-child(3)</arg>
+<arg>${found_result}</arg>
+</arguments>
+<msg timestamp="20161024 09:55:43.718" level="INFO">Verifying element 'css=#myopenorders &gt; div &gt; div.page-container &gt; div.page-content-wrapper &gt; div &gt; div:nth-child(3)' contains text 'Canceled'.</msg>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20161024 09:55:43.941" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-11.png"&gt;&lt;img src="selenium-screenshot-11.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20161024 09:55:43.942" starttime="20161024 09:55:43.748"></status>
+</kw>
+<msg timestamp="20161024 09:55:43.942" level="FAIL">Element 'css=#myopenorders &gt; div &gt; div.page-container &gt; div.page-content-wrapper &gt; div &gt; div:nth-child(3)' should have contained text 'Canceled' but its text was 'Filter results
+No orders found'.</msg>
+<status status="FAIL" endtime="20161024 09:55:43.942" starttime="20161024 09:55:43.718"></status>
+</kw>
+<status status="FAIL" endtime="20161024 09:55:43.943" starttime="20161024 09:55:40.797"></status>
+</kw>
+<status status="FAIL" endtime="20161024 09:55:43.943" critical="yes" starttime="20161024 09:55:40.073">Element 'css=#myopenorders &gt; div &gt; div.page-container &gt; div.page-content-wrapper &gt; div &gt; div:nth-child(3)' should have contained text 'Canceled' but its text was 'Filter results
+No orders found'.</status>
+</test>
+<test id="s1-t9" name="Search by SoftID">
+<kw type="setup" name="Go to My Open Orders page" library="resource_ios">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>http://${SERVER_DEV}/en/index.php?controller=myopenorders</arg>
+</arguments>
+<msg timestamp="20161024 09:55:43.945" level="INFO">Opening url 'http://tadelos.ro/ios/en/index.php?controller=myopenorders'</msg>
+<status status="PASS" endtime="20161024 09:55:44.622" starttime="20161024 09:55:43.945"></status>
+</kw>
+<status status="PASS" endtime="20161024 09:55:44.622" starttime="20161024 09:55:43.945"></status>
+</kw>
+<kw name="Filter My Open Orders">
+<arguments>
+<arg>${EMPTY}</arg>
+<arg>${EMPTY}</arg>
+<arg>${EMPTY}</arg>
+<arg>${Filter SoftID}</arg>
+<arg>${EMPTY}</arg>
+<arg>${EMPTY}</arg>
+<arg>${Filter SoftID}</arg>
+</arguments>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>search_customer</arg>
+<arg>${customer}</arg>
+</arguments>
+<msg timestamp="20161024 09:55:44.624" level="INFO">Typing text '' into text field 'search_customer'</msg>
+<status status="PASS" endtime="20161024 09:55:44.723" starttime="20161024 09:55:44.624"></status>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<arguments>
+<arg>click element</arg>
+<arg>css=#myopenorders &gt; div.ac_results &gt; ul &gt; li.ac_even.ac_over</arg>
+</arguments>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>css=#myopenorders &gt; div.ac_results &gt; ul &gt; li.ac_even.ac_over</arg>
+</arguments>
+<msg timestamp="20161024 09:55:44.725" level="INFO">Clicking element 'css=#myopenorders &gt; div.ac_results &gt; ul &gt; li.ac_even.ac_over'.</msg>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20161024 09:55:44.953" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-12.png"&gt;&lt;img src="selenium-screenshot-12.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20161024 09:55:44.954" starttime="20161024 09:55:44.733"></status>
+</kw>
+<msg timestamp="20161024 09:55:44.954" level="FAIL">ValueError: Element locator 'css=#myopenorders &gt; div.ac_results &gt; ul &gt; li.ac_even.ac_over' did not match any elements.</msg>
+<status status="FAIL" endtime="20161024 09:55:44.955" starttime="20161024 09:55:44.724"></status>
+</kw>
+<status status="PASS" endtime="20161024 09:55:44.955" starttime="20161024 09:55:44.724"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>reference</arg>
+<arg>${orderNumber}</arg>
+</arguments>
+<msg timestamp="20161024 09:55:44.955" level="INFO">Typing text '' into text field 'reference'</msg>
+<status status="PASS" endtime="20161024 09:55:45.038" starttime="20161024 09:55:44.955"></status>
+</kw>
+<kw name="Select From List By Value" library="Selenium2Library">
+<doc>Selects `*values` from list identified by `locator`</doc>
+<arguments>
+<arg>status</arg>
+<arg>${status}</arg>
+</arguments>
+<msg timestamp="20161024 09:55:45.039" level="INFO">Selecting value(s) '' from list 'status'.</msg>
+<status status="PASS" endtime="20161024 09:55:45.098" starttime="20161024 09:55:45.039"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>software_id</arg>
+<arg>${softID}</arg>
+</arguments>
+<msg timestamp="20161024 09:55:45.100" level="INFO">Typing text '' into text field 'software_id'</msg>
+<status status="PASS" endtime="20161024 09:55:45.268" starttime="20161024 09:55:45.099"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>key_number</arg>
+<arg>${keyNumber}</arg>
+</arguments>
+<msg timestamp="20161024 09:55:45.272" level="INFO">Typing text '' into text field 'key_number'</msg>
+<status status="PASS" endtime="20161024 09:55:45.369" starttime="20161024 09:55:45.270"></status>
+</kw>
+<kw name="Select From List By Value" library="Selenium2Library">
+<doc>Selects `*values` from list identified by `locator`</doc>
+<arguments>
+<arg>type</arg>
+<arg>${type}</arg>
+</arguments>
+<msg timestamp="20161024 09:55:45.370" level="INFO">Selecting value(s) '' from list 'type'.</msg>
+<status status="PASS" endtime="20161024 09:55:45.453" starttime="20161024 09:55:45.369"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=//button[contains(.,'Filter')]</arg>
+</arguments>
+<msg timestamp="20161024 09:55:45.454" level="INFO">Clicking element 'xpath=//button[contains(.,'Filter')]'.</msg>
+<status status="PASS" endtime="20161024 09:55:45.492" starttime="20161024 09:55:45.453"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20161024 09:55:47.493" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" endtime="20161024 09:55:47.493" starttime="20161024 09:55:45.492"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>css=#myopenorders &gt; div &gt; div.page-container &gt; div.page-content-wrapper &gt; div &gt; div:nth-child(3)</arg>
+</arguments>
+<status status="PASS" endtime="20161024 09:55:47.534" starttime="20161024 09:55:47.493"></status>
+</kw>
+<kw name="Element Should Contain" library="Selenium2Library">
+<doc>Verifies element identified by `locator` contains text `expected`.</doc>
+<arguments>
+<arg>css=#myopenorders &gt; div &gt; div.page-container &gt; div.page-content-wrapper &gt; div &gt; div:nth-child(3)</arg>
+<arg>${found_result}</arg>
+</arguments>
+<msg timestamp="20161024 09:55:47.535" level="INFO">Verifying element 'css=#myopenorders &gt; div &gt; div.page-container &gt; div.page-content-wrapper &gt; div &gt; div:nth-child(3)' contains text ''.</msg>
+<status status="PASS" endtime="20161024 09:55:47.851" starttime="20161024 09:55:47.535"></status>
+</kw>
+<status status="PASS" endtime="20161024 09:55:47.851" starttime="20161024 09:55:44.623"></status>
+</kw>
+<status status="PASS" endtime="20161024 09:55:47.851" critical="yes" starttime="20161024 09:55:43.944"></status>
+</test>
+<test id="s1-t10" name="Search by Key Number">
+<kw type="setup" name="Go to My Open Orders page" library="resource_ios">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>http://${SERVER_DEV}/en/index.php?controller=myopenorders</arg>
+</arguments>
+<msg timestamp="20161024 09:55:47.855" level="INFO">Opening url 'http://tadelos.ro/ios/en/index.php?controller=myopenorders'</msg>
+<status status="PASS" endtime="20161024 09:55:48.531" starttime="20161024 09:55:47.854"></status>
+</kw>
+<status status="PASS" endtime="20161024 09:55:48.532" starttime="20161024 09:55:47.854"></status>
+</kw>
+<kw name="Filter My Open Orders">
+<arguments>
+<arg>${EMPTY}</arg>
+<arg>${EMPTY}</arg>
+<arg>${EMPTY}</arg>
+<arg>${EMPTY}</arg>
+<arg>${Filter Key Number}</arg>
+<arg>${EMPTY}</arg>
+<arg>${Filter Key Number}</arg>
+</arguments>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>search_customer</arg>
+<arg>${customer}</arg>
+</arguments>
+<msg timestamp="20161024 09:55:48.534" level="INFO">Typing text '' into text field 'search_customer'</msg>
+<status status="PASS" endtime="20161024 09:55:48.633" starttime="20161024 09:55:48.533"></status>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<arguments>
+<arg>click element</arg>
+<arg>css=#myopenorders &gt; div.ac_results &gt; ul &gt; li.ac_even.ac_over</arg>
+</arguments>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>css=#myopenorders &gt; div.ac_results &gt; ul &gt; li.ac_even.ac_over</arg>
+</arguments>
+<msg timestamp="20161024 09:55:48.635" level="INFO">Clicking element 'css=#myopenorders &gt; div.ac_results &gt; ul &gt; li.ac_even.ac_over'.</msg>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20161024 09:55:48.860" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-13.png"&gt;&lt;img src="selenium-screenshot-13.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20161024 09:55:48.860" starttime="20161024 09:55:48.644"></status>
+</kw>
+<msg timestamp="20161024 09:55:48.861" level="FAIL">ValueError: Element locator 'css=#myopenorders &gt; div.ac_results &gt; ul &gt; li.ac_even.ac_over' did not match any elements.</msg>
+<status status="FAIL" endtime="20161024 09:55:48.862" starttime="20161024 09:55:48.634"></status>
+</kw>
+<status status="PASS" endtime="20161024 09:55:48.862" starttime="20161024 09:55:48.634"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>reference</arg>
+<arg>${orderNumber}</arg>
+</arguments>
+<msg timestamp="20161024 09:55:48.863" level="INFO">Typing text '' into text field 'reference'</msg>
+<status status="PASS" endtime="20161024 09:55:48.954" starttime="20161024 09:55:48.862"></status>
+</kw>
+<kw name="Select From List By Value" library="Selenium2Library">
+<doc>Selects `*values` from list identified by `locator`</doc>
+<arguments>
+<arg>status</arg>
+<arg>${status}</arg>
+</arguments>
+<msg timestamp="20161024 09:55:48.955" level="INFO">Selecting value(s) '' from list 'status'.</msg>
+<status status="PASS" endtime="20161024 09:55:49.018" starttime="20161024 09:55:48.955"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>software_id</arg>
+<arg>${softID}</arg>
+</arguments>
+<msg timestamp="20161024 09:55:49.018" level="INFO">Typing text '' into text field 'software_id'</msg>
+<status status="PASS" endtime="20161024 09:55:49.121" starttime="20161024 09:55:49.018"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>key_number</arg>
+<arg>${keyNumber}</arg>
+</arguments>
+<msg timestamp="20161024 09:55:49.122" level="INFO">Typing text '' into text field 'key_number'</msg>
+<status status="PASS" endtime="20161024 09:55:49.221" starttime="20161024 09:55:49.122"></status>
+</kw>
+<kw name="Select From List By Value" library="Selenium2Library">
+<doc>Selects `*values` from list identified by `locator`</doc>
+<arguments>
+<arg>type</arg>
+<arg>${type}</arg>
+</arguments>
+<msg timestamp="20161024 09:55:49.222" level="INFO">Selecting value(s) '' from list 'type'.</msg>
+<status status="PASS" endtime="20161024 09:55:49.284" starttime="20161024 09:55:49.221"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=//button[contains(.,'Filter')]</arg>
+</arguments>
+<msg timestamp="20161024 09:55:49.284" level="INFO">Clicking element 'xpath=//button[contains(.,'Filter')]'.</msg>
+<status status="PASS" endtime="20161024 09:55:49.333" starttime="20161024 09:55:49.284"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20161024 09:55:51.333" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" endtime="20161024 09:55:51.333" starttime="20161024 09:55:49.333"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>css=#myopenorders &gt; div &gt; div.page-container &gt; div.page-content-wrapper &gt; div &gt; div:nth-child(3)</arg>
+</arguments>
+<status status="PASS" endtime="20161024 09:55:51.373" starttime="20161024 09:55:51.333"></status>
+</kw>
+<kw name="Element Should Contain" library="Selenium2Library">
+<doc>Verifies element identified by `locator` contains text `expected`.</doc>
+<arguments>
+<arg>css=#myopenorders &gt; div &gt; div.page-container &gt; div.page-content-wrapper &gt; div &gt; div:nth-child(3)</arg>
+<arg>${found_result}</arg>
+</arguments>
+<msg timestamp="20161024 09:55:51.373" level="INFO">Verifying element 'css=#myopenorders &gt; div &gt; div.page-container &gt; div.page-content-wrapper &gt; div &gt; div:nth-child(3)' contains text ''.</msg>
+<status status="PASS" endtime="20161024 09:55:51.722" starttime="20161024 09:55:51.373"></status>
+</kw>
+<status status="PASS" endtime="20161024 09:55:51.722" starttime="20161024 09:55:48.532"></status>
+</kw>
+<status status="PASS" endtime="20161024 09:55:51.728" critical="yes" starttime="20161024 09:55:47.853"></status>
+</test>
+<test id="s1-t11" name="Search by Type D">
+<kw type="setup" name="Go to My Open Orders page" library="resource_ios">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>http://${SERVER_DEV}/en/index.php?controller=myopenorders</arg>
+</arguments>
+<msg timestamp="20161024 09:55:51.730" level="INFO">Opening url 'http://tadelos.ro/ios/en/index.php?controller=myopenorders'</msg>
+<status status="PASS" endtime="20161024 09:55:52.408" starttime="20161024 09:55:51.730"></status>
+</kw>
+<status status="PASS" endtime="20161024 09:55:52.409" starttime="20161024 09:55:51.729"></status>
+</kw>
+<kw name="Filter My Open Orders">
+<arguments>
+<arg>${EMPTY}</arg>
+<arg>${EMPTY}</arg>
+<arg>${EMPTY}</arg>
+<arg>${EMPTY}</arg>
+<arg>${EMPTY}</arg>
+<arg>${typeDirectSales}</arg>
+<arg>Direct sales</arg>
+</arguments>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>search_customer</arg>
+<arg>${customer}</arg>
+</arguments>
+<msg timestamp="20161024 09:55:52.411" level="INFO">Typing text '' into text field 'search_customer'</msg>
+<status status="PASS" endtime="20161024 09:55:52.514" starttime="20161024 09:55:52.411"></status>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<arguments>
+<arg>click element</arg>
+<arg>css=#myopenorders &gt; div.ac_results &gt; ul &gt; li.ac_even.ac_over</arg>
+</arguments>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>css=#myopenorders &gt; div.ac_results &gt; ul &gt; li.ac_even.ac_over</arg>
+</arguments>
+<msg timestamp="20161024 09:55:52.515" level="INFO">Clicking element 'css=#myopenorders &gt; div.ac_results &gt; ul &gt; li.ac_even.ac_over'.</msg>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20161024 09:55:52.731" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-14.png"&gt;&lt;img src="selenium-screenshot-14.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20161024 09:55:52.731" starttime="20161024 09:55:52.522"></status>
+</kw>
+<msg timestamp="20161024 09:55:52.732" level="FAIL">ValueError: Element locator 'css=#myopenorders &gt; div.ac_results &gt; ul &gt; li.ac_even.ac_over' did not match any elements.</msg>
+<status status="FAIL" endtime="20161024 09:55:52.732" starttime="20161024 09:55:52.514"></status>
+</kw>
+<status status="PASS" endtime="20161024 09:55:52.732" starttime="20161024 09:55:52.514"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>reference</arg>
+<arg>${orderNumber}</arg>
+</arguments>
+<msg timestamp="20161024 09:55:52.733" level="INFO">Typing text '' into text field 'reference'</msg>
+<status status="PASS" endtime="20161024 09:55:52.810" starttime="20161024 09:55:52.732"></status>
+</kw>
+<kw name="Select From List By Value" library="Selenium2Library">
+<doc>Selects `*values` from list identified by `locator`</doc>
+<arguments>
+<arg>status</arg>
+<arg>${status}</arg>
+</arguments>
+<msg timestamp="20161024 09:55:52.811" level="INFO">Selecting value(s) '' from list 'status'.</msg>
+<status status="PASS" endtime="20161024 09:55:52.869" starttime="20161024 09:55:52.810"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>software_id</arg>
+<arg>${softID}</arg>
+</arguments>
+<msg timestamp="20161024 09:55:52.869" level="INFO">Typing text '' into text field 'software_id'</msg>
+<status status="PASS" endtime="20161024 09:55:52.959" starttime="20161024 09:55:52.869"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>key_number</arg>
+<arg>${keyNumber}</arg>
+</arguments>
+<msg timestamp="20161024 09:55:52.960" level="INFO">Typing text '' into text field 'key_number'</msg>
+<status status="PASS" endtime="20161024 09:55:53.055" starttime="20161024 09:55:52.959"></status>
+</kw>
+<kw name="Select From List By Value" library="Selenium2Library">
+<doc>Selects `*values` from list identified by `locator`</doc>
+<arguments>
+<arg>type</arg>
+<arg>${type}</arg>
+</arguments>
+<msg timestamp="20161024 09:55:53.056" level="INFO">Selecting value(s) '0' from list 'type'.</msg>
+<status status="PASS" endtime="20161024 09:55:53.165" starttime="20161024 09:55:53.055"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=//button[contains(.,'Filter')]</arg>
+</arguments>
+<msg timestamp="20161024 09:55:53.166" level="INFO">Clicking element 'xpath=//button[contains(.,'Filter')]'.</msg>
+<status status="PASS" endtime="20161024 09:55:53.241" starttime="20161024 09:55:53.166"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20161024 09:55:55.241" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" endtime="20161024 09:55:55.241" starttime="20161024 09:55:53.241"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>css=#myopenorders &gt; div &gt; div.page-container &gt; div.page-content-wrapper &gt; div &gt; div:nth-child(3)</arg>
+</arguments>
+<status status="PASS" endtime="20161024 09:55:55.291" starttime="20161024 09:55:55.242"></status>
+</kw>
+<kw name="Element Should Contain" library="Selenium2Library">
+<doc>Verifies element identified by `locator` contains text `expected`.</doc>
+<arguments>
+<arg>css=#myopenorders &gt; div &gt; div.page-container &gt; div.page-content-wrapper &gt; div &gt; div:nth-child(3)</arg>
+<arg>${found_result}</arg>
+</arguments>
+<msg timestamp="20161024 09:55:55.292" level="INFO">Verifying element 'css=#myopenorders &gt; div &gt; div.page-container &gt; div.page-content-wrapper &gt; div &gt; div:nth-child(3)' contains text 'Direct sales'.</msg>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20161024 09:55:55.765" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-15.png"&gt;&lt;img src="selenium-screenshot-15.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20161024 09:55:55.765" starttime="20161024 09:55:55.559"></status>
+</kw>
+<msg timestamp="20161024 09:55:55.766" level="FAIL">Element 'css=#myopenorders &gt; div &gt; div.page-container &gt; div.page-content-wrapper &gt; div &gt; div:nth-child(3)' should have contained text 'Direct sales' but its text was 'Filter results
+Showing 1 to 30 of 30 rows
+Order Customer Price Sales Rep Order date Last modified Status Documents Type Actions
+OC000216 Pascan Cristian 2 132,73 € Marius Pop 10/13/2016 10/19/2016 Rejected Direct Sales Edit
+OC000212 Marius Pop 2 115,76 € Marius Pop 10/12/2016 10/19/2016 Approved Direct Sales Finalize
+OC000203 Marius Pop 2 115,76 € Marius Pop 10/12/2016 10/12/2016 To be Approved Direct Sales Edit
+OC000201 Marius Pop 843,76 € Marius Pop 10/12/2016 10/12/2016 Approved Direct Sales Finalize
+OC000194 mihaiaaa 2 115,76 € Marius Pop 10/10/2016 10/12/2016 Draft Direct Sales Edit
+OC000191 Marius Pop 843,76 € Marius Pop 10/06/2016 10/06/2016 Draft Direct Sales Edit
+OC000188 Marius Pop 2 115,76 € Marius Pop 10/06/2016 10/06/2016 To be Approved Direct Sales Edit
+OC000186 Marius Pop CAD 2,115.76 Marius Pop 10/06/2016 10/06/2016 To be Approved Direct Sales Edit
+OC000184 Marius Pop CAD 2,115.76 Marius Pop 10/06/2016 10/06/2016 To be Approved Direct Sales Edit
+OC000183 Marius Pop CAD 2,115.76 Marius Pop 10/06/2016 10/06/2016 To be Approved Direct Sales Edit
+OC000173 Marius Pop 2 115,76 € Marius Pop 10/04/2016 10/04/2016 Approved Direct Sales Finalize
+OC000172 Marius Pop 2 115,76 € Marius Pop 10/03/2016 10/03/2016 To be Approved Direct Sales Edit
+OC000169 Marius Pop 843,76 € Marius Pop 10/03/2016 10/03/2016 Approved Direct Sales Finalize
+OC000168 Marius Pop 1 936,16 € Marius Pop 10/03/2016 10/03/2016 Approved Direct Sales Finalize
+OC000157 Marius Pop 3 370,80 € Marius Pop 09/30/2016 09/30/2016 Approved Direct Sales Finalize
+OC000154 Marius Pop 5 384,48 € Marius Pop 09/30/2016 09/30/2016 Approved Direct Sales Finalize
+OC000134 Marius Pop 1 936,16 € Marius Pop 09/29/2016 10/03/2016 To be Approved Direct Sales Edit
+OC000129 Marius Pop 2 415,16 € Marius Pop 09/29/2016 09/29/2016 Approved Direct Sales Finalize
+OC000123 Marius Pop 1 869,36 € Marius Pop 09/29/2016 09/29/2016 Approved Direct Sales Finalize
+ONNFCCYDX Marius Pop 491,60 € Marius Pop 09/14/2016 09/14/2016 Approved Direct Sales Finalize
+KNAPZJBZE Marius Pop 595,31 € Marius Pop 09/13/2016 09/13/2016 Draft Direct Sales Edit
+RBUSFCJWU Pascan Cristian 958,32 € Marius Pop 09/13/2016 09/13/2016 Approved Direct Sales Finalize
+ZMKWNODMW Marius Pop 3 078,24 € Marius Pop 09/13/2016 09/13/2016 Approved Direct Sales Finalize
+ULEUUNTXE Marius Pop 958,32 € Marius Pop 09/13/2016 09/13/2016 Approved Direct Sales Finalize
+EMLFLQVSM Xcommerce 1 539,12 € Marius Pop 09/13/2016 09/13/2016 Draft Direct Sales Edit
+HHQJFNMHN Marius Pop 3 386,06 € Marius Pop 09/13/2016 09/14/2016 Approved Direct Sales Finalize
+JKNUJNGLO Marius Pop 3 562,24 € Marius Pop 09/13/2016 09/13/2016 Approved Direct Sales Finalize
+HCKRQJCFM kiiiiiii 383,33 € Marius Pop 09/12/2016 09/12/2016 Approved Direct Sales Finalize
+JVVSAXYPW Marius Pop 2 884,64 € Marius Pop 09/08/2016 09/09/2016 Approved Direct Sales Finalize
+IMBQUPXFB Marius Pop 500,45 € Marius Pop 04/18/2016 09/13/2016 Approved Direct Sales Finalize
+Showing 1 to 30 of 30 rows
+«
+‹
+1
+›
+»'.</msg>
+<status status="FAIL" endtime="20161024 09:55:55.766" starttime="20161024 09:55:55.291"></status>
+</kw>
+<status status="FAIL" endtime="20161024 09:55:55.767" starttime="20161024 09:55:52.410"></status>
+</kw>
+<status status="FAIL" endtime="20161024 09:55:55.767" critical="yes" starttime="20161024 09:55:51.729">Element 'css=#myopenorders &gt; div &gt; div.page-container &gt; div.page-content-wrapper &gt; div &gt; div:nth-child(3)' should have contained text 'Direct sales' but its text was 'Filter results
+Showing 1 to 30 of 30 rows
+Order Customer Price Sales Rep Order date Last modified Status Documents Type Actions
+OC000216 Pascan Cristian 2 132,73 € Marius Pop 10/13/2016 10/19/2016 Rejected Direct Sales Edit
+OC000212 Marius Pop 2 115,76 € Marius Pop 10/12/2016 10/19/2016 Approved Direct Sales Finalize
+OC000203 Marius Pop 2 115,76 € Marius Pop 10/12/2016 10/12/2016 To be Approved Direct Sales Edit
+OC000201 Marius Pop 843,76 € Marius Pop 10/12/2016 10/12/2016 Approved Direct Sales Finalize
+OC000194 mihaiaaa 2 115,76 € Marius Pop 10/10/2016 10/12/2016 Draft Direct Sales Edit
+OC000191 Marius Pop 843,76 € Marius Pop 10/06/2016 10/06/2016 Draft Direct Sales Edit
+OC000188 Marius Pop 2 115,76 € Marius Pop 10/06/2016 10/06/2016 To be Approved Direct Sales Edit
+    [ Message content over the limit has been removed. ]
+ULEUUNTXE Marius Pop 958,32 € Marius Pop 09/13/2016 09/13/2016 Approved Direct Sales Finalize
+EMLFLQVSM Xcommerce 1 539,12 € Marius Pop 09/13/2016 09/13/2016 Draft Direct Sales Edit
+HHQJFNMHN Marius Pop 3 386,06 € Marius Pop 09/13/2016 09/14/2016 Approved Direct Sales Finalize
+JKNUJNGLO Marius Pop 3 562,24 € Marius Pop 09/13/2016 09/13/2016 Approved Direct Sales Finalize
+HCKRQJCFM kiiiiiii 383,33 € Marius Pop 09/12/2016 09/12/2016 Approved Direct Sales Finalize
+JVVSAXYPW Marius Pop 2 884,64 € Marius Pop 09/08/2016 09/09/2016 Approved Direct Sales Finalize
+IMBQUPXFB Marius Pop 500,45 € Marius Pop 04/18/2016 09/13/2016 Approved Direct Sales Finalize
+Showing 1 to 30 of 30 rows
+«
+‹
+1
+›
+»'.</status>
+</test>
+<test id="s1-t12" name="Search by Type R">
+<kw type="setup" name="Go to My Open Orders page" library="resource_ios">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>http://${SERVER_DEV}/en/index.php?controller=myopenorders</arg>
+</arguments>
+<msg timestamp="20161024 09:55:55.772" level="INFO">Opening url 'http://tadelos.ro/ios/en/index.php?controller=myopenorders'</msg>
+<status status="PASS" endtime="20161024 09:55:57.116" starttime="20161024 09:55:55.772"></status>
+</kw>
+<status status="PASS" endtime="20161024 09:55:57.117" starttime="20161024 09:55:55.771"></status>
+</kw>
+<kw name="Filter My Open Orders">
+<arguments>
+<arg>${EMPTY}</arg>
+<arg>${EMPTY}</arg>
+<arg>${EMPTY}</arg>
+<arg>${EMPTY}</arg>
+<arg>${EMPTY}</arg>
+<arg>${typeReseller}</arg>
+<arg>Reseller</arg>
+</arguments>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>search_customer</arg>
+<arg>${customer}</arg>
+</arguments>
+<msg timestamp="20161024 09:55:57.121" level="INFO">Typing text '' into text field 'search_customer'</msg>
+<status status="PASS" endtime="20161024 09:55:57.203" starttime="20161024 09:55:57.120"></status>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<arguments>
+<arg>click element</arg>
+<arg>css=#myopenorders &gt; div.ac_results &gt; ul &gt; li.ac_even.ac_over</arg>
+</arguments>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>css=#myopenorders &gt; div.ac_results &gt; ul &gt; li.ac_even.ac_over</arg>
+</arguments>
+<msg timestamp="20161024 09:55:57.204" level="INFO">Clicking element 'css=#myopenorders &gt; div.ac_results &gt; ul &gt; li.ac_even.ac_over'.</msg>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20161024 09:55:57.530" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-16.png"&gt;&lt;img src="selenium-screenshot-16.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20161024 09:55:57.530" starttime="20161024 09:55:57.212"></status>
+</kw>
+<msg timestamp="20161024 09:55:57.531" level="FAIL">ValueError: Element locator 'css=#myopenorders &gt; div.ac_results &gt; ul &gt; li.ac_even.ac_over' did not match any elements.</msg>
+<status status="FAIL" endtime="20161024 09:55:57.531" starttime="20161024 09:55:57.204"></status>
+</kw>
+<status status="PASS" endtime="20161024 09:55:57.531" starttime="20161024 09:55:57.203"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>reference</arg>
+<arg>${orderNumber}</arg>
+</arguments>
+<msg timestamp="20161024 09:55:57.532" level="INFO">Typing text '' into text field 'reference'</msg>
+<status status="PASS" endtime="20161024 09:55:57.677" starttime="20161024 09:55:57.532"></status>
+</kw>
+<kw name="Select From List By Value" library="Selenium2Library">
+<doc>Selects `*values` from list identified by `locator`</doc>
+<arguments>
+<arg>status</arg>
+<arg>${status}</arg>
+</arguments>
+<msg timestamp="20161024 09:55:57.678" level="INFO">Selecting value(s) '' from list 'status'.</msg>
+<status status="PASS" endtime="20161024 09:55:57.754" starttime="20161024 09:55:57.677"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>software_id</arg>
+<arg>${softID}</arg>
+</arguments>
+<msg timestamp="20161024 09:55:57.755" level="INFO">Typing text '' into text field 'software_id'</msg>
+<status status="PASS" endtime="20161024 09:55:57.876" starttime="20161024 09:55:57.755"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>key_number</arg>
+<arg>${keyNumber}</arg>
+</arguments>
+<msg timestamp="20161024 09:55:57.878" level="INFO">Typing text '' into text field 'key_number'</msg>
+<status status="PASS" endtime="20161024 09:55:58.006" starttime="20161024 09:55:57.877"></status>
+</kw>
+<kw name="Select From List By Value" library="Selenium2Library">
+<doc>Selects `*values` from list identified by `locator`</doc>
+<arguments>
+<arg>type</arg>
+<arg>${type}</arg>
+</arguments>
+<msg timestamp="20161024 09:55:58.007" level="INFO">Selecting value(s) '1' from list 'type'.</msg>
+<status status="PASS" endtime="20161024 09:55:58.125" starttime="20161024 09:55:58.007"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=//button[contains(.,'Filter')]</arg>
+</arguments>
+<msg timestamp="20161024 09:55:58.125" level="INFO">Clicking element 'xpath=//button[contains(.,'Filter')]'.</msg>
+<status status="PASS" endtime="20161024 09:55:58.203" starttime="20161024 09:55:58.125"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20161024 09:56:00.204" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" endtime="20161024 09:56:00.204" starttime="20161024 09:55:58.204"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>css=#myopenorders &gt; div &gt; div.page-container &gt; div.page-content-wrapper &gt; div &gt; div:nth-child(3)</arg>
+</arguments>
+<status status="PASS" endtime="20161024 09:56:00.247" starttime="20161024 09:56:00.204"></status>
+</kw>
+<kw name="Element Should Contain" library="Selenium2Library">
+<doc>Verifies element identified by `locator` contains text `expected`.</doc>
+<arguments>
+<arg>css=#myopenorders &gt; div &gt; div.page-container &gt; div.page-content-wrapper &gt; div &gt; div:nth-child(3)</arg>
+<arg>${found_result}</arg>
+</arguments>
+<msg timestamp="20161024 09:56:00.248" level="INFO">Verifying element 'css=#myopenorders &gt; div &gt; div.page-container &gt; div.page-content-wrapper &gt; div &gt; div:nth-child(3)' contains text 'Reseller'.</msg>
+<status status="PASS" endtime="20161024 09:56:00.346" starttime="20161024 09:56:00.248"></status>
+</kw>
+<status status="PASS" endtime="20161024 09:56:00.346" starttime="20161024 09:55:57.119"></status>
+</kw>
+<status status="PASS" endtime="20161024 09:56:00.347" critical="yes" starttime="20161024 09:55:55.771"></status>
+</test>
+<test id="s1-t13" name="No results found">
+<kw type="setup" name="Go to My Open Orders page" library="resource_ios">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>http://${SERVER_DEV}/en/index.php?controller=myopenorders</arg>
+</arguments>
+<msg timestamp="20161024 09:56:00.350" level="INFO">Opening url 'http://tadelos.ro/ios/en/index.php?controller=myopenorders'</msg>
+<status status="PASS" endtime="20161024 09:56:01.013" starttime="20161024 09:56:00.350"></status>
+</kw>
+<status status="PASS" endtime="20161024 09:56:01.013" starttime="20161024 09:56:00.349"></status>
+</kw>
+<kw name="Filter My Open Orders">
+<arguments>
+<arg>${EMPTY}</arg>
+<arg>invalid</arg>
+<arg>${EMPTY}</arg>
+<arg>invalid</arg>
+<arg>${EMPTY}</arg>
+<arg>${EMPTY}</arg>
+<arg>No orders found</arg>
+</arguments>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>search_customer</arg>
+<arg>${customer}</arg>
+</arguments>
+<msg timestamp="20161024 09:56:01.024" level="INFO">Typing text '' into text field 'search_customer'</msg>
+<status status="PASS" endtime="20161024 09:56:01.137" starttime="20161024 09:56:01.023"></status>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<arguments>
+<arg>click element</arg>
+<arg>css=#myopenorders &gt; div.ac_results &gt; ul &gt; li.ac_even.ac_over</arg>
+</arguments>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>css=#myopenorders &gt; div.ac_results &gt; ul &gt; li.ac_even.ac_over</arg>
+</arguments>
+<msg timestamp="20161024 09:56:01.138" level="INFO">Clicking element 'css=#myopenorders &gt; div.ac_results &gt; ul &gt; li.ac_even.ac_over'.</msg>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20161024 09:56:01.368" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-17.png"&gt;&lt;img src="selenium-screenshot-17.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20161024 09:56:01.368" starttime="20161024 09:56:01.146"></status>
+</kw>
+<msg timestamp="20161024 09:56:01.369" level="FAIL">ValueError: Element locator 'css=#myopenorders &gt; div.ac_results &gt; ul &gt; li.ac_even.ac_over' did not match any elements.</msg>
+<status status="FAIL" endtime="20161024 09:56:01.369" starttime="20161024 09:56:01.137"></status>
+</kw>
+<status status="PASS" endtime="20161024 09:56:01.369" starttime="20161024 09:56:01.137"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>reference</arg>
+<arg>${orderNumber}</arg>
+</arguments>
+<msg timestamp="20161024 09:56:01.369" level="INFO">Typing text 'invalid' into text field 'reference'</msg>
+<status status="PASS" endtime="20161024 09:56:01.448" starttime="20161024 09:56:01.369"></status>
+</kw>
+<kw name="Select From List By Value" library="Selenium2Library">
+<doc>Selects `*values` from list identified by `locator`</doc>
+<arguments>
+<arg>status</arg>
+<arg>${status}</arg>
+</arguments>
+<msg timestamp="20161024 09:56:01.448" level="INFO">Selecting value(s) '' from list 'status'.</msg>
+<status status="PASS" endtime="20161024 09:56:01.514" starttime="20161024 09:56:01.448"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>software_id</arg>
+<arg>${softID}</arg>
+</arguments>
+<msg timestamp="20161024 09:56:01.515" level="INFO">Typing text 'invalid' into text field 'software_id'</msg>
+<status status="PASS" endtime="20161024 09:56:01.617" starttime="20161024 09:56:01.514"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>key_number</arg>
+<arg>${keyNumber}</arg>
+</arguments>
+<msg timestamp="20161024 09:56:01.618" level="INFO">Typing text '' into text field 'key_number'</msg>
+<status status="PASS" endtime="20161024 09:56:01.756" starttime="20161024 09:56:01.617"></status>
+</kw>
+<kw name="Select From List By Value" library="Selenium2Library">
+<doc>Selects `*values` from list identified by `locator`</doc>
+<arguments>
+<arg>type</arg>
+<arg>${type}</arg>
+</arguments>
+<msg timestamp="20161024 09:56:01.757" level="INFO">Selecting value(s) '' from list 'type'.</msg>
+<status status="PASS" endtime="20161024 09:56:01.818" starttime="20161024 09:56:01.756"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=//button[contains(.,'Filter')]</arg>
+</arguments>
+<msg timestamp="20161024 09:56:01.818" level="INFO">Clicking element 'xpath=//button[contains(.,'Filter')]'.</msg>
+<status status="PASS" endtime="20161024 09:56:01.905" starttime="20161024 09:56:01.818"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20161024 09:56:03.906" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" endtime="20161024 09:56:03.906" starttime="20161024 09:56:01.905"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>css=#myopenorders &gt; div &gt; div.page-container &gt; div.page-content-wrapper &gt; div &gt; div:nth-child(3)</arg>
+</arguments>
+<status status="PASS" endtime="20161024 09:56:03.930" starttime="20161024 09:56:03.906"></status>
+</kw>
+<kw name="Element Should Contain" library="Selenium2Library">
+<doc>Verifies element identified by `locator` contains text `expected`.</doc>
+<arguments>
+<arg>css=#myopenorders &gt; div &gt; div.page-container &gt; div.page-content-wrapper &gt; div &gt; div:nth-child(3)</arg>
+<arg>${found_result}</arg>
+</arguments>
+<msg timestamp="20161024 09:56:03.931" level="INFO">Verifying element 'css=#myopenorders &gt; div &gt; div.page-container &gt; div.page-content-wrapper &gt; div &gt; div:nth-child(3)' contains text 'No orders found'.</msg>
+<status status="PASS" endtime="20161024 09:56:03.962" starttime="20161024 09:56:03.930"></status>
+</kw>
+<status status="PASS" endtime="20161024 09:56:03.963" starttime="20161024 09:56:01.022"></status>
+</kw>
+<status status="PASS" endtime="20161024 09:56:03.963" critical="yes" starttime="20161024 09:56:00.348"></status>
+</test>
+<doc>A test suite containing tests for filtering the my open orders</doc>
+<status status="FAIL" endtime="20161024 09:56:03.967" starttime="20161024 09:55:05.740"></status>
 </suite>
 <statistics>
 <total>
-<stat fail="0" pass="1">Critical Tests</stat>
-<stat fail="0" pass="1">All Tests</stat>
+<stat fail="4" pass="9">Critical Tests</stat>
+<stat fail="4" pass="9">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat fail="0" id="s1" name="21 Filters Awaiting Approvals" pass="1">21 Filters Awaiting Approvals</stat>
+<stat fail="4" id="s1" name="24 Filters My Open Orders" pass="9">24 Filters My Open Orders</stat>
 </suite>
 </statistics>
 <errors>

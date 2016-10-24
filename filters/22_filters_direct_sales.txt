@@ -30,7 +30,7 @@ No results found                ${EMPTY}               invalid                  
 Filter Direct Sales
     [Arguments]             ${customer}     ${orderNumber}     ${status}        ${salesRep}     ${softID}       ${keyNumber}     ${my_orders}         ${found_result}
     input text                      search_customer             ${customer}
-    run keyword and ignore error    wait until element is visible   css=#directsalesorders > div.ac_results > ul > li.ac_even.ac_over
+#    run keyword and ignore error    wait until element is visible   css=#directsalesorders > div.ac_results > ul > li.ac_even.ac_over
     run keyword and ignore error    click element                   css=#directsalesorders > div.ac_results > ul > li.ac_even.ac_over
     input text                      reference                   ${orderNumber}
     select from list by value       status                      ${status}
