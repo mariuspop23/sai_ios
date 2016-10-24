@@ -11,14 +11,14 @@ Resource          ../variables_ios.txt
 
 
 *** Test Cases ***              Customer                Order Number              Sales Representative        SoftID              Key Number              PO Number               Type                Found Result
-#Search by Customer              ${Filter Customer}      ${EMPTY}                   ${EMPTY}                    ${EMPTY}            ${EMPTY}                ${EMPTY}                ${EMPTY}            ${Filter Customer}
+Search by Customer              ${Filter Customer}      ${EMPTY}                   ${EMPTY}                    ${EMPTY}            ${EMPTY}                ${EMPTY}                ${EMPTY}            ${Filter Customer}
 Search by Order Number          ${EMPTY}                 ${Filter Order Number}       ${EMPTY}                    ${EMPTY}            ${EMPTY}                ${EMPTY}                ${EMPTY}            ${Filter Order Number}
-#Search by Sales Representative  ${EMPTY}                ${EMPTY}                   ${Filter Sales Rep}         ${EMPTY}            ${EMPTY}                ${EMPTY}                ${EMPTY}            Marius Pop
-#Search by SoftID                ${EMPTY}                ${EMPTY}                   ${EMPTY}                    ${Filter SoftID}    ${EMPTY}                ${EMPTY}                ${EMPTY}            ${Filter SoftID}
-#Search by Key Number            ${EMPTY}                ${EMPTY}                   ${EMPTY}                    ${EMPTY}            ${Filter Key Number}    ${EMPTY}                ${EMPTY}            ${Filter Key Number}
-#Search by PO Number             ${EMPTY}                ${EMPTY}                   ${EMPTY}                    ${EMPTY}            ${EMPTY}                ${Filter PO Number}     ${EMPTY}            ${Filter PO Number}
-#Search by Type Direct Sales     ${EMPTY}                ${EMPTY}                   ${EMPTY}                    ${EMPTY}            ${EMPTY}                ${EMPTY}                ${typeDirectSales}  Direct Sales
-#No results found                ${EMPTY}                invalid                    ${EMPTY}                    invalid             ${EMPTY}                ${EMPTY}                ${EMPTY}            No orders found
+Search by Sales Representative  ${EMPTY}                ${EMPTY}                   ${Filter Sales Rep}         ${EMPTY}            ${EMPTY}                ${EMPTY}                ${EMPTY}            Marius Pop
+Search by SoftID                ${EMPTY}                ${EMPTY}                   ${EMPTY}                    ${Filter SoftID}    ${EMPTY}                ${EMPTY}                ${EMPTY}            ${Filter SoftID}
+Search by Key Number            ${EMPTY}                ${EMPTY}                   ${EMPTY}                    ${EMPTY}            ${Filter Key Number}    ${EMPTY}                ${EMPTY}            ${Filter Key Number}
+Search by PO Number             ${EMPTY}                ${EMPTY}                   ${EMPTY}                    ${EMPTY}            ${EMPTY}                ${Filter PO Number}     ${EMPTY}            ${Filter PO Number}
+Search by Type Direct Sales     ${EMPTY}                ${EMPTY}                   ${EMPTY}                    ${EMPTY}            ${EMPTY}                ${EMPTY}                ${typeDirectSales}  Direct Sales
+No results found                ${EMPTY}                invalid                    ${EMPTY}                    invalid             ${EMPTY}                ${EMPTY}                ${EMPTY}            No orders found
 
 *** Keywords ***
 
