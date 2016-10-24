@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generated="20161019 16:12:12.457" generator="Robot 3.0 (Python 2.7.8 on win32)">
-<suite source="C:\Python27\Proiecte\Live SAI IOS\admin users\valid_forgot_password.txt" id="s1" name="Valid Forgot Password">
+<robot generated="20161024 09:34:59.933" generator="Robot 3.0 (Python 2.7.8 on win32)">
+<suite source="C:\Python27\Proiecte\Live SAI IOS\admin_users\08_delete_admin.txt" id="s1" name="08 Delete Admin">
 <kw type="setup" name="Open Browser To Homepage" library="resource_ios">
 <kw name="Open Browser" library="Selenium2Library">
 <doc>Opens a new browser instance to given URL.</doc>
@@ -8,93 +8,184 @@
 <arg>${LOGIN URL}</arg>
 <arg>${BROWSER}</arg>
 </arguments>
-<msg timestamp="20161019 16:12:12.642" level="INFO">Opening browser 'chrome' to base url 'http://tadelos.ro/ios'</msg>
-<status status="PASS" endtime="20161019 16:12:17.692" starttime="20161019 16:12:12.642"></status>
+<msg timestamp="20161024 09:35:00.087" level="INFO">Opening browser 'chrome' to base url 'http://tadelos.ro/ios'</msg>
+<status status="PASS" endtime="20161024 09:35:05.126" starttime="20161024 09:35:00.087"></status>
 </kw>
 <kw name="Maximize Browser Window" library="Selenium2Library">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" endtime="20161019 16:12:17.883" starttime="20161019 16:12:17.692"></status>
+<status status="PASS" endtime="20161024 09:35:05.298" starttime="20161024 09:35:05.126"></status>
 </kw>
 <kw name="Set Selenium Speed" library="Selenium2Library">
 <doc>Sets the delay in seconds that is waited after each Selenium command.</doc>
 <arguments>
 <arg>${DELAY}</arg>
 </arguments>
-<status status="PASS" endtime="20161019 16:12:17.884" starttime="20161019 16:12:17.884"></status>
+<status status="PASS" endtime="20161024 09:35:05.299" starttime="20161024 09:35:05.298"></status>
 </kw>
-<status status="PASS" endtime="20161019 16:12:17.885" starttime="20161019 16:12:12.642"></status>
+<status status="PASS" endtime="20161024 09:35:05.299" starttime="20161024 09:35:00.087"></status>
 </kw>
-<test id="s1-t1" name="Go to Forgot password and submit a valid email">
-<kw name="Click Link" library="Selenium2Library">
-<doc>Clicks a link identified by locator.</doc>
+<test id="s1-t1" name="User should successful login">
+<kw name="Login Admin User" library="resource_ios">
+<kw name="Input Username" library="resource_ios">
 <arguments>
-<arg>forget-password</arg>
+<arg>${VALID ADMIN_USER}</arg>
 </arguments>
-<msg timestamp="20161019 16:12:17.892" level="INFO">Clicking link 'forget-password'.</msg>
-<status status="PASS" endtime="20161019 16:12:17.981" starttime="20161019 16:12:17.891"></status>
-</kw>
 <kw name="Wait Until Page Contains Element" library="Selenium2Library">
 <doc>Waits until element specified with `locator` appears on current page.</doc>
 <arguments>
 <arg>email</arg>
 </arguments>
-<status status="PASS" endtime="20161019 16:12:18.720" starttime="20161019 16:12:17.982"></status>
+<status status="PASS" endtime="20161024 09:35:05.354" starttime="20161024 09:35:05.302"></status>
 </kw>
 <kw name="Input Text" library="Selenium2Library">
 <doc>Types the given `text` into text field identified by `locator`.</doc>
 <arguments>
 <arg>email</arg>
-<arg>${VALID ADMIN_USER}</arg>
+<arg>${username}</arg>
 </arguments>
-<msg timestamp="20161019 16:12:18.723" level="INFO">Typing text 'marius@xcommerce.eu' into text field 'email'</msg>
-<status status="PASS" endtime="20161019 16:12:18.838" starttime="20161019 16:12:18.722"></status>
+<msg timestamp="20161024 09:35:05.356" level="INFO">Typing text 'marius@xcommerce.eu' into text field 'email'</msg>
+<status status="PASS" endtime="20161024 09:35:05.475" starttime="20161024 09:35:05.355"></status>
 </kw>
-<kw name="Click Button" library="Selenium2Library">
-<doc>Clicks a button identified by `locator`.</doc>
+<status status="PASS" endtime="20161024 09:35:05.475" starttime="20161024 09:35:05.301"></status>
+</kw>
+<kw name="Input Password" library="resource_ios">
+<arguments>
+<arg>${VALID PASSWORD}</arg>
+</arguments>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>passwd</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20161024 09:35:05.477" level="INFO">Typing text 'Marius123' into text field 'passwd'</msg>
+<status status="PASS" endtime="20161024 09:35:05.598" starttime="20161024 09:35:05.476"></status>
+</kw>
+<status status="PASS" endtime="20161024 09:35:05.598" starttime="20161024 09:35:05.475"></status>
+</kw>
+<kw name="Submit Credentials" library="resource_ios">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
 <arguments>
 <arg>SubmitLogin</arg>
 </arguments>
-<msg timestamp="20161019 16:12:18.842" level="INFO">Clicking button 'SubmitLogin'.</msg>
-<status status="PASS" endtime="20161019 16:12:18.972" starttime="20161019 16:12:18.842"></status>
+<msg timestamp="20161024 09:35:05.599" level="INFO">Clicking element 'SubmitLogin'.</msg>
+<status status="PASS" endtime="20161024 09:35:05.674" starttime="20161024 09:35:05.599"></status>
 </kw>
-<kw name="Wait Until Page Contains Element" library="Selenium2Library">
-<doc>Waits until element specified with `locator` appears on current page.</doc>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20161024 09:35:07.675" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" endtime="20161024 09:35:07.676" starttime="20161024 09:35:05.674"></status>
+</kw>
+<status status="PASS" endtime="20161024 09:35:07.676" starttime="20161024 09:35:05.598"></status>
+</kw>
+<status status="PASS" endtime="20161024 09:35:07.676" starttime="20161024 09:35:05.300"></status>
+</kw>
+<doc>This test case completes the login form and submits the form</doc>
+<tags>
+<tag>Login should be succesful</tag>
+</tags>
+<status status="PASS" endtime="20161024 09:35:07.679" critical="yes" starttime="20161024 09:35:05.299"></status>
+</test>
+<test id="s1-t2" name="Cancel the delete action and check user still exists">
+<kw name="Choose Cancel On Next Confirmation" library="Selenium2Library">
+<doc>Cancel will be selected the next time `Confirm Action` is used.</doc>
+<status status="PASS" endtime="20161024 09:35:07.684" starttime="20161024 09:35:07.684"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>xpath=//td[contains(.,"${TEMP ADMIN EMAIL UPDATED}")]/../td[4]//a[2]</arg>
+</arguments>
+<status status="PASS" endtime="20161024 09:35:07.745" starttime="20161024 09:35:07.685"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=//td[contains(.,"${TEMP ADMIN EMAIL UPDATED}")]/../td[4]//a[2]</arg>
+</arguments>
+<msg timestamp="20161024 09:35:07.746" level="INFO">Clicking element 'xpath=//td[contains(.,"marius_automation1@xcommerce.eu")]/../td[4]//a[2]'.</msg>
+<status status="PASS" endtime="20161024 09:35:07.787" starttime="20161024 09:35:07.745"></status>
+</kw>
+<kw name="Confirm Action" library="Selenium2Library">
+<doc>Dismisses currently shown confirmation dialog and returns it's message.</doc>
+<status status="PASS" endtime="20161024 09:35:08.316" starttime="20161024 09:35:07.788"></status>
+</kw>
+<kw name="Table Should Contain" library="Selenium2Library">
+<doc>Verifies that `expected` can be found somewhere in the table.</doc>
+<arguments>
+<arg>css=table.table.table-hover</arg>
+<arg>${TEMP ADMIN EMAIL UPDATED}</arg>
+</arguments>
+<status status="PASS" endtime="20161024 09:35:08.420" starttime="20161024 09:35:08.325"></status>
+</kw>
+<status status="PASS" endtime="20161024 09:35:08.421" critical="yes" starttime="20161024 09:35:07.682"></status>
+</test>
+<test id="s1-t3" name="Delete user from table">
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>xpath=//td[contains(.,"${TEMP ADMIN EMAIL UPDATED}")]/../td[4]//a[2]</arg>
+</arguments>
+<status status="PASS" endtime="20161024 09:35:08.450" starttime="20161024 09:35:08.423"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=//td[contains(.,"${TEMP ADMIN EMAIL UPDATED}")]/../td[4]//a[2]</arg>
+</arguments>
+<msg timestamp="20161024 09:35:08.452" level="INFO">Clicking element 'xpath=//td[contains(.,"marius_automation1@xcommerce.eu")]/../td[4]//a[2]'.</msg>
+<status status="PASS" endtime="20161024 09:35:08.480" starttime="20161024 09:35:08.452"></status>
+</kw>
+<kw name="Confirm Action" library="Selenium2Library">
+<doc>Dismisses currently shown confirmation dialog and returns it's message.</doc>
+<status status="PASS" endtime="20161024 09:35:08.511" starttime="20161024 09:35:08.482"></status>
+</kw>
+<status status="PASS" endtime="20161024 09:35:08.513" critical="yes" starttime="20161024 09:35:08.422"></status>
+</test>
+<test id="s1-t4" name="Check delete has done succesfully">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20161024 09:35:10.536" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" endtime="20161024 09:35:10.536" starttime="20161024 09:35:08.534"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element specified with `locator` is visible.</doc>
 <arguments>
 <arg>css=p.alert.alert-success</arg>
 </arguments>
-<status status="PASS" endtime="20161019 16:12:19.915" starttime="20161019 16:12:18.973"></status>
+<status status="PASS" endtime="20161024 09:35:10.588" starttime="20161024 09:35:10.538"></status>
 </kw>
 <kw name="Element Should Contain" library="Selenium2Library">
 <doc>Verifies element identified by `locator` contains text `expected`.</doc>
 <arguments>
 <arg>css=p.alert.alert-success</arg>
-<arg>A confirmation email has been sent to your address</arg>
+<arg>Admin deleted successfully</arg>
 </arguments>
-<msg timestamp="20161019 16:12:19.917" level="INFO">Verifying element 'css=p.alert.alert-success' contains text 'A confirmation email has been sent to your address'.</msg>
-<status status="PASS" endtime="20161019 16:12:19.947" starttime="20161019 16:12:19.916"></status>
+<msg timestamp="20161024 09:35:10.589" level="INFO">Verifying element 'css=p.alert.alert-success' contains text 'Admin deleted successfully'.</msg>
+<status status="PASS" endtime="20161024 09:35:10.616" starttime="20161024 09:35:10.589"></status>
 </kw>
-<kw name="Click Link" library="Selenium2Library">
-<doc>Clicks a link identified by locator.</doc>
-<arguments>
-<arg>css=a.btn.green.btn-outline</arg>
-</arguments>
-<msg timestamp="20161019 16:12:19.953" level="INFO">Clicking link 'css=a.btn.green.btn-outline'.</msg>
-<status status="PASS" endtime="20161019 16:12:20.009" starttime="20161019 16:12:19.953"></status>
-</kw>
-<status status="PASS" endtime="20161019 16:12:20.010" critical="yes" starttime="20161019 16:12:17.885"></status>
+<status status="PASS" endtime="20161024 09:35:10.616" critical="yes" starttime="20161024 09:35:08.519"></status>
 </test>
-<doc>Test suite with valid login.</doc>
-<status status="PASS" endtime="20161019 16:12:20.012" starttime="20161019 16:12:12.459"></status>
+<doc>Test suite with create, edit and delete admin scenarios</doc>
+<status status="PASS" endtime="20161024 09:35:10.618" starttime="20161024 09:34:59.935"></status>
 </suite>
 <statistics>
 <total>
-<stat fail="0" pass="1">Critical Tests</stat>
-<stat fail="0" pass="1">All Tests</stat>
+<stat fail="0" pass="4">Critical Tests</stat>
+<stat fail="0" pass="4">All Tests</stat>
 </total>
 <tag>
+<stat fail="0" pass="1">Login should be succesful</stat>
 </tag>
 <suite>
-<stat fail="0" id="s1" name="Valid Forgot Password" pass="1">Valid Forgot Password</stat>
+<stat fail="0" id="s1" name="08 Delete Admin" pass="4">08 Delete Admin</stat>
 </suite>
 </statistics>
 <errors>

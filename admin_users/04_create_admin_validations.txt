@@ -10,17 +10,17 @@ Resource          ../resource_ios.txt
 Resource          ../variables_ios.txt
 
 
-*** Test Cases ***                  NAME                EMAIL                   PASSWORD            Account type            ERROR MESSAGE
-Empty fields                        ${EMPTY}            ${EMPTY}                ${EMPTY}            0                       Name is required Email is required Email is invalid format Account Type is required Password must be 8 characters longer and must contain Uppercase, Lowercase and Alphanumeric characters.
-Invalid email                       any                 invalid                 ${VALID PASSWORD}   1                       Email is invalid format
-Email already exists                any                 ${VALID ADMIN_USER}     ${VALID PASSWORD}   1                       An admin with this email already exist
-Limit chars under 8                 any                 ${TEMP ADMIN EMAIL}     Test123             1                       Password must be 8 characters longer and must contain Uppercase, Lowercase and Alphanumeric characters
-Only Valid Uppercase                any                 ${TEMP ADMIN EMAIL}     VALIDUPPER          2                       Password must be 8 characters longer and must contain Uppercase, Lowercase and Alphanumeric characters
-Only Valid Lowercase                any                 ${TEMP ADMIN EMAIL}     VALIDLOWER          2                       Password must be 8 characters longer and must contain Uppercase, Lowercase and Alphanumeric characters
-Only Valid Alphanumerics            any                 ${TEMP ADMIN EMAIL}     123456789           3                       Password must be 8 characters longer and must contain Uppercase, Lowercase and Alphanumeric characters
-Only Uppercase and Lowercase        any                 ${TEMP ADMIN EMAIL}     TESTlowercase       3                       Password must be 8 characters longer and must contain Uppercase, Lowercase and Alphanumeric characters
-Only Uppercase and Alphanumeric     any                 ${TEMP ADMIN EMAIL}     TEST123456          2                       Password must be 8 characters longer and must contain Uppercase, Lowercase and Alphanumeric characters
-Only Lowercase and Alphanumeric     any                 ${TEMP ADMIN EMAIL}     test123456          3                       Password must be 8 characters longer and must contain Uppercase, Lowercase and Alphanumeric characters
+*** Test Cases ***                  NAME                EMAIL                           PASSWORD            Account type            ERROR MESSAGE
+Empty fields                        ${EMPTY}            ${EMPTY}                        ${EMPTY}            0                       Name is required Email is required Email is invalid format Account Type is required Password must be 8 characters longer and must contain Uppercase, Lowercase and Alphanumeric characters.
+Invalid email                       any                 invalid                         ${VALID PASSWORD}   1                       Email is invalid format
+Email already exists                any                 ${TEMP ADMIN EMAIL UPDATED}     ${VALID PASSWORD}   1                       An admin with this email already exist
+Limit chars under 8                 any                 ${TEMP ADMIN EMAIL}             Test123             1                       Password must be 8 characters longer and must contain Uppercase, Lowercase and Alphanumeric characters
+Only Valid Uppercase                any                 ${TEMP ADMIN EMAIL}             VALIDUPPER          2                       Password must be 8 characters longer and must contain Uppercase, Lowercase and Alphanumeric characters
+Only Valid Lowercase                any                 ${TEMP ADMIN EMAIL}             VALIDLOWER          2                       Password must be 8 characters longer and must contain Uppercase, Lowercase and Alphanumeric characters
+Only Valid Alphanumerics            any                 ${TEMP ADMIN EMAIL}             123456789           3                       Password must be 8 characters longer and must contain Uppercase, Lowercase and Alphanumeric characters
+Only Uppercase and Lowercase        any                 ${TEMP ADMIN EMAIL}             TESTlowercase       3                       Password must be 8 characters longer and must contain Uppercase, Lowercase and Alphanumeric characters
+Only Uppercase and Alphanumeric     any                 ${TEMP ADMIN EMAIL}             TEST123456          2                       Password must be 8 characters longer and must contain Uppercase, Lowercase and Alphanumeric characters
+Only Lowercase and Alphanumeric     any                 ${TEMP ADMIN EMAIL}             test123456          3                       Password must be 8 characters longer and must contain Uppercase, Lowercase and Alphanumeric characters
 
 *** Keywords ***
 Add Users with Invalid Credentials Should Fail

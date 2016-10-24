@@ -45,23 +45,6 @@ Check if admin has succesfully been edited
     wait until element is visible   css=p.alert.alert-success
     element should contain          css=p.alert.alert-success           Admin updated successfully
 
-#DELETE USER
-Cancel the delete action and check user still exists
-    Choose Cancel On Next Confirmation
-    wait until element is visible   xpath=//td[contains(.,"${TEMP ADMIN EMAIL UPDATED}")]/../td[4]//a[2]
-    click element                   xpath=//td[contains(.,"${TEMP ADMIN EMAIL UPDATED}")]/../td[4]//a[2]
-    Confirm Action
-    table should contain            css=table.table.table-hover     ${TEMP ADMIN EMAIL UPDATED}
-
-Delete user from table
-    wait until element is visible   xpath=//td[contains(.,"${TEMP ADMIN EMAIL UPDATED}")]/../td[4]//a[2]
-    click element                   xpath=//td[contains(.,"${TEMP ADMIN EMAIL UPDATED}")]/../td[4]//a[2]
-    Confirm Action
-
-Check delete has done succesfully
-    sleep       2s
-    wait until element is visible   css=p.alert.alert-success
-    element should contain          css=p.alert.alert-success            Admin deleted successfully
 
 
 
