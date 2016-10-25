@@ -24,6 +24,11 @@ Search Company name and Reset customer
     sleep       2s
     location should be                  http://${SERVER_DEV}/index.php?controller=createdirectorder&create=1
 
+Validate the billing form
+    click button                        save_company_info
+    wait until element is visible       css=div.alert.alert-danger
+    page should contain element         css=div.alert.alert-danger         There were some errors: Company name is required Address is required Country is required City is required Zip is required Contact email is required
+
 Complete the billing address form
     wait until element is visible       company_name
     input text                          company_name            Marius Pop Automation
