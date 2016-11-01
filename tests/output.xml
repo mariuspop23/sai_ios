@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20161101 12:50:10.688" generator="Robot 3.0 (Python 2.7.8 on win32)">
+<suite source="C:\Python27\Proiecte\Live SAI IOS\tests\test_ios.txt" id="s1" name="Test Ios">
+<test id="s1-t1" name="Open google page">
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>http://www.google.com</arg>
+<arg>chrome</arg>
+</arguments>
+<msg timestamp="20161101 12:50:10.816" level="INFO">Opening browser 'chrome' to base url 'http://www.google.com'</msg>
+<status status="PASS" endtime="20161101 12:50:16.392" starttime="20161101 12:50:10.816"></status>
+</kw>
+<status status="PASS" endtime="20161101 12:50:16.394" critical="yes" starttime="20161101 12:50:10.814"></status>
+</test>
+<doc>Test suite with valid login.</doc>
+<status status="PASS" endtime="20161101 12:50:16.396" starttime="20161101 12:50:10.692"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="1">Critical Tests</stat>
+<stat fail="0" pass="1">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="0" id="s1" name="Test Ios" pass="1">Test Ios</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
