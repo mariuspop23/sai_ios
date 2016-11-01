@@ -1,0 +1,14 @@
+*** Settings ***
+Documentation     Test suite with valid login.
+#Suite Setup       Open Browser To Homepage
+#Suite Teardown    Close Browser
+
+#Resource          ../resource_ios.txt
+#Resource          ../variables_ios.txt
+Library           Selenium2Library
+
+
+*** Test Cases ***
+
+Open google page
+    open browser            http://www.google.com          chrome
