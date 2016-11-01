@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generated="20161024 09:34:59.933" generator="Robot 3.0 (Python 2.7.8 on win32)">
-<suite source="C:\Python27\Proiecte\Live SAI IOS\admin_users\08_delete_admin.txt" id="s1" name="08 Delete Admin">
+<robot generated="20161101 11:42:15.095" generator="Robot 3.0 (Python 2.7.8 on win32)">
+<suite source="C:\Python27\Proiecte\Live SAI IOS\admin_users\01_invalid_login.txt" id="s1" name="01 Invalid Login">
 <kw type="setup" name="Open Browser To Homepage" library="resource_ios">
 <kw name="Open Browser" library="Selenium2Library">
 <doc>Opens a new browser instance to given URL.</doc>
@@ -8,34 +8,50 @@
 <arg>${LOGIN URL}</arg>
 <arg>${BROWSER}</arg>
 </arguments>
-<msg timestamp="20161024 09:35:00.087" level="INFO">Opening browser 'chrome' to base url 'http://tadelos.ro/ios'</msg>
-<status status="PASS" endtime="20161024 09:35:05.126" starttime="20161024 09:35:00.087"></status>
+<msg timestamp="20161101 11:42:15.786" level="INFO">Opening browser 'chrome' to base url 'http://tadelos.ro/ios'</msg>
+<status status="PASS" endtime="20161101 11:42:21.712" starttime="20161101 11:42:15.785"></status>
 </kw>
 <kw name="Maximize Browser Window" library="Selenium2Library">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" endtime="20161024 09:35:05.298" starttime="20161024 09:35:05.126"></status>
+<status status="PASS" endtime="20161101 11:42:22.949" starttime="20161101 11:42:21.712"></status>
 </kw>
 <kw name="Set Selenium Speed" library="Selenium2Library">
 <doc>Sets the delay in seconds that is waited after each Selenium command.</doc>
 <arguments>
 <arg>${DELAY}</arg>
 </arguments>
-<status status="PASS" endtime="20161024 09:35:05.299" starttime="20161024 09:35:05.298"></status>
+<status status="PASS" endtime="20161101 11:42:22.953" starttime="20161101 11:42:22.949"></status>
 </kw>
-<status status="PASS" endtime="20161024 09:35:05.299" starttime="20161024 09:35:00.087"></status>
+<status status="PASS" endtime="20161101 11:42:22.954" starttime="20161101 11:42:15.785"></status>
 </kw>
-<test id="s1-t1" name="User should successful login">
-<kw name="Login Admin User" library="resource_ios">
+<test id="s1-t1" name="Invalid Username">
+<kw type="setup" name="Go To Login Page" library="resource_ios">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${LOGIN URL}</arg>
+</arguments>
+<msg timestamp="20161101 11:42:22.963" level="INFO">Opening url 'http://tadelos.ro/ios'</msg>
+<status status="PASS" endtime="20161101 11:42:23.858" starttime="20161101 11:42:22.963"></status>
+</kw>
+<status status="PASS" endtime="20161101 11:42:23.858" starttime="20161101 11:42:22.962"></status>
+</kw>
+<kw name="Login With Invalid Credentials Should Fail">
+<arguments>
+<arg>invalid</arg>
+<arg>${VALID PASSWORD}</arg>
+<arg>Invalid email address</arg>
+</arguments>
 <kw name="Input Username" library="resource_ios">
 <arguments>
-<arg>${VALID ADMIN_USER}</arg>
+<arg>${username}</arg>
 </arguments>
 <kw name="Wait Until Page Contains Element" library="Selenium2Library">
 <doc>Waits until element specified with `locator` appears on current page.</doc>
 <arguments>
 <arg>email</arg>
 </arguments>
-<status status="PASS" endtime="20161024 09:35:05.354" starttime="20161024 09:35:05.302"></status>
+<status status="PASS" endtime="20161101 11:42:23.924" starttime="20161101 11:42:23.860"></status>
 </kw>
 <kw name="Input Text" library="Selenium2Library">
 <doc>Types the given `text` into text field identified by `locator`.</doc>
@@ -43,14 +59,14 @@
 <arg>email</arg>
 <arg>${username}</arg>
 </arguments>
-<msg timestamp="20161024 09:35:05.356" level="INFO">Typing text 'marius@xcommerce.eu' into text field 'email'</msg>
-<status status="PASS" endtime="20161024 09:35:05.475" starttime="20161024 09:35:05.355"></status>
+<msg timestamp="20161101 11:42:23.925" level="INFO">Typing text 'invalid' into text field 'email'</msg>
+<status status="PASS" endtime="20161101 11:42:24.029" starttime="20161101 11:42:23.925"></status>
 </kw>
-<status status="PASS" endtime="20161024 09:35:05.475" starttime="20161024 09:35:05.301"></status>
+<status status="PASS" endtime="20161101 11:42:24.029" starttime="20161101 11:42:23.860"></status>
 </kw>
 <kw name="Input Password" library="resource_ios">
 <arguments>
-<arg>${VALID PASSWORD}</arg>
+<arg>${password}</arg>
 </arguments>
 <kw name="Input Text" library="Selenium2Library">
 <doc>Types the given `text` into text field identified by `locator`.</doc>
@@ -58,10 +74,10 @@
 <arg>passwd</arg>
 <arg>${password}</arg>
 </arguments>
-<msg timestamp="20161024 09:35:05.477" level="INFO">Typing text 'Marius123' into text field 'passwd'</msg>
-<status status="PASS" endtime="20161024 09:35:05.598" starttime="20161024 09:35:05.476"></status>
+<msg timestamp="20161101 11:42:24.030" level="INFO">Typing text 'Marius123' into text field 'passwd'</msg>
+<status status="PASS" endtime="20161101 11:42:24.148" starttime="20161101 11:42:24.030"></status>
 </kw>
-<status status="PASS" endtime="20161024 09:35:05.598" starttime="20161024 09:35:05.475"></status>
+<status status="PASS" endtime="20161101 11:42:24.149" starttime="20161101 11:42:24.029"></status>
 </kw>
 <kw name="Submit Credentials" library="resource_ios">
 <kw name="Click Element" library="Selenium2Library">
@@ -69,123 +85,521 @@
 <arguments>
 <arg>SubmitLogin</arg>
 </arguments>
-<msg timestamp="20161024 09:35:05.599" level="INFO">Clicking element 'SubmitLogin'.</msg>
-<status status="PASS" endtime="20161024 09:35:05.674" starttime="20161024 09:35:05.599"></status>
+<msg timestamp="20161101 11:42:24.151" level="INFO">Clicking element 'SubmitLogin'.</msg>
+<status status="PASS" endtime="20161101 11:42:24.672" starttime="20161101 11:42:24.150"></status>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <doc>Pauses the test executed for the given time.</doc>
 <arguments>
 <arg>2s</arg>
 </arguments>
-<msg timestamp="20161024 09:35:07.675" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" endtime="20161024 09:35:07.676" starttime="20161024 09:35:05.674"></status>
+<msg timestamp="20161101 11:42:26.678" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" endtime="20161101 11:42:26.679" starttime="20161101 11:42:24.672"></status>
 </kw>
-<status status="PASS" endtime="20161024 09:35:07.676" starttime="20161024 09:35:05.598"></status>
+<status status="PASS" endtime="20161101 11:42:26.680" starttime="20161101 11:42:24.149"></status>
 </kw>
-<status status="PASS" endtime="20161024 09:35:07.676" starttime="20161024 09:35:05.300"></status>
-</kw>
-<doc>This test case completes the login form and submits the form</doc>
-<tags>
-<tag>Login should be succesful</tag>
-</tags>
-<status status="PASS" endtime="20161024 09:35:07.679" critical="yes" starttime="20161024 09:35:05.299"></status>
-</test>
-<test id="s1-t2" name="Cancel the delete action and check user still exists">
-<kw name="Choose Cancel On Next Confirmation" library="Selenium2Library">
-<doc>Cancel will be selected the next time `Confirm Action` is used.</doc>
-<status status="PASS" endtime="20161024 09:35:07.684" starttime="20161024 09:35:07.684"></status>
-</kw>
-<kw name="Wait Until Element Is Visible" library="Selenium2Library">
-<doc>Waits until element specified with `locator` is visible.</doc>
+<kw name="Wait Until Element Is Enabled" library="Selenium2Library">
+<doc>Waits until element specified with `locator` is enabled.</doc>
 <arguments>
-<arg>xpath=//td[contains(.,"${TEMP ADMIN EMAIL UPDATED}")]/../td[4]//a[2]</arg>
+<arg>create_account_error</arg>
 </arguments>
-<status status="PASS" endtime="20161024 09:35:07.745" starttime="20161024 09:35:07.685"></status>
-</kw>
-<kw name="Click Element" library="Selenium2Library">
-<doc>Click element identified by `locator`.</doc>
-<arguments>
-<arg>xpath=//td[contains(.,"${TEMP ADMIN EMAIL UPDATED}")]/../td[4]//a[2]</arg>
-</arguments>
-<msg timestamp="20161024 09:35:07.746" level="INFO">Clicking element 'xpath=//td[contains(.,"marius_automation1@xcommerce.eu")]/../td[4]//a[2]'.</msg>
-<status status="PASS" endtime="20161024 09:35:07.787" starttime="20161024 09:35:07.745"></status>
-</kw>
-<kw name="Confirm Action" library="Selenium2Library">
-<doc>Dismisses currently shown confirmation dialog and returns it's message.</doc>
-<status status="PASS" endtime="20161024 09:35:08.316" starttime="20161024 09:35:07.788"></status>
-</kw>
-<kw name="Table Should Contain" library="Selenium2Library">
-<doc>Verifies that `expected` can be found somewhere in the table.</doc>
-<arguments>
-<arg>css=table.table.table-hover</arg>
-<arg>${TEMP ADMIN EMAIL UPDATED}</arg>
-</arguments>
-<status status="PASS" endtime="20161024 09:35:08.420" starttime="20161024 09:35:08.325"></status>
-</kw>
-<status status="PASS" endtime="20161024 09:35:08.421" critical="yes" starttime="20161024 09:35:07.682"></status>
-</test>
-<test id="s1-t3" name="Delete user from table">
-<kw name="Wait Until Element Is Visible" library="Selenium2Library">
-<doc>Waits until element specified with `locator` is visible.</doc>
-<arguments>
-<arg>xpath=//td[contains(.,"${TEMP ADMIN EMAIL UPDATED}")]/../td[4]//a[2]</arg>
-</arguments>
-<status status="PASS" endtime="20161024 09:35:08.450" starttime="20161024 09:35:08.423"></status>
-</kw>
-<kw name="Click Element" library="Selenium2Library">
-<doc>Click element identified by `locator`.</doc>
-<arguments>
-<arg>xpath=//td[contains(.,"${TEMP ADMIN EMAIL UPDATED}")]/../td[4]//a[2]</arg>
-</arguments>
-<msg timestamp="20161024 09:35:08.452" level="INFO">Clicking element 'xpath=//td[contains(.,"marius_automation1@xcommerce.eu")]/../td[4]//a[2]'.</msg>
-<status status="PASS" endtime="20161024 09:35:08.480" starttime="20161024 09:35:08.452"></status>
-</kw>
-<kw name="Confirm Action" library="Selenium2Library">
-<doc>Dismisses currently shown confirmation dialog and returns it's message.</doc>
-<status status="PASS" endtime="20161024 09:35:08.511" starttime="20161024 09:35:08.482"></status>
-</kw>
-<status status="PASS" endtime="20161024 09:35:08.513" critical="yes" starttime="20161024 09:35:08.422"></status>
-</test>
-<test id="s1-t4" name="Check delete has done succesfully">
-<kw name="Sleep" library="BuiltIn">
-<doc>Pauses the test executed for the given time.</doc>
-<arguments>
-<arg>2s</arg>
-</arguments>
-<msg timestamp="20161024 09:35:10.536" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" endtime="20161024 09:35:10.536" starttime="20161024 09:35:08.534"></status>
-</kw>
-<kw name="Wait Until Element Is Visible" library="Selenium2Library">
-<doc>Waits until element specified with `locator` is visible.</doc>
-<arguments>
-<arg>css=p.alert.alert-success</arg>
-</arguments>
-<status status="PASS" endtime="20161024 09:35:10.588" starttime="20161024 09:35:10.538"></status>
+<status status="PASS" endtime="20161101 11:42:26.752" starttime="20161101 11:42:26.680"></status>
 </kw>
 <kw name="Element Should Contain" library="Selenium2Library">
 <doc>Verifies element identified by `locator` contains text `expected`.</doc>
 <arguments>
-<arg>css=p.alert.alert-success</arg>
-<arg>Admin deleted successfully</arg>
+<arg>css=div.alert.alert-danger</arg>
+<arg>${error_message}</arg>
 </arguments>
-<msg timestamp="20161024 09:35:10.589" level="INFO">Verifying element 'css=p.alert.alert-success' contains text 'Admin deleted successfully'.</msg>
-<status status="PASS" endtime="20161024 09:35:10.616" starttime="20161024 09:35:10.589"></status>
+<msg timestamp="20161101 11:42:26.753" level="INFO">Verifying element 'css=div.alert.alert-danger' contains text 'Invalid email address'.</msg>
+<status status="PASS" endtime="20161101 11:42:26.819" starttime="20161101 11:42:26.752"></status>
 </kw>
-<status status="PASS" endtime="20161024 09:35:10.616" critical="yes" starttime="20161024 09:35:08.519"></status>
+<status status="PASS" endtime="20161101 11:42:26.819" starttime="20161101 11:42:23.859"></status>
+</kw>
+<status status="PASS" endtime="20161101 11:42:26.822" critical="yes" starttime="20161101 11:42:22.954"></status>
 </test>
-<doc>Test suite with create, edit and delete admin scenarios</doc>
-<status status="PASS" endtime="20161024 09:35:10.618" starttime="20161024 09:34:59.935"></status>
+<test id="s1-t2" name="Invalid Password">
+<kw type="setup" name="Go To Login Page" library="resource_ios">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${LOGIN URL}</arg>
+</arguments>
+<msg timestamp="20161101 11:42:26.826" level="INFO">Opening url 'http://tadelos.ro/ios'</msg>
+<status status="PASS" endtime="20161101 11:42:27.480" starttime="20161101 11:42:26.825"></status>
+</kw>
+<status status="PASS" endtime="20161101 11:42:27.480" starttime="20161101 11:42:26.825"></status>
+</kw>
+<kw name="Login With Invalid Credentials Should Fail">
+<arguments>
+<arg>${VALID ADMIN_USER}</arg>
+<arg>invalid</arg>
+<arg>Authentication failed</arg>
+</arguments>
+<kw name="Input Username" library="resource_ios">
+<arguments>
+<arg>${username}</arg>
+</arguments>
+<kw name="Wait Until Page Contains Element" library="Selenium2Library">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>email</arg>
+</arguments>
+<status status="PASS" endtime="20161101 11:42:27.507" starttime="20161101 11:42:27.488"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>email</arg>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20161101 11:42:27.508" level="INFO">Typing text 'marius@xcommerce.eu' into text field 'email'</msg>
+<status status="PASS" endtime="20161101 11:42:27.711" starttime="20161101 11:42:27.508"></status>
+</kw>
+<status status="PASS" endtime="20161101 11:42:27.711" starttime="20161101 11:42:27.488"></status>
+</kw>
+<kw name="Input Password" library="resource_ios">
+<arguments>
+<arg>${password}</arg>
+</arguments>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>passwd</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20161101 11:42:27.713" level="INFO">Typing text 'invalid' into text field 'passwd'</msg>
+<status status="PASS" endtime="20161101 11:42:27.801" starttime="20161101 11:42:27.712"></status>
+</kw>
+<status status="PASS" endtime="20161101 11:42:27.802" starttime="20161101 11:42:27.712"></status>
+</kw>
+<kw name="Submit Credentials" library="resource_ios">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>SubmitLogin</arg>
+</arguments>
+<msg timestamp="20161101 11:42:27.803" level="INFO">Clicking element 'SubmitLogin'.</msg>
+<status status="PASS" endtime="20161101 11:42:28.376" starttime="20161101 11:42:27.802"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20161101 11:42:30.381" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" endtime="20161101 11:42:30.382" starttime="20161101 11:42:28.377"></status>
+</kw>
+<status status="PASS" endtime="20161101 11:42:30.383" starttime="20161101 11:42:27.802"></status>
+</kw>
+<kw name="Wait Until Element Is Enabled" library="Selenium2Library">
+<doc>Waits until element specified with `locator` is enabled.</doc>
+<arguments>
+<arg>create_account_error</arg>
+</arguments>
+<status status="PASS" endtime="20161101 11:42:30.447" starttime="20161101 11:42:30.383"></status>
+</kw>
+<kw name="Element Should Contain" library="Selenium2Library">
+<doc>Verifies element identified by `locator` contains text `expected`.</doc>
+<arguments>
+<arg>css=div.alert.alert-danger</arg>
+<arg>${error_message}</arg>
+</arguments>
+<msg timestamp="20161101 11:42:30.449" level="INFO">Verifying element 'css=div.alert.alert-danger' contains text 'Authentication failed'.</msg>
+<status status="PASS" endtime="20161101 11:42:30.505" starttime="20161101 11:42:30.448"></status>
+</kw>
+<status status="PASS" endtime="20161101 11:42:30.505" starttime="20161101 11:42:27.487"></status>
+</kw>
+<status status="PASS" endtime="20161101 11:42:30.510" critical="yes" starttime="20161101 11:42:26.824"></status>
+</test>
+<test id="s1-t3" name="Invalid Username And Password">
+<kw type="setup" name="Go To Login Page" library="resource_ios">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${LOGIN URL}</arg>
+</arguments>
+<msg timestamp="20161101 11:42:30.518" level="INFO">Opening url 'http://tadelos.ro/ios'</msg>
+<status status="PASS" endtime="20161101 11:42:31.173" starttime="20161101 11:42:30.518"></status>
+</kw>
+<status status="PASS" endtime="20161101 11:42:31.173" starttime="20161101 11:42:30.517"></status>
+</kw>
+<kw name="Login With Invalid Credentials Should Fail">
+<arguments>
+<arg>invalid</arg>
+<arg>whatever</arg>
+<arg>Invalid email address</arg>
+</arguments>
+<kw name="Input Username" library="resource_ios">
+<arguments>
+<arg>${username}</arg>
+</arguments>
+<kw name="Wait Until Page Contains Element" library="Selenium2Library">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>email</arg>
+</arguments>
+<status status="PASS" endtime="20161101 11:42:31.192" starttime="20161101 11:42:31.178"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>email</arg>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20161101 11:42:31.193" level="INFO">Typing text 'invalid' into text field 'email'</msg>
+<status status="PASS" endtime="20161101 11:42:31.309" starttime="20161101 11:42:31.192"></status>
+</kw>
+<status status="PASS" endtime="20161101 11:42:31.310" starttime="20161101 11:42:31.178"></status>
+</kw>
+<kw name="Input Password" library="resource_ios">
+<arguments>
+<arg>${password}</arg>
+</arguments>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>passwd</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20161101 11:42:31.311" level="INFO">Typing text 'whatever' into text field 'passwd'</msg>
+<status status="PASS" endtime="20161101 11:42:31.384" starttime="20161101 11:42:31.310"></status>
+</kw>
+<status status="PASS" endtime="20161101 11:42:31.385" starttime="20161101 11:42:31.310"></status>
+</kw>
+<kw name="Submit Credentials" library="resource_ios">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>SubmitLogin</arg>
+</arguments>
+<msg timestamp="20161101 11:42:31.386" level="INFO">Clicking element 'SubmitLogin'.</msg>
+<status status="PASS" endtime="20161101 11:42:31.870" starttime="20161101 11:42:31.386"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20161101 11:42:33.872" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" endtime="20161101 11:42:33.882" starttime="20161101 11:42:31.870"></status>
+</kw>
+<status status="PASS" endtime="20161101 11:42:33.883" starttime="20161101 11:42:31.385"></status>
+</kw>
+<kw name="Wait Until Element Is Enabled" library="Selenium2Library">
+<doc>Waits until element specified with `locator` is enabled.</doc>
+<arguments>
+<arg>create_account_error</arg>
+</arguments>
+<status status="PASS" endtime="20161101 11:42:33.958" starttime="20161101 11:42:33.884"></status>
+</kw>
+<kw name="Element Should Contain" library="Selenium2Library">
+<doc>Verifies element identified by `locator` contains text `expected`.</doc>
+<arguments>
+<arg>css=div.alert.alert-danger</arg>
+<arg>${error_message}</arg>
+</arguments>
+<msg timestamp="20161101 11:42:33.959" level="INFO">Verifying element 'css=div.alert.alert-danger' contains text 'Invalid email address'.</msg>
+<status status="PASS" endtime="20161101 11:42:34.002" starttime="20161101 11:42:33.958"></status>
+</kw>
+<status status="PASS" endtime="20161101 11:42:34.003" starttime="20161101 11:42:31.177"></status>
+</kw>
+<status status="PASS" endtime="20161101 11:42:34.004" critical="yes" starttime="20161101 11:42:30.515"></status>
+</test>
+<test id="s1-t4" name="Empty Username">
+<kw type="setup" name="Go To Login Page" library="resource_ios">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${LOGIN URL}</arg>
+</arguments>
+<msg timestamp="20161101 11:42:34.009" level="INFO">Opening url 'http://tadelos.ro/ios'</msg>
+<status status="PASS" endtime="20161101 11:42:34.569" starttime="20161101 11:42:34.008"></status>
+</kw>
+<status status="PASS" endtime="20161101 11:42:34.569" starttime="20161101 11:42:34.008"></status>
+</kw>
+<kw name="Login With Invalid Credentials Should Fail">
+<arguments>
+<arg>${EMPTY}</arg>
+<arg>${VALID PASSWORD}</arg>
+<arg>An email address required</arg>
+</arguments>
+<kw name="Input Username" library="resource_ios">
+<arguments>
+<arg>${username}</arg>
+</arguments>
+<kw name="Wait Until Page Contains Element" library="Selenium2Library">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>email</arg>
+</arguments>
+<status status="PASS" endtime="20161101 11:42:34.586" starttime="20161101 11:42:34.572"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>email</arg>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20161101 11:42:34.587" level="INFO">Typing text '' into text field 'email'</msg>
+<status status="PASS" endtime="20161101 11:42:34.688" starttime="20161101 11:42:34.586"></status>
+</kw>
+<status status="PASS" endtime="20161101 11:42:34.689" starttime="20161101 11:42:34.571"></status>
+</kw>
+<kw name="Input Password" library="resource_ios">
+<arguments>
+<arg>${password}</arg>
+</arguments>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>passwd</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20161101 11:42:34.690" level="INFO">Typing text 'Marius123' into text field 'passwd'</msg>
+<status status="PASS" endtime="20161101 11:42:34.774" starttime="20161101 11:42:34.690"></status>
+</kw>
+<status status="PASS" endtime="20161101 11:42:34.775" starttime="20161101 11:42:34.689"></status>
+</kw>
+<kw name="Submit Credentials" library="resource_ios">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>SubmitLogin</arg>
+</arguments>
+<msg timestamp="20161101 11:42:34.775" level="INFO">Clicking element 'SubmitLogin'.</msg>
+<status status="PASS" endtime="20161101 11:42:35.342" starttime="20161101 11:42:34.775"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20161101 11:42:37.346" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" endtime="20161101 11:42:37.347" starttime="20161101 11:42:35.342"></status>
+</kw>
+<status status="PASS" endtime="20161101 11:42:37.347" starttime="20161101 11:42:34.775"></status>
+</kw>
+<kw name="Wait Until Element Is Enabled" library="Selenium2Library">
+<doc>Waits until element specified with `locator` is enabled.</doc>
+<arguments>
+<arg>create_account_error</arg>
+</arguments>
+<status status="PASS" endtime="20161101 11:42:37.402" starttime="20161101 11:42:37.348"></status>
+</kw>
+<kw name="Element Should Contain" library="Selenium2Library">
+<doc>Verifies element identified by `locator` contains text `expected`.</doc>
+<arguments>
+<arg>css=div.alert.alert-danger</arg>
+<arg>${error_message}</arg>
+</arguments>
+<msg timestamp="20161101 11:42:37.403" level="INFO">Verifying element 'css=div.alert.alert-danger' contains text 'An email address required'.</msg>
+<status status="PASS" endtime="20161101 11:42:37.474" starttime="20161101 11:42:37.402"></status>
+</kw>
+<status status="PASS" endtime="20161101 11:42:37.474" starttime="20161101 11:42:34.570"></status>
+</kw>
+<status status="PASS" endtime="20161101 11:42:37.480" critical="yes" starttime="20161101 11:42:34.007"></status>
+</test>
+<test id="s1-t5" name="Empty Password">
+<kw type="setup" name="Go To Login Page" library="resource_ios">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${LOGIN URL}</arg>
+</arguments>
+<msg timestamp="20161101 11:42:37.486" level="INFO">Opening url 'http://tadelos.ro/ios'</msg>
+<status status="PASS" endtime="20161101 11:42:38.155" starttime="20161101 11:42:37.485"></status>
+</kw>
+<status status="PASS" endtime="20161101 11:42:38.155" starttime="20161101 11:42:37.485"></status>
+</kw>
+<kw name="Login With Invalid Credentials Should Fail">
+<arguments>
+<arg>${VALID ADMIN_USER}</arg>
+<arg>${EMPTY}</arg>
+<arg>Password is required</arg>
+</arguments>
+<kw name="Input Username" library="resource_ios">
+<arguments>
+<arg>${username}</arg>
+</arguments>
+<kw name="Wait Until Page Contains Element" library="Selenium2Library">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>email</arg>
+</arguments>
+<status status="PASS" endtime="20161101 11:42:38.192" starttime="20161101 11:42:38.172"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>email</arg>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20161101 11:42:38.192" level="INFO">Typing text 'marius@xcommerce.eu' into text field 'email'</msg>
+<status status="PASS" endtime="20161101 11:42:38.323" starttime="20161101 11:42:38.192"></status>
+</kw>
+<status status="PASS" endtime="20161101 11:42:38.323" starttime="20161101 11:42:38.171"></status>
+</kw>
+<kw name="Input Password" library="resource_ios">
+<arguments>
+<arg>${password}</arg>
+</arguments>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>passwd</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20161101 11:42:38.325" level="INFO">Typing text '' into text field 'passwd'</msg>
+<status status="PASS" endtime="20161101 11:42:38.387" starttime="20161101 11:42:38.324"></status>
+</kw>
+<status status="PASS" endtime="20161101 11:42:38.387" starttime="20161101 11:42:38.323"></status>
+</kw>
+<kw name="Submit Credentials" library="resource_ios">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>SubmitLogin</arg>
+</arguments>
+<msg timestamp="20161101 11:42:38.388" level="INFO">Clicking element 'SubmitLogin'.</msg>
+<status status="PASS" endtime="20161101 11:42:38.854" starttime="20161101 11:42:38.388"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20161101 11:42:40.865" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" endtime="20161101 11:42:40.865" starttime="20161101 11:42:38.854"></status>
+</kw>
+<status status="PASS" endtime="20161101 11:42:40.865" starttime="20161101 11:42:38.387"></status>
+</kw>
+<kw name="Wait Until Element Is Enabled" library="Selenium2Library">
+<doc>Waits until element specified with `locator` is enabled.</doc>
+<arguments>
+<arg>create_account_error</arg>
+</arguments>
+<status status="PASS" endtime="20161101 11:42:40.883" starttime="20161101 11:42:40.865"></status>
+</kw>
+<kw name="Element Should Contain" library="Selenium2Library">
+<doc>Verifies element identified by `locator` contains text `expected`.</doc>
+<arguments>
+<arg>css=div.alert.alert-danger</arg>
+<arg>${error_message}</arg>
+</arguments>
+<msg timestamp="20161101 11:42:40.884" level="INFO">Verifying element 'css=div.alert.alert-danger' contains text 'Password is required'.</msg>
+<status status="PASS" endtime="20161101 11:42:40.909" starttime="20161101 11:42:40.883"></status>
+</kw>
+<status status="PASS" endtime="20161101 11:42:40.909" starttime="20161101 11:42:38.170"></status>
+</kw>
+<status status="PASS" endtime="20161101 11:42:40.910" critical="yes" starttime="20161101 11:42:37.484"></status>
+</test>
+<test id="s1-t6" name="Empty Username And Password">
+<kw type="setup" name="Go To Login Page" library="resource_ios">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${LOGIN URL}</arg>
+</arguments>
+<msg timestamp="20161101 11:42:40.914" level="INFO">Opening url 'http://tadelos.ro/ios'</msg>
+<status status="PASS" endtime="20161101 11:42:41.441" starttime="20161101 11:42:40.914"></status>
+</kw>
+<status status="PASS" endtime="20161101 11:42:41.441" starttime="20161101 11:42:40.913"></status>
+</kw>
+<kw name="Login With Invalid Credentials Should Fail">
+<arguments>
+<arg>${EMPTY}</arg>
+<arg>${EMPTY}</arg>
+<arg>An email address required</arg>
+</arguments>
+<kw name="Input Username" library="resource_ios">
+<arguments>
+<arg>${username}</arg>
+</arguments>
+<kw name="Wait Until Page Contains Element" library="Selenium2Library">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>email</arg>
+</arguments>
+<status status="PASS" endtime="20161101 11:42:41.456" starttime="20161101 11:42:41.443"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>email</arg>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20161101 11:42:41.457" level="INFO">Typing text '' into text field 'email'</msg>
+<status status="PASS" endtime="20161101 11:42:41.569" starttime="20161101 11:42:41.456"></status>
+</kw>
+<status status="PASS" endtime="20161101 11:42:41.570" starttime="20161101 11:42:41.442"></status>
+</kw>
+<kw name="Input Password" library="resource_ios">
+<arguments>
+<arg>${password}</arg>
+</arguments>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>passwd</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20161101 11:42:41.571" level="INFO">Typing text '' into text field 'passwd'</msg>
+<status status="PASS" endtime="20161101 11:42:41.640" starttime="20161101 11:42:41.570"></status>
+</kw>
+<status status="PASS" endtime="20161101 11:42:41.640" starttime="20161101 11:42:41.570"></status>
+</kw>
+<kw name="Submit Credentials" library="resource_ios">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>SubmitLogin</arg>
+</arguments>
+<msg timestamp="20161101 11:42:41.641" level="INFO">Clicking element 'SubmitLogin'.</msg>
+<status status="PASS" endtime="20161101 11:42:42.176" starttime="20161101 11:42:41.641"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20161101 11:42:44.191" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" endtime="20161101 11:42:44.192" starttime="20161101 11:42:42.178"></status>
+</kw>
+<status status="PASS" endtime="20161101 11:42:44.193" starttime="20161101 11:42:41.640"></status>
+</kw>
+<kw name="Wait Until Element Is Enabled" library="Selenium2Library">
+<doc>Waits until element specified with `locator` is enabled.</doc>
+<arguments>
+<arg>create_account_error</arg>
+</arguments>
+<status status="PASS" endtime="20161101 11:42:44.234" starttime="20161101 11:42:44.195"></status>
+</kw>
+<kw name="Element Should Contain" library="Selenium2Library">
+<doc>Verifies element identified by `locator` contains text `expected`.</doc>
+<arguments>
+<arg>css=div.alert.alert-danger</arg>
+<arg>${error_message}</arg>
+</arguments>
+<msg timestamp="20161101 11:42:44.236" level="INFO">Verifying element 'css=div.alert.alert-danger' contains text 'An email address required'.</msg>
+<status status="PASS" endtime="20161101 11:42:44.290" starttime="20161101 11:42:44.235"></status>
+</kw>
+<status status="PASS" endtime="20161101 11:42:44.290" starttime="20161101 11:42:41.442"></status>
+</kw>
+<status status="PASS" endtime="20161101 11:42:44.300" critical="yes" starttime="20161101 11:42:40.912"></status>
+</test>
+<doc>A test suite containing tests related to invalid login.</doc>
+<status status="PASS" endtime="20161101 11:42:44.304" starttime="20161101 11:42:15.099"></status>
 </suite>
 <statistics>
 <total>
-<stat fail="0" pass="4">Critical Tests</stat>
-<stat fail="0" pass="4">All Tests</stat>
+<stat fail="0" pass="6">Critical Tests</stat>
+<stat fail="0" pass="6">All Tests</stat>
 </total>
 <tag>
-<stat fail="0" pass="1">Login should be succesful</stat>
 </tag>
 <suite>
-<stat fail="0" id="s1" name="08 Delete Admin" pass="4">08 Delete Admin</stat>
+<stat fail="0" id="s1" name="01 Invalid Login" pass="6">01 Invalid Login</stat>
 </suite>
 </statistics>
 <errors>
