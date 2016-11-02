@@ -18,7 +18,7 @@ Search Company name and Select customer
     click element                       xpath=//*[@id="createresellerorder"]/div[2]/ul/li[1]
     sleep   2s
 
-    click element                       xpath=//*[@id="createresellerorder"]/div/div[3]/div[2]/div/div[2]/div/a[2]
+    click element                       xpath=//*[@id="createresellerorder"]/div/div[3]/div[2]/div/div[2]/div[1]/div[1]/a
 
 New license validations
     wait until element is visible       submitAddOrderItem
