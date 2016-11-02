@@ -1,7 +1,7 @@
 *** Settings ***
 Documentation     Test suite with Add line items
 Suite Setup       Open Browser To Homepage
-#Suite Teardown    Close Browser
+Suite Teardown    Close Browser
 
 Resource          ../resource_ios.txt
 Resource          ../variables_ios.txt
