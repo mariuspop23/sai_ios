@@ -10,6 +10,7 @@ Resource          ../variables_ios.txt
 
 Search Company name and Select customer
     Login Admin User
+
     Go to Resellers page
     click element                       xpath=//*[@id="resellerorders"]/div/div[3]/div[2]/div/div[2]/div[1]/div[2]/div/a
     wait until element is visible       search_reseller
