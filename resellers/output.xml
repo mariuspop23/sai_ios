@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generated="20161019 16:04:01.412" generator="Robot 3.0 (Python 2.7.8 on win32)">
-<suite source="C:\Python27\Proiecte\Live SAI IOS\resellers\order_flows.txt" id="s1" name="Order Flows">
+<robot generated="20161102 09:52:21.113" generator="Robot 3.0 (Python 2.7.8 on win32)">
+<suite source="C:\Python27\Proiecte\Live SAI IOS\resellers\44_order_flows.txt" id="s1" name="44 Order Flows">
 <kw type="setup" name="Open Browser To Homepage" library="resource_ios">
 <kw name="Open Browser" library="Selenium2Library">
 <doc>Opens a new browser instance to given URL.</doc>
@@ -8,21 +8,21 @@
 <arg>${LOGIN URL}</arg>
 <arg>${BROWSER}</arg>
 </arguments>
-<msg timestamp="20161019 16:04:01.562" level="INFO">Opening browser 'chrome' to base url 'http://tadelos.ro/ios'</msg>
-<status status="PASS" endtime="20161019 16:04:06.373" starttime="20161019 16:04:01.562"></status>
+<msg timestamp="20161102 09:52:21.260" level="INFO">Opening browser 'chrome' to base url 'http://tadelos.ro/ios'</msg>
+<status status="PASS" endtime="20161102 09:52:26.143" starttime="20161102 09:52:21.260"></status>
 </kw>
 <kw name="Maximize Browser Window" library="Selenium2Library">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" endtime="20161019 16:04:06.550" starttime="20161019 16:04:06.374"></status>
+<status status="PASS" endtime="20161102 09:52:27.350" starttime="20161102 09:52:26.143"></status>
 </kw>
 <kw name="Set Selenium Speed" library="Selenium2Library">
 <doc>Sets the delay in seconds that is waited after each Selenium command.</doc>
 <arguments>
 <arg>${DELAY}</arg>
 </arguments>
-<status status="PASS" endtime="20161019 16:04:06.555" starttime="20161019 16:04:06.552"></status>
+<status status="PASS" endtime="20161102 09:52:27.353" starttime="20161102 09:52:27.352"></status>
 </kw>
-<status status="PASS" endtime="20161019 16:04:06.556" starttime="20161019 16:04:01.561"></status>
+<status status="PASS" endtime="20161102 09:52:27.353" starttime="20161102 09:52:21.259"></status>
 </kw>
 <test id="s1-t1" name="Search Company name and Select customer">
 <kw name="Login Admin User" library="resource_ios">
@@ -35,7 +35,7 @@
 <arguments>
 <arg>email</arg>
 </arguments>
-<status status="PASS" endtime="20161019 16:04:06.620" starttime="20161019 16:04:06.567"></status>
+<status status="PASS" endtime="20161102 09:52:27.413" starttime="20161102 09:52:27.360"></status>
 </kw>
 <kw name="Input Text" library="Selenium2Library">
 <doc>Types the given `text` into text field identified by `locator`.</doc>
@@ -43,10 +43,10 @@
 <arg>email</arg>
 <arg>${username}</arg>
 </arguments>
-<msg timestamp="20161019 16:04:06.621" level="INFO">Typing text 'marius@xcommerce.eu' into text field 'email'</msg>
-<status status="PASS" endtime="20161019 16:04:06.725" starttime="20161019 16:04:06.620"></status>
+<msg timestamp="20161102 09:52:27.416" level="INFO">Typing text 'marius@xcommerce.eu' into text field 'email'</msg>
+<status status="PASS" endtime="20161102 09:52:27.532" starttime="20161102 09:52:27.414"></status>
 </kw>
-<status status="PASS" endtime="20161019 16:04:06.725" starttime="20161019 16:04:06.564"></status>
+<status status="PASS" endtime="20161102 09:52:27.532" starttime="20161102 09:52:27.357"></status>
 </kw>
 <kw name="Input Password" library="resource_ios">
 <arguments>
@@ -58,10 +58,10 @@
 <arg>passwd</arg>
 <arg>${password}</arg>
 </arguments>
-<msg timestamp="20161019 16:04:06.727" level="INFO">Typing text 'Marius123' into text field 'passwd'</msg>
-<status status="PASS" endtime="20161019 16:04:06.875" starttime="20161019 16:04:06.726"></status>
+<msg timestamp="20161102 09:52:27.534" level="INFO">Typing text 'Marius123' into text field 'passwd'</msg>
+<status status="PASS" endtime="20161102 09:52:27.638" starttime="20161102 09:52:27.533"></status>
 </kw>
-<status status="PASS" endtime="20161019 16:04:06.875" starttime="20161019 16:04:06.725"></status>
+<status status="PASS" endtime="20161102 09:52:27.638" starttime="20161102 09:52:27.533"></status>
 </kw>
 <kw name="Submit Credentials" library="resource_ios">
 <kw name="Click Element" library="Selenium2Library">
@@ -69,554 +69,72 @@
 <arguments>
 <arg>SubmitLogin</arg>
 </arguments>
-<msg timestamp="20161019 16:04:06.877" level="INFO">Clicking element 'SubmitLogin'.</msg>
-<status status="PASS" endtime="20161019 16:04:06.944" starttime="20161019 16:04:06.876"></status>
+<msg timestamp="20161102 09:52:27.639" level="INFO">Clicking element 'SubmitLogin'.</msg>
+<status status="PASS" endtime="20161102 09:52:28.599" starttime="20161102 09:52:27.639"></status>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <doc>Pauses the test executed for the given time.</doc>
 <arguments>
 <arg>2s</arg>
 </arguments>
-<msg timestamp="20161019 16:04:08.951" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" endtime="20161019 16:04:08.952" starttime="20161019 16:04:06.944"></status>
+<msg timestamp="20161102 09:52:30.600" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" endtime="20161102 09:52:30.602" starttime="20161102 09:52:28.599"></status>
 </kw>
-<status status="PASS" endtime="20161019 16:04:08.952" starttime="20161019 16:04:06.876"></status>
+<status status="PASS" endtime="20161102 09:52:30.602" starttime="20161102 09:52:27.638"></status>
 </kw>
-<status status="PASS" endtime="20161019 16:04:08.952" starttime="20161019 16:04:06.562"></status>
+<status status="PASS" endtime="20161102 09:52:30.603" starttime="20161102 09:52:27.356"></status>
 </kw>
+<status status="PASS" endtime="20161102 09:52:30.604" critical="yes" starttime="20161102 09:52:27.353"></status>
+</test>
+<test id="s1-t2" name="Cancel the Order">
 <kw name="Go to Resellers page" library="resource_ios">
 <kw name="Go To" library="Selenium2Library">
 <doc>Navigates the active browser instance to the provided URL.</doc>
 <arguments>
 <arg>http://${SERVER_DEV}/en/index.php?controller=resellerorders</arg>
 </arguments>
-<msg timestamp="20161019 16:04:08.953" level="INFO">Opening url 'http://tadelos.ro/ios/en/index.php?controller=resellerorders'</msg>
-<status status="PASS" endtime="20161019 16:04:09.706" starttime="20161019 16:04:08.953"></status>
+<msg timestamp="20161102 09:52:30.615" level="INFO">Opening url 'http://tadelos.ro/ios/en/index.php?controller=resellerorders'</msg>
+<status status="PASS" endtime="20161102 09:52:31.529" starttime="20161102 09:52:30.612"></status>
 </kw>
-<status status="PASS" endtime="20161019 16:04:09.706" starttime="20161019 16:04:08.953"></status>
-</kw>
-<kw name="Click Element" library="Selenium2Library">
-<doc>Click element identified by `locator`.</doc>
-<arguments>
-<arg>xpath=//*[@id="resellerorders"]/div/div[3]/div[2]/div/div[2]/div[1]/div[2]/div/a</arg>
-</arguments>
-<msg timestamp="20161019 16:04:09.707" level="INFO">Clicking element 'xpath=//*[@id="resellerorders"]/div/div[3]/div[2]/div/div[2]/div[1]/div[2]/div/a'.</msg>
-<status status="PASS" endtime="20161019 16:04:09.833" starttime="20161019 16:04:09.707"></status>
-</kw>
-<kw name="Wait Until Element Is Visible" library="Selenium2Library">
-<doc>Waits until element specified with `locator` is visible.</doc>
-<arguments>
-<arg>search_reseller</arg>
-</arguments>
-<status status="PASS" endtime="20161019 16:04:10.876" starttime="20161019 16:04:09.834"></status>
-</kw>
-<kw name="Input Text" library="Selenium2Library">
-<doc>Types the given `text` into text field identified by `locator`.</doc>
-<arguments>
-<arg>search_reseller</arg>
-<arg>${VALID ADMIN_USER2}</arg>
-</arguments>
-<msg timestamp="20161019 16:04:10.877" level="INFO">Typing text 'marius.pop@xcommerce.eu' into text field 'search_reseller'</msg>
-<status status="PASS" endtime="20161019 16:04:10.975" starttime="20161019 16:04:10.877"></status>
-</kw>
-<kw name="Wait Until Element Is Visible" library="Selenium2Library">
-<doc>Waits until element specified with `locator` is visible.</doc>
-<arguments>
-<arg>xpath=//*[@id="createresellerorder"]/div[2]/ul</arg>
-</arguments>
-<status status="PASS" endtime="20161019 16:04:11.704" starttime="20161019 16:04:10.976"></status>
-</kw>
-<kw name="Click Element" library="Selenium2Library">
-<doc>Click element identified by `locator`.</doc>
-<arguments>
-<arg>xpath=//*[@id="createresellerorder"]/div[2]/ul/li[1]</arg>
-</arguments>
-<msg timestamp="20161019 16:04:11.705" level="INFO">Clicking element 'xpath=//*[@id="createresellerorder"]/div[2]/ul/li[1]'.</msg>
-<status status="PASS" endtime="20161019 16:04:11.764" starttime="20161019 16:04:11.705"></status>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<doc>Pauses the test executed for the given time.</doc>
-<arguments>
-<arg>2s</arg>
-</arguments>
-<msg timestamp="20161019 16:04:13.777" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" endtime="20161019 16:04:13.778" starttime="20161019 16:04:11.766"></status>
-</kw>
-<kw name="Click Element" library="Selenium2Library">
-<doc>Click element identified by `locator`.</doc>
-<arguments>
-<arg>xpath=//*[@id="createresellerorder"]/div/div[3]/div[2]/div/div[2]/div/a[2]</arg>
-</arguments>
-<msg timestamp="20161019 16:04:13.780" level="INFO">Clicking element 'xpath=//*[@id="createresellerorder"]/div/div[3]/div[2]/div/div[2]/div/a[2]'.</msg>
-<status status="PASS" endtime="20161019 16:04:13.837" starttime="20161019 16:04:13.780"></status>
-</kw>
-<status status="PASS" endtime="20161019 16:04:13.845" critical="yes" starttime="20161019 16:04:06.556"></status>
-</test>
-<test id="s1-t2" name="Add Item Enroute - New license">
-<kw name="Wait Until Element Is Visible" library="Selenium2Library">
-<doc>Waits until element specified with `locator` is visible.</doc>
-<arguments>
-<arg>line</arg>
-</arguments>
-<status status="PASS" endtime="20161019 16:04:14.540" starttime="20161019 16:04:13.847"></status>
-</kw>
-<kw name="Select From List By Value" library="Selenium2Library">
-<doc>Selects `*values` from list identified by `locator`</doc>
-<arguments>
-<arg>line</arg>
-<arg>ENROUTE</arg>
-</arguments>
-<msg timestamp="20161019 16:04:14.546" level="INFO">Selecting value(s) 'ENROUTE' from list 'line'.</msg>
-<status status="PASS" endtime="20161019 16:04:14.650" starttime="20161019 16:04:14.545"></status>
-</kw>
-<kw name="Wait Until Element Is Visible" library="Selenium2Library">
-<doc>Waits until element specified with `locator` is visible.</doc>
-<arguments>
-<arg>type</arg>
-</arguments>
-<status status="PASS" endtime="20161019 16:04:14.920" starttime="20161019 16:04:14.651"></status>
-</kw>
-<kw name="Select From List By Value" library="Selenium2Library">
-<doc>Selects `*values` from list identified by `locator`</doc>
-<arguments>
-<arg>type</arg>
-<arg>NEW</arg>
-</arguments>
-<msg timestamp="20161019 16:04:14.938" level="INFO">Selecting value(s) 'NEW' from list 'type'.</msg>
-<status status="PASS" endtime="20161019 16:04:15.043" starttime="20161019 16:04:14.937"></status>
-</kw>
-<kw name="Wait Until Element Is Visible" library="Selenium2Library">
-<doc>Waits until element specified with `locator` is visible.</doc>
-<arguments>
-<arg>xpath=//*[@id="item_options"]/div/div[1]/div/div/label[1]</arg>
-</arguments>
-<status status="PASS" endtime="20161019 16:04:15.301" starttime="20161019 16:04:15.054"></status>
-</kw>
-<kw name="Click Element" library="Selenium2Library">
-<doc>Click element identified by `locator`.</doc>
-<arguments>
-<arg>xpath=//*[@id="item_options"]/div/div[1]/div/div/label[1]</arg>
-</arguments>
-<msg timestamp="20161019 16:04:15.302" level="INFO">Clicking element 'xpath=//*[@id="item_options"]/div/div[1]/div/div/label[1]'.</msg>
-<status status="PASS" endtime="20161019 16:04:15.342" starttime="20161019 16:04:15.301"></status>
-</kw>
-<kw name="Input Text" library="Selenium2Library">
-<doc>Types the given `text` into text field identified by `locator`.</doc>
-<arguments>
-<arg>hardware_key</arg>
-<arg>5-10</arg>
-</arguments>
-<msg timestamp="20161019 16:04:15.343" level="INFO">Typing text '5-10' into text field 'hardware_key'</msg>
-<status status="PASS" endtime="20161019 16:04:15.513" starttime="20161019 16:04:15.342"></status>
-</kw>
-<kw name="Click Button" library="Selenium2Library">
-<doc>Clicks a button identified by `locator`.</doc>
-<arguments>
-<arg>submitAddOrderItem</arg>
-</arguments>
-<msg timestamp="20161019 16:04:15.515" level="INFO">Clicking button 'submitAddOrderItem'.</msg>
-<status status="PASS" endtime="20161019 16:04:15.641" starttime="20161019 16:04:15.513"></status>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<doc>Pauses the test executed for the given time.</doc>
-<arguments>
-<arg>2s</arg>
-</arguments>
-<msg timestamp="20161019 16:04:17.646" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" endtime="20161019 16:04:17.646" starttime="20161019 16:04:15.641"></status>
-</kw>
-<kw name="Page Should Contain Element" library="Selenium2Library">
-<doc>Verifies element identified by `locator` is found on the current page.</doc>
-<arguments>
-<arg>xpath=//*[@id="createresellerorder"]/div/div[3]/div[2]/div/div[3]</arg>
-</arguments>
-<msg timestamp="20161019 16:04:17.668" level="INFO">Current page contains element 'xpath=//*[@id="createresellerorder"]/div/div[3]/div[2]/div/div[3]'.</msg>
-<status status="PASS" endtime="20161019 16:04:17.668" starttime="20161019 16:04:17.648"></status>
-</kw>
-<status status="PASS" endtime="20161019 16:04:17.669" critical="yes" starttime="20161019 16:04:13.846"></status>
-</test>
-<test id="s1-t3" name="Saves order as Draft and check status">
-<kw name="Click Button" library="Selenium2Library">
-<doc>Clicks a button identified by `locator`.</doc>
-<arguments>
-<arg>save_as_draft</arg>
-</arguments>
-<msg timestamp="20161019 16:04:17.672" level="INFO">Clicking button 'save_as_draft'.</msg>
-<status status="PASS" endtime="20161019 16:04:17.752" starttime="20161019 16:04:17.671"></status>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<doc>Pauses the test executed for the given time.</doc>
-<arguments>
-<arg>2s</arg>
-</arguments>
-<msg timestamp="20161019 16:04:19.757" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" endtime="20161019 16:04:19.758" starttime="20161019 16:04:17.756"></status>
-</kw>
-<kw name="Element Should Contain" library="Selenium2Library">
-<doc>Verifies element identified by `locator` contains text `expected`.</doc>
-<arguments>
-<arg>css=div.alert.alert-success</arg>
-<arg>Order successfully saved</arg>
-</arguments>
-<msg timestamp="20161019 16:04:19.763" level="INFO">Verifying element 'css=div.alert.alert-success' contains text 'Order successfully saved'.</msg>
-<status status="PASS" endtime="20161019 16:04:19.825" starttime="20161019 16:04:19.763"></status>
-</kw>
-<kw name="Select From List By Value" library="Selenium2Library">
-<doc>Selects `*values` from list identified by `locator`</doc>
-<arguments>
-<arg>status</arg>
-<arg>5</arg>
-</arguments>
-<msg timestamp="20161019 16:04:19.826" level="INFO">Selecting value(s) '5' from list 'status'.</msg>
-<status status="PASS" endtime="20161019 16:04:19.958" starttime="20161019 16:04:19.826"></status>
-</kw>
-<kw name="Click Element" library="Selenium2Library">
-<doc>Click element identified by `locator`.</doc>
-<arguments>
-<arg>xpath=//*[@id="resellerorders"]/div/div[3]/div[2]/div/div[1]/div[3]/form/div[2]/div/div/div/div/button[1]</arg>
-</arguments>
-<msg timestamp="20161019 16:04:19.959" level="INFO">Clicking element 'xpath=//*[@id="resellerorders"]/div/div[3]/div[2]/div/div[1]/div[3]/form/div[2]/div/div/div/div/button[1]'.</msg>
-<status status="PASS" endtime="20161019 16:04:20.061" starttime="20161019 16:04:19.959"></status>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<doc>Pauses the test executed for the given time.</doc>
-<arguments>
-<arg>2s</arg>
-</arguments>
-<msg timestamp="20161019 16:04:22.062" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" endtime="20161019 16:04:22.062" starttime="20161019 16:04:20.062"></status>
-</kw>
-<kw name="Wait Until Element Is Visible" library="Selenium2Library">
-<doc>Waits until element specified with `locator` is visible.</doc>
-<arguments>
-<arg>xpath=//td[contains(.,"${TEMP Reseller Customer}")]/../td[7]/span</arg>
-</arguments>
-<status status="PASS" endtime="20161019 16:04:22.147" starttime="20161019 16:04:22.076"></status>
-</kw>
-<kw name="Element Text Should Be" library="Selenium2Library">
-<doc>Verifies element identified by `locator` exactly contains text `expected`.</doc>
-<arguments>
-<arg>xpath=//td[contains(.,"${TEMP Reseller Customer}")]/../td[7]/span</arg>
-<arg>Draft</arg>
-</arguments>
-<msg timestamp="20161019 16:04:22.150" level="INFO">Verifying element 'xpath=//td[contains(.,"Marius")]/../td[7]/span' contains exactly text 'Draft'.</msg>
-<status status="PASS" endtime="20161019 16:04:22.182" starttime="20161019 16:04:22.150"></status>
-</kw>
-<status status="PASS" endtime="20161019 16:04:22.182" critical="yes" starttime="20161019 16:04:17.671"></status>
-</test>
-<test id="s1-t4" name="Saves order as Submit for approval and check status">
-<kw name="Wait Until Element Is Visible" library="Selenium2Library">
-<doc>Waits until element specified with `locator` is visible.</doc>
-<arguments>
-<arg>xpath=//td[contains(.,"${TEMP Reseller Customer}")]/../td[9]/a</arg>
-</arguments>
-<status status="PASS" endtime="20161019 16:04:22.216" starttime="20161019 16:04:22.184"></status>
-</kw>
-<kw name="Click Element" library="Selenium2Library">
-<doc>Click element identified by `locator`.</doc>
-<arguments>
-<arg>xpath=//td[contains(.,"${TEMP Reseller Customer}")]/../td[9]/a</arg>
-</arguments>
-<msg timestamp="20161019 16:04:22.217" level="INFO">Clicking element 'xpath=//td[contains(.,"Marius")]/../td[9]/a'.</msg>
-<status status="PASS" endtime="20161019 16:04:22.260" starttime="20161019 16:04:22.216"></status>
-</kw>
-<kw name="Click Button" library="Selenium2Library">
-<doc>Clicks a button identified by `locator`.</doc>
-<arguments>
-<arg>action_for_approve</arg>
-</arguments>
-<msg timestamp="20161019 16:04:22.264" level="INFO">Clicking button 'action_for_approve'.</msg>
-<status status="PASS" endtime="20161019 16:04:24.201" starttime="20161019 16:04:22.264"></status>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<doc>Pauses the test executed for the given time.</doc>
-<arguments>
-<arg>2s</arg>
-</arguments>
-<msg timestamp="20161019 16:04:26.216" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" endtime="20161019 16:04:26.216" starttime="20161019 16:04:24.216"></status>
-</kw>
-<kw name="Element Should Contain" library="Selenium2Library">
-<doc>Verifies element identified by `locator` contains text `expected`.</doc>
-<arguments>
-<arg>css=div.alert.alert-success</arg>
-<arg>Order successfully saved</arg>
-</arguments>
-<msg timestamp="20161019 16:04:26.217" level="INFO">Verifying element 'css=div.alert.alert-success' contains text 'Order successfully saved'.</msg>
-<status status="PASS" endtime="20161019 16:04:26.729" starttime="20161019 16:04:26.217"></status>
-</kw>
-<kw name="Go to Awaiting approval page" library="resource_ios">
-<kw name="Go To" library="Selenium2Library">
-<doc>Navigates the active browser instance to the provided URL.</doc>
-<arguments>
-<arg>http://${SERVER_DEV}/en/index.php?controller=approvalorders</arg>
-</arguments>
-<msg timestamp="20161019 16:04:26.731" level="INFO">Opening url 'http://tadelos.ro/ios/en/index.php?controller=approvalorders'</msg>
-<status status="PASS" endtime="20161019 16:04:27.301" starttime="20161019 16:04:26.730"></status>
-</kw>
-<status status="PASS" endtime="20161019 16:04:27.302" starttime="20161019 16:04:26.730"></status>
-</kw>
-<kw name="Wait Until Element Is Visible" library="Selenium2Library">
-<doc>Waits until element specified with `locator` is visible.</doc>
-<arguments>
-<arg>xpath=//td[contains(.,"${TEMP Reseller Customer}")]/../td[7]/span</arg>
-</arguments>
-<status status="PASS" endtime="20161019 16:04:27.344" starttime="20161019 16:04:27.304"></status>
-</kw>
-<kw name="Element Text Should Be" library="Selenium2Library">
-<doc>Verifies element identified by `locator` exactly contains text `expected`.</doc>
-<arguments>
-<arg>xpath=//td[contains(.,"${TEMP Reseller Customer}")]/../td[7]/span</arg>
-<arg>To be Approved</arg>
-</arguments>
-<msg timestamp="20161019 16:04:27.345" level="INFO">Verifying element 'xpath=//td[contains(.,"Marius")]/../td[7]/span' contains exactly text 'To be Approved'.</msg>
-<status status="PASS" endtime="20161019 16:04:27.397" starttime="20161019 16:04:27.345"></status>
-</kw>
-<status status="PASS" endtime="20161019 16:04:27.398" critical="yes" starttime="20161019 16:04:22.184"></status>
-</test>
-<test id="s1-t5" name="Reject an order and check status">
-<kw name="Wait Until Element Is Visible" library="Selenium2Library">
-<doc>Waits until element specified with `locator` is visible.</doc>
-<arguments>
-<arg>xpath=//*[@id="approvalorders"]/div/div[3]/div[2]/div/div[2]/div[2]/div[2]/table/tbody/tr[1]/td[1]/a</arg>
-</arguments>
-<status status="PASS" endtime="20161019 16:04:27.440" starttime="20161019 16:04:27.400"></status>
-</kw>
-<kw name="Wait Until Element Is Visible" library="Selenium2Library">
-<doc>Waits until element specified with `locator` is visible.</doc>
-<arguments>
-<arg>xpath=//td[contains(.,"${TEMP Reseller Customer}")]/../td[10]/a[1]</arg>
-</arguments>
-<status status="PASS" endtime="20161019 16:04:27.477" starttime="20161019 16:04:27.441"></status>
-</kw>
-<kw name="Click Element" library="Selenium2Library">
-<doc>Click element identified by `locator`.</doc>
-<arguments>
-<arg>xpath=//td[contains(.,"${TEMP Reseller Customer}")]/../td[10]/a[1]</arg>
-</arguments>
-<msg timestamp="20161019 16:04:27.481" level="INFO">Clicking element 'xpath=//td[contains(.,"Marius")]/../td[10]/a[1]'.</msg>
-<status status="PASS" endtime="20161019 16:04:27.526" starttime="20161019 16:04:27.481"></status>
-</kw>
-<kw name="Click Button" library="Selenium2Library">
-<doc>Clicks a button identified by `locator`.</doc>
-<arguments>
-<arg>action_reject</arg>
-</arguments>
-<msg timestamp="20161019 16:04:27.527" level="INFO">Clicking button 'action_reject'.</msg>
-<status status="PASS" endtime="20161019 16:04:28.153" starttime="20161019 16:04:27.527"></status>
-</kw>
-<kw name="Wait Until Element Is Visible" library="Selenium2Library">
-<doc>Waits until element specified with `locator` is visible.</doc>
-<arguments>
-<arg>xpath=//*[@id="approvalorders"]/div[2]/div/div/div[2]/div/form/input</arg>
-</arguments>
-<status status="PASS" endtime="20161019 16:04:28.445" starttime="20161019 16:04:28.160"></status>
-</kw>
-<kw name="Input Text" library="Selenium2Library">
-<doc>Types the given `text` into text field identified by `locator`.</doc>
-<arguments>
-<arg>xpath=//*[@id="approvalorders"]/div[2]/div/div/div[2]/div/form/input</arg>
-<arg>Reject TEST reason</arg>
-</arguments>
-<msg timestamp="20161019 16:04:28.456" level="INFO">Typing text 'Reject TEST reason' into text field 'xpath=//*[@id="approvalorders"]/div[2]/div/div/div[2]/div/form/input'</msg>
-<status status="PASS" endtime="20161019 16:04:28.582" starttime="20161019 16:04:28.455"></status>
-</kw>
-<kw name="Click Element" library="Selenium2Library">
-<doc>Click element identified by `locator`.</doc>
-<arguments>
-<arg>xpath=//*[@id="approvalorders"]/div[2]/div/div/div[3]/button[2]</arg>
-</arguments>
-<msg timestamp="20161019 16:04:28.584" level="INFO">Clicking element 'xpath=//*[@id="approvalorders"]/div[2]/div/div/div[3]/button[2]'.</msg>
-<status status="PASS" endtime="20161019 16:04:28.691" starttime="20161019 16:04:28.583"></status>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<doc>Pauses the test executed for the given time.</doc>
-<arguments>
-<arg>2s</arg>
-</arguments>
-<msg timestamp="20161019 16:04:30.696" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" endtime="20161019 16:04:30.697" starttime="20161019 16:04:28.691"></status>
-</kw>
-<kw name="Element Should Contain" library="Selenium2Library">
-<doc>Verifies element identified by `locator` contains text `expected`.</doc>
-<arguments>
-<arg>css=div.alert.alert-success</arg>
-<arg>successfully rejected</arg>
-</arguments>
-<msg timestamp="20161019 16:04:30.719" level="INFO">Verifying element 'css=div.alert.alert-success' contains text 'successfully rejected'.</msg>
-<status status="PASS" endtime="20161019 16:04:30.777" starttime="20161019 16:04:30.719"></status>
-</kw>
-<status status="PASS" endtime="20161019 16:04:30.778" critical="yes" starttime="20161019 16:04:27.399"></status>
-</test>
-<test id="s1-t6" name="Go to Direct sales and submit for approval again">
-<kw name="Go to Direct sales page" library="resource_ios">
-<kw name="Go To" library="Selenium2Library">
-<doc>Navigates the active browser instance to the provided URL.</doc>
-<arguments>
-<arg>http://${SERVER_DEV}/en/index.php?controller=directsalesorders</arg>
-</arguments>
-<msg timestamp="20161019 16:04:30.780" level="INFO">Opening url 'http://tadelos.ro/ios/en/index.php?controller=directsalesorders'</msg>
-<status status="PASS" endtime="20161019 16:04:31.510" starttime="20161019 16:04:30.780"></status>
-</kw>
-<status status="PASS" endtime="20161019 16:04:31.510" starttime="20161019 16:04:30.780"></status>
+<status status="PASS" endtime="20161102 09:52:31.530" starttime="20161102 09:52:30.611"></status>
 </kw>
 <kw name="Wait Until Element Is Visible" library="Selenium2Library">
 <doc>Waits until element specified with `locator` is visible.</doc>
 <arguments>
 <arg>xpath=//td[contains(.,"${TEMP Reseller Customer}")]/../td[9]/a</arg>
 </arguments>
-<status status="PASS" endtime="20161019 16:04:31.554" starttime="20161019 16:04:31.512"></status>
+<status status="PASS" endtime="20161102 09:52:31.601" starttime="20161102 09:52:31.533"></status>
 </kw>
 <kw name="Click Element" library="Selenium2Library">
 <doc>Click element identified by `locator`.</doc>
 <arguments>
 <arg>xpath=//td[contains(.,"${TEMP Reseller Customer}")]/../td[9]/a</arg>
 </arguments>
-<msg timestamp="20161019 16:04:31.558" level="INFO">Clicking element 'xpath=//td[contains(.,"Marius")]/../td[9]/a'.</msg>
-<status status="PASS" endtime="20161019 16:04:31.601" starttime="20161019 16:04:31.558"></status>
-</kw>
-<kw name="Click Button" library="Selenium2Library">
-<doc>Clicks a button identified by `locator`.</doc>
-<arguments>
-<arg>action_for_approve</arg>
-</arguments>
-<msg timestamp="20161019 16:04:31.609" level="INFO">Clicking button 'action_for_approve'.</msg>
-<status status="PASS" endtime="20161019 16:04:33.520" starttime="20161019 16:04:31.608"></status>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<doc>Pauses the test executed for the given time.</doc>
-<arguments>
-<arg>2s</arg>
-</arguments>
-<msg timestamp="20161019 16:04:35.520" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" endtime="20161019 16:04:35.520" starttime="20161019 16:04:33.520"></status>
-</kw>
-<kw name="Element Should Contain" library="Selenium2Library">
-<doc>Verifies element identified by `locator` contains text `expected`.</doc>
-<arguments>
-<arg>css=div.alert.alert-success</arg>
-<arg>Order successfully saved</arg>
-</arguments>
-<msg timestamp="20161019 16:04:35.535" level="INFO">Verifying element 'css=div.alert.alert-success' contains text 'Order successfully saved'.</msg>
-<status status="PASS" endtime="20161019 16:04:36.175" starttime="20161019 16:04:35.534"></status>
-</kw>
-<kw name="Go to Awaiting approval page" library="resource_ios">
-<kw name="Go To" library="Selenium2Library">
-<doc>Navigates the active browser instance to the provided URL.</doc>
-<arguments>
-<arg>http://${SERVER_DEV}/en/index.php?controller=approvalorders</arg>
-</arguments>
-<msg timestamp="20161019 16:04:36.177" level="INFO">Opening url 'http://tadelos.ro/ios/en/index.php?controller=approvalorders'</msg>
-<status status="PASS" endtime="20161019 16:04:36.773" starttime="20161019 16:04:36.177"></status>
-</kw>
-<status status="PASS" endtime="20161019 16:04:36.773" starttime="20161019 16:04:36.176"></status>
-</kw>
-<kw name="Wait Until Element Is Visible" library="Selenium2Library">
-<doc>Waits until element specified with `locator` is visible.</doc>
-<arguments>
-<arg>xpath=//td[contains(.,"${TEMP Reseller Customer}")]/../td[10]/a[1]</arg>
-</arguments>
-<status status="PASS" endtime="20161019 16:04:36.803" starttime="20161019 16:04:36.774"></status>
-</kw>
-<kw name="Click Element" library="Selenium2Library">
-<doc>Click element identified by `locator`.</doc>
-<arguments>
-<arg>xpath=//td[contains(.,"${TEMP Reseller Customer}")]/../td[10]/a[1]</arg>
-</arguments>
-<msg timestamp="20161019 16:04:36.804" level="INFO">Clicking element 'xpath=//td[contains(.,"Marius")]/../td[10]/a[1]'.</msg>
-<status status="PASS" endtime="20161019 16:04:36.888" starttime="20161019 16:04:36.804"></status>
-</kw>
-<kw name="Click Button" library="Selenium2Library">
-<doc>Clicks a button identified by `locator`.</doc>
-<arguments>
-<arg>action_approve</arg>
-</arguments>
-<msg timestamp="20161019 16:04:36.891" level="INFO">Clicking button 'action_approve'.</msg>
-<status status="PASS" endtime="20161019 16:04:37.452" starttime="20161019 16:04:36.890"></status>
-</kw>
-<kw name="Wait Until Element Is Visible" library="Selenium2Library">
-<doc>Waits until element specified with `locator` is visible.</doc>
-<arguments>
-<arg>xpath=//*[@id="approvalorders"]/div[2]/div/div/div[3]/button[2]</arg>
-</arguments>
-<status status="PASS" endtime="20161019 16:04:37.743" starttime="20161019 16:04:37.452"></status>
-</kw>
-<kw name="Click Element" library="Selenium2Library">
-<doc>Click element identified by `locator`.</doc>
-<arguments>
-<arg>xpath=//*[@id="approvalorders"]/div[2]/div/div/div[3]/button[2]</arg>
-</arguments>
-<msg timestamp="20161019 16:04:37.745" level="INFO">Clicking element 'xpath=//*[@id="approvalorders"]/div[2]/div/div/div[3]/button[2]'.</msg>
-<status status="PASS" endtime="20161019 16:04:37.814" starttime="20161019 16:04:37.744"></status>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<doc>Pauses the test executed for the given time.</doc>
-<arguments>
-<arg>2s</arg>
-</arguments>
-<msg timestamp="20161019 16:04:39.818" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" endtime="20161019 16:04:39.818" starttime="20161019 16:04:37.816"></status>
-</kw>
-<kw name="Element Should Contain" library="Selenium2Library">
-<doc>Verifies element identified by `locator` contains text `expected`.</doc>
-<arguments>
-<arg>css=div.alert.alert-success</arg>
-<arg>successfully approved</arg>
-</arguments>
-<msg timestamp="20161019 16:04:39.819" level="INFO">Verifying element 'css=div.alert.alert-success' contains text 'successfully approved'.</msg>
-<status status="PASS" endtime="20161019 16:04:39.860" starttime="20161019 16:04:39.819"></status>
-</kw>
-<status status="PASS" endtime="20161019 16:04:39.861" critical="yes" starttime="20161019 16:04:30.779"></status>
-</test>
-<test id="s1-t7" name="Cancel the Order">
-<kw name="Go to Direct sales page" library="resource_ios">
-<kw name="Go To" library="Selenium2Library">
-<doc>Navigates the active browser instance to the provided URL.</doc>
-<arguments>
-<arg>http://${SERVER_DEV}/en/index.php?controller=directsalesorders</arg>
-</arguments>
-<msg timestamp="20161019 16:04:39.866" level="INFO">Opening url 'http://tadelos.ro/ios/en/index.php?controller=directsalesorders'</msg>
-<status status="PASS" endtime="20161019 16:04:40.591" starttime="20161019 16:04:39.865"></status>
-</kw>
-<status status="PASS" endtime="20161019 16:04:40.592" starttime="20161019 16:04:39.865"></status>
-</kw>
-<kw name="Wait Until Element Is Visible" library="Selenium2Library">
-<doc>Waits until element specified with `locator` is visible.</doc>
-<arguments>
-<arg>xpath=//td[contains(.,"${TEMP Reseller Customer}")]/../td[9]/a</arg>
-</arguments>
-<status status="PASS" endtime="20161019 16:04:40.630" starttime="20161019 16:04:40.592"></status>
-</kw>
-<kw name="Click Element" library="Selenium2Library">
-<doc>Click element identified by `locator`.</doc>
-<arguments>
-<arg>xpath=//td[contains(.,"${TEMP Reseller Customer}")]/../td[9]/a</arg>
-</arguments>
-<msg timestamp="20161019 16:04:40.631" level="INFO">Clicking element 'xpath=//td[contains(.,"Marius")]/../td[9]/a'.</msg>
-<status status="PASS" endtime="20161019 16:04:40.674" starttime="20161019 16:04:40.631"></status>
+<msg timestamp="20161102 09:52:31.611" level="INFO">Clicking element 'xpath=//td[contains(.,"Marius")]/../td[9]/a'.</msg>
+<status status="PASS" endtime="20161102 09:52:34.181" starttime="20161102 09:52:31.609"></status>
 </kw>
 <kw name="Choose Ok On Next Confirmation" library="Selenium2Library">
 <doc>Undo the effect of using keywords `Choose Cancel On Next Confirmation`. Note</doc>
-<status status="PASS" endtime="20161019 16:04:40.675" starttime="20161019 16:04:40.675"></status>
+<status status="PASS" endtime="20161102 09:52:34.183" starttime="20161102 09:52:34.183"></status>
 </kw>
 <kw name="Click Button" library="Selenium2Library">
 <doc>Clicks a button identified by `locator`.</doc>
 <arguments>
 <arg>cancel</arg>
 </arguments>
-<msg timestamp="20161019 16:04:40.676" level="INFO">Clicking button 'cancel'.</msg>
-<status status="PASS" endtime="20161019 16:04:42.599" starttime="20161019 16:04:40.676"></status>
+<msg timestamp="20161102 09:52:34.184" level="INFO">Clicking button 'cancel'.</msg>
+<status status="PASS" endtime="20161102 09:52:34.354" starttime="20161102 09:52:34.184"></status>
 </kw>
 <kw name="Confirm Action" library="Selenium2Library">
 <doc>Dismisses currently shown confirmation dialog and returns it's message.</doc>
-<status status="PASS" endtime="20161019 16:04:42.639" starttime="20161019 16:04:42.606"></status>
+<status status="PASS" endtime="20161102 09:52:34.388" starttime="20161102 09:52:34.356"></status>
 </kw>
 <kw name="Wait Until Element Is Visible" library="Selenium2Library">
 <doc>Waits until element specified with `locator` is visible.</doc>
 <arguments>
 <arg>xpath=//td[contains(.,"${TEMP Reseller Customer}")]/../td[7]/span</arg>
 </arguments>
-<status status="PASS" endtime="20161019 16:04:43.917" starttime="20161019 16:04:42.660"></status>
+<status status="PASS" endtime="20161102 09:52:35.532" starttime="20161102 09:52:34.388"></status>
 </kw>
 <kw name="Element Text Should Be" library="Selenium2Library">
 <doc>Verifies element identified by `locator` exactly contains text `expected`.</doc>
@@ -624,23 +142,23 @@
 <arg>xpath=//td[contains(.,"${TEMP Reseller Customer}")]/../td[7]/span</arg>
 <arg>Canceled</arg>
 </arguments>
-<msg timestamp="20161019 16:04:43.919" level="INFO">Verifying element 'xpath=//td[contains(.,"Marius")]/../td[7]/span' contains exactly text 'Canceled'.</msg>
-<status status="PASS" endtime="20161019 16:04:43.947" starttime="20161019 16:04:43.918"></status>
+<msg timestamp="20161102 09:52:35.535" level="INFO">Verifying element 'xpath=//td[contains(.,"Marius")]/../td[7]/span' contains exactly text 'Canceled'.</msg>
+<status status="PASS" endtime="20161102 09:52:35.571" starttime="20161102 09:52:35.534"></status>
 </kw>
-<status status="PASS" endtime="20161019 16:04:43.948" critical="yes" starttime="20161019 16:04:39.864"></status>
+<status status="PASS" endtime="20161102 09:52:35.572" critical="yes" starttime="20161102 09:52:30.609"></status>
 </test>
 <doc>Test suite with Order flows</doc>
-<status status="PASS" endtime="20161019 16:04:43.950" starttime="20161019 16:04:01.415"></status>
+<status status="PASS" endtime="20161102 09:52:35.576" starttime="20161102 09:52:21.116"></status>
 </suite>
 <statistics>
 <total>
-<stat fail="0" pass="7">Critical Tests</stat>
-<stat fail="0" pass="7">All Tests</stat>
+<stat fail="0" pass="2">Critical Tests</stat>
+<stat fail="0" pass="2">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat fail="0" id="s1" name="Order Flows" pass="7">Order Flows</stat>
+<stat fail="0" id="s1" name="44 Order Flows" pass="2">44 Order Flows</stat>
 </suite>
 </statistics>
 <errors>
