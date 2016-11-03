@@ -13,7 +13,7 @@ Search Company name and Reset customer
     click element                       xpath=//a[@href='http://${SERVER_DEV}/en/index.php?controller=createdirectorder&create=1']
 
     wait until element is visible       search_company
-    input text                          search_company          marius
+    input text                          search_company          ${VALID ADMIN_USER}
     wait until element is visible       xpath=//*[@id="createdirectorder"]/div[2]/ul
     click element                       //*[@id="createdirectorder"]/div[2]/ul/li[1]
 
@@ -55,6 +55,8 @@ Complete the shipping address form
     input text                          shipp_zip               A1A 2B2
 
     click button                        save_company_info
+
+    sleep       2s
 
     element should contain              css=div.alert.alert-success         Company saved successfully
 

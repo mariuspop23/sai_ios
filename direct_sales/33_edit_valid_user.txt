@@ -1,5 +1,5 @@
 *** Settings ***
-Documentation     Test suite with Add user
+Documentation     Test suite with Edit user
 Suite Setup       Open Browser To Homepage
 #Suite Teardown    Close Browser
 
@@ -41,6 +41,7 @@ Update the billing address form
     input text                          contact_phone           0740654321
 
 Update the shipping address form
+    click element                       xpath=//*[@id="createdirectorder"]/div/div[3]/div[2]/div/div[1]/div[4]/form/div[1]/div[5]/div[3]/div/label/span
     wait until element is visible       shipp_address1
     clear element text                  shipp_address1
     input text                          shipp_address1          My shipping address1 Update
@@ -48,7 +49,8 @@ Update the shipping address form
     input text                          shipp_address2          My shipping address2 Update
     select from list by value           id_shipp_country        4
     wait until element is visible       shipp_id_state
-    select from list by value           shipp_id_state          87
+    sleep   1s
+    select from list by index           shipp_id_state          1
     clear element text                  shipp_city
     input text                          shipp_city              Quebec city
     clear element text                  shipp_zip

@@ -18,7 +18,7 @@ Search Company name and Select customer
     click element                       xpath=//*[@id="createdirectorder"]/div[2]/ul/li[1]
     sleep   2s
 
-    click element                       xpath=//*[@id="createdirectorder"]/div/div[3]/div[2]/div/div[2]/div/a[2]
+    click element                       xpath=//*[@id="no_prod_buttons"]/div[1]/div[1]/a
 
 Add Item Enroute - New license
     wait until element is visible       line
@@ -29,7 +29,7 @@ Add Item Enroute - New license
     click element                       xpath=//*[@id="item_options"]/div/div[1]/div/div/label[1]
     clear element text                  qty
     input text                          qty             2
-    input text                          hardware_key    5-10
+    input text                          hardware_key    1234567
 
     click button                        submitAddOrderItem
     sleep    2s
@@ -37,7 +37,7 @@ Add Item Enroute - New license
     page should contain element         xpath=//*[@id="createdirectorder"]/div/div[3]/div[2]/div/div[3]
 
 Cart - Add shipment or discount
-    click element                       xpath=//*[@id="createdirectorder"]/div/div[3]/div[2]/div/div[2]/div/a[1]
+    click element                       xpath=//*[@id="no_prod_buttons"]/div[1]/div[2]/a
     wait until element is visible       css=div#shipping_options
     click element                       xpath=//*[@id="shipping_options"]/div/div/div/label[2]
 
@@ -46,7 +46,7 @@ Cart - Add shipment or discount
     wait until element is visible       xpath=//*[@id="createdirectorder"]/div/div[3]/div[2]/div/div[3]/div[2]/div/table
     element should contain              xpath=//*[@id="createdirectorder"]/div/div[3]/div[2]/div/div[3]/div[2]/div/table      Shipping
 
-    click element                       xpath=//*[@id="createdirectorder"]/div/div[3]/div[2]/div/div[2]/div/a[1]
+    click element                       xpath=//*[@id="no_prod_buttons"]/div[1]/div[2]/a
     wait until element is visible       css=div#discount_options
     click element                       xpath=//*[@id="discount_options"]/div/div/div/label[4]
 
@@ -83,11 +83,11 @@ Change Company name and check if cart stays in page
 
 Remove items by checkbox
     choose ok on next confirmation
-    click element                       xpath=//*[@id="createdirectorder"]/div/div[3]/div[2]/div/div[2]/div/a[3]
+    click element                       xpath=//*[@id="no_prod_buttons"]/div[2]/a
     confirm action
     sleep   2s
     click element                       xpath=//*[@id="createdirectorder"]/div/div[3]/div[2]/div/div[3]/div[2]/div/table/thead/tr/th[1]/label/span
-    click element                       xpath=//*[@id="createdirectorder"]/div/div[3]/div[2]/div/div[2]/div/a[3]
+    click element                       xpath=//*[@id="no_prod_buttons"]/div[2]/a
 
     sleep  1s
     element should not be visible       xpath=//*[@id="createdirectorder"]/div/div[3]/div[2]/div/div[3]/div[2]/div/table

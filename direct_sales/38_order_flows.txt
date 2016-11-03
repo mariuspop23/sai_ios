@@ -18,7 +18,7 @@ Search Company name and Select customer
     click element                       xpath=//*[@id="createdirectorder"]/div[2]/ul/li[1]
     sleep   2s
 
-    click element                       xpath=//*[@id="createdirectorder"]/div/div[3]/div[2]/div/div[2]/div/a[2]
+    click element                       xpath=//*[@id="no_prod_buttons"]/div[1]/div[1]/a
 
 Add Item Enroute - New license
     wait until element is visible       line
@@ -27,7 +27,7 @@ Add Item Enroute - New license
     select from list by value           type        NEW
     wait until element is visible       xpath=//*[@id="item_options"]/div/div[1]/div/div/label[1]
     click element                       xpath=//*[@id="item_options"]/div/div[1]/div/div/label[1]
-    input text                          hardware_key    5-10
+    input text                          hardware_key    1234567
 
     click button                        submitAddOrderItem
     sleep    2s
