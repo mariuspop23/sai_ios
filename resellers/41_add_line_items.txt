@@ -1,7 +1,7 @@
 *** Settings ***
 Documentation     Test suite with Add line items
 Suite Setup       Open Browser To Homepage
-Suite Teardown    Close Browser
+#Suite Teardown    Close Browser
 
 Resource          ../resource_ios.txt
 Resource          ../variables_ios.txt
@@ -10,7 +10,6 @@ Resource          ../variables_ios.txt
 
 Search Company name and Select customer
     Login Admin User
-
     Go to Resellers page
     click element                       xpath=//*[@id="resellerorders"]/div/div[3]/div[2]/div/div[2]/div[1]/div[2]/div/a
     wait until element is visible       search_reseller
@@ -19,7 +18,7 @@ Search Company name and Select customer
     click element                       xpath=//*[@id="createresellerorder"]/div[2]/ul/li[1]
     sleep   2s
 
-    click element                       xpath=//*[@id="createresellerorder"]/div/div[3]/div[2]/div/div[2]/div[1]/div[1]/a
+    click element                       xpath=//*[@id="createresellerorder"]/div/div[3]/div[2]/div/div[2]/div/a[2]
 
 Add Item Enroute - New license
     wait until element is visible       line
@@ -28,7 +27,7 @@ Add Item Enroute - New license
     select from list by value           type        NEW
     wait until element is visible       xpath=//*[@id="item_options"]/div/div[1]/div/div/label[1]
     click element                       xpath=//*[@id="item_options"]/div/div[1]/div/div/label[1]
-    input text                          hardware_key    1234567
+    input text                          hardware_key    5-10
 
     click button                        submitAddOrderItem
     sleep    2s
@@ -36,7 +35,7 @@ Add Item Enroute - New license
     page should contain element         xpath=//*[@id="createresellerorder"]/div/div[3]/div[2]/div/div[3]
 
 Add Item Enroute - Upgrade from Legacy - Select Current Level on Key - Pro
-    click element                       xpath=//*[@id="createresellerorder"]/div/div[3]/div[2]/div/div[2]/div[1]/div[1]/a
+    click element                       xpath=//*[@id="createresellerorder"]/div/div[3]/div[2]/div/div[2]/div/a[2]
     wait until element is visible       line
     select from list by value           line        ENROUTE
     wait until element is visible       type
@@ -44,9 +43,6 @@ Add Item Enroute - Upgrade from Legacy - Select Current Level on Key - Pro
     sleep   1s
     select from list by value           current_product_line        ENROUTE
     sleep   1s
-
-    input text                          current_key                 1234567
-
     select from list by value           current_version             OLD
     sleep   1s
     select from list by value           current_level               PRO
@@ -61,17 +57,13 @@ Add Item Enroute - Upgrade from Legacy - Select Current Level on Key - Pro
     page should contain element         xpath=//*[@id="createresellerorder"]/div/div[3]/div[2]/div/div[3]
 
 Add Item Enroute - Upgrade from Legacy - Select Current Level on Key - Fab Pro
-    click element                       xpath=//*[@id="createresellerorder"]/div/div[3]/div[2]/div/div[2]/div[1]/div[1]/a
+    click element                       xpath=//*[@id="createresellerorder"]/div/div[3]/div[2]/div/div[2]/div/a[2]
     wait until element is visible       line
     select from list by value           line        ENROUTE
     wait until element is visible       type
     select from list by value           type        LEG
     sleep   1s
     select from list by value           current_product_line        ENROUTE
-
-    wait until element is visible       current_key
-    input text                          current_key                 1234567
-
     sleep   1s
     select from list by value           current_version             OLD
     sleep   1s
@@ -87,17 +79,13 @@ Add Item Enroute - Upgrade from Legacy - Select Current Level on Key - Fab Pro
     page should contain element         xpath=//*[@id="createresellerorder"]/div/div[3]/div[2]/div/div[3]
 
 Add Item Enroute - Upgrade from Legacy - Select Current Level on Key - Apprentice
-    click element                       xpath=//*[@id="createresellerorder"]/div/div[3]/div[2]/div/div[2]/div[1]/div[1]/a
+    click element                       xpath=//*[@id="createresellerorder"]/div/div[3]/div[2]/div/div[2]/div/a[2]
     wait until element is visible       line
     select from list by value           line        ENROUTE
     wait until element is visible       type
     select from list by value           type        LEG
     sleep   1s
     select from list by value           current_product_line        ENROUTE
-
-    wait until element is visible       current_key
-    input text                          current_key                 1234567
-
     sleep   1s
     select from list by value           current_version             PREV
     sleep   1s
@@ -113,7 +101,7 @@ Add Item Enroute - Upgrade from Legacy - Select Current Level on Key - Apprentic
     page should contain element         xpath=//*[@id="createresellerorder"]/div/div[3]/div[2]/div/div[3]
 
 Add Item Flexi - New license
-    click element                       xpath=//*[@id="createresellerorder"]/div/div[3]/div[2]/div/div[2]/div[1]/div[1]/a
+    click element                       xpath=//*[@id="createresellerorder"]/div/div[3]/div[2]/div/div[2]/div/a[2]
     wait until element is visible       line
     select from list by value           line        FLEXI
     wait until element is visible       type
@@ -123,39 +111,39 @@ Add Item Flexi - New license
 
     clear element text                  qty
     input text                          qty             3
-    input text                          hardware_key    1234567
+    input text                          hardware_key    15-20
 
     click button                        submitAddOrderItem
     sleep    2s
 
     page should contain element         xpath=//*[@id="createresellerorder"]/div/div[3]/div[2]/div/div[3]
 
-#Add Item Flexi - Upgrade to Legacy - OEM - Older - OEM  # aici nu mai avem produs momentan
-#    click element                       xpath=//*[@id="createresellerorder"]/div/div[3]/div[2]/div/div[2]/div[1]/div[1]/a
-#    wait until element is visible       line
-#    select from list by value           line        FLEXI
-#    wait until element is visible       type
-#    select from list by value           type        LEG
-#    sleep   1s
-#    select from list by value           current_product_line        OEM
-#    sleep   1s
-#    select from list by value           current_version             OLD
-#    sleep   1s
-#    select from list by value           current_level               OEM
-#
-#
-#    wait until element is visible       xpath=//*[@id="upgrade_from_legacy_keys_result"]/div/div/div/label[1]
-#    click element                       xpath=//*[@id="upgrade_from_legacy_keys_result"]/div/div/div/label[1]
-#
-#    click element                       xpath=//*[@id="item_options"]/div/div[2]/div/div/label[1]
-#
-#    click button                        submitAddOrderItem
-#    sleep    2s
-#
-#    page should contain element         xpath=//*[@id="createresellerorder"]/div/div[3]/div[2]/div/div[3]
+Add Item Flexi - Upgrade to Legacy - OEM - Older - OEM
+    click element                       xpath=//*[@id="createresellerorder"]/div/div[3]/div[2]/div/div[2]/div/a[2]
+    wait until element is visible       line
+    select from list by value           line        FLEXI
+    wait until element is visible       type
+    select from list by value           type        LEG
+    sleep   1s
+    select from list by value           current_product_line        OEM
+    sleep   1s
+    select from list by value           current_version             OLD
+    sleep   1s
+    select from list by value           current_level               OEM
+
+
+    wait until element is visible       xpath=//*[@id="upgrade_from_legacy_keys_result"]/div/div/div/label[1]
+    click element                       xpath=//*[@id="upgrade_from_legacy_keys_result"]/div/div/div/label[1]
+
+    click element                       xpath=//*[@id="item_options"]/div/div[2]/div/div/label[1]
+
+    click button                        submitAddOrderItem
+    sleep    2s
+
+    page should contain element         xpath=//*[@id="createresellerorder"]/div/div[3]/div[2]/div/div[3]
 
 Add item OEM - New license
-    click element                       xpath=//*[@id="createresellerorder"]/div/div[3]/div[2]/div/div[2]/div[1]/div[1]/a
+    click element                       xpath=//*[@id="createresellerorder"]/div/div[3]/div[2]/div/div[2]/div/a[2]
     wait until element is visible       line
     select from list by value           line        OEM
     wait until element is visible       type
@@ -166,7 +154,7 @@ Add item OEM - New license
 
     clear element text                  qty
     input text                          qty             4
-    input text                          hardware_key    1234567
+    input text                          hardware_key    10
 
     click button                        submitAddOrderItem
     sleep    2s
