@@ -1,5 +1,5 @@
 *** Settings ***
-Documentation     Test suite with valid login.
+Documentation     Test suite with ff browser test
 #Suite Setup       Open Browser To Homepage
 #Suite Teardown    Close Browser
 
