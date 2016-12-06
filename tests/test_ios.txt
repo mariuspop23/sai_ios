@@ -11,4 +11,4 @@ Library           Selenium2Library
 *** Test Cases ***
 
 Open google page
-    open browser            http://www.google.com          ff
+    open browser            http://www.google.com          gc
